@@ -1,0 +1,113 @@
+/**
+This theme is poorly based on the
+ */
+
+.gatsby-highlight {
+  padding-bottom: 30px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #f8f8f2;
+  background: none;
+  font-family: 'Fira Code', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.87;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  box-shadow: 0.05555555555555555rem 0.05555555555555555rem
+    1.1111111111111112rem rgba(20, 20, 20, 0.37);
+}
+
+/* Code blocks */
+pre[class*='language-'],
+pre > code[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0;
+  background: #1d1f27;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'],
+:not(pre) > code {
+  padding: 0.1em 0.5em;
+  border-radius: 0.1em;
+  white-space: normal;
+  background: #ced4dd;
+  color: black;
+}
+
+/*Things that shouldn't POP*/
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5e6165;
+}
+
+/*Normal things*/
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.punctuation,
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #ffffff;
+}
+
+/*The most important things to call attention to:*/
+.token.selector,
+.token.attr-name,
+.token.class-name,
+.token.builtin,
+.token.inserted,
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #51e2a0;
+}
+
+/*Important things that are mainly user inputs and arbitrary*/
+.token.boolean,
+.token.number .token.keyword,
+.token.string,
+.token.char,
+.token.variable,
+.token.regex,
+.token.number {
+  color: #3698f2;
+}
+
+/*very important framework specific*/
+.token.important,
+.token.keyword {
+  color: #ff8480;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

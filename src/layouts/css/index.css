@@ -1,0 +1,135 @@
+/**********
+ Reset
+***********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/**********
+ Text
+***********/
+html {
+  font-size: 10px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul {
+  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 50px 0 15px;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 20px 0;
+}
+
+li,
+li > *,
+dt,
+dd {
+  margin: 10px 0;
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+    'Courier New', Courier, monospace, monospace;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3.5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.6rem;
+  padding: 10px;
+  margin: 0;
+  background: #e8e8ea;
+}
+
+p,
+a,
+li,
+dt,
+dd,
+tr,
+th {
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+blockquote {
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+
+  /*Font*/
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: justify;
+
+  /*Borders - (Optional)*/
+  border-left: 15px solid #ff6666;
+}
+
+blockquote::before {
+  content: '\201C'; /*Unicode for Left Double Quote*/
+
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: bold;
+
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
