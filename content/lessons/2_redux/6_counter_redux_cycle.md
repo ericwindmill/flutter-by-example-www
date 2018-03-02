@@ -21,7 +21,7 @@ Take a look at this visual again from [Ignacio Chavez](https://ignaciochavez.com
 
 I personally like to build my redux cycles starting at the Action, then implementing middleware (if any), the reducer, and finally the views which dispatch the actions.
 
-### Counter Action
+### 1. Add the Counter Action
 
 Start by adding the proper files. Create a new `actions` directory with a `counter_actions.dart` file:
 
@@ -40,7 +40,7 @@ main.dart
 
 Open the `counter_actions` file:
 
-_NB_: I'm imagining that our app can also decrease count to make a point:
+**NB:** I'm imagining that our app can also decrease count to make a point:
 
 ```dart
 // actions/counter_actions.dart
@@ -55,11 +55,11 @@ Because the reducers will only mutate state when given a pre-defined action, you
 
 ---
 
-_NB:_ The way I'm structuring my files is preference. I like to make things as modular as possible. In most examples of Flutter_Redux, you'll see all of the actions in a single file -- and that's completely fine.
+**NB:**The way I'm structuring my files is preference. I like to make things as modular as possible. In most examples of Flutter_Redux, you'll see all of the actions in a single file -- and that's completely fine.
 
 ---
 
-### Counter Reducer
+### 2. Add a Counter Reducer
 
 Again, you need to add the files:
 
@@ -82,7 +82,7 @@ Then in the new `counter_reducer` file:
 _NB:_ Still pretending our app can decrement.
 
 ```dart
-import 'package:music_party/actions/counter_actions.dart';
+import 'package:me_suite/actions/counter_actions.dart';
 
 int counterReducer(int currentCount, action) {
   if (action is IncrementCountAction) {
@@ -103,11 +103,11 @@ So far, we've created an action so that the reducer knows it's an allowed mutati
 
 ---
 
-_NB_: We skipped middleware, because this cycle doesn't need any middleware.
+**NB:** We skipped middleware, because this cycle doesn't need any middleware.
 
 ---
 
-### Adding the Views
+### 3. Add the Views
 
 Finally, we have all this, but there needs to be a button of some sort that will actually make this cycle fire.
 
@@ -151,8 +151,8 @@ There's a lot going on here. The important Redux-y parts are:
 // containers/increase_counters.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:music_party/actions/counter_actions.dart';
-import 'package:music_party/models/app_state.dart';
+import 'package:me_suite/actions/counter_actions.dart';
+import 'package:me_suite/models/app_state.dart';
 import 'package:redux/redux.dart';
 
 // This is just another stateless widget.
@@ -180,7 +180,7 @@ class IncreaseCountButton extends StatelessWidget {
 
 This is a very basic `container`, but all containers follow this pattern. The only real difference between this and more complex flutter patterns is that rather than returning a new `FloatingActionButton` in your builder, you'd most likely return a custom widget that takes in some data from the store. That's a dumb component, but that doesn't apply here.
 
-### Counter View
+### 4. Build the Counter View
 
 The counter view adds yet another redux concept -- but this is the last one! (for now)
 
@@ -193,10 +193,11 @@ Whenever you're creating a `container` widget that displays data from the state 
 These viewModel classes will use a Redux method called `fromStore()`, which gets the data from the store, and knows to re-render when the slices of relevant state are updated.
 
 ```dart
+// containers/counter/counter.dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:music_party/models/app_state.dart';
+import 'package:me_suite/models/app_state.dart';
 import 'package:redux/redux.dart';
 
 class Counter extends StatelessWidget {
@@ -248,8 +249,8 @@ With these two widgets, all we've really done is make a button with fancy capabi
 ```dart
 // pages/home_page.dart
 import 'package:flutter/material.dart';
-import 'package:music_party_code_along/containers/counter/counter.dart';
-import 'package:music_party_code_along/containers/counter/increase_counter.dart';
+import 'package:me_suite_code_along/containers/counter/counter.dart';
+import 'package:me_suite_code_along/containers/counter/increase_counter.dart';
 
 class HomePage extends StatelessWidget {
   final String title;

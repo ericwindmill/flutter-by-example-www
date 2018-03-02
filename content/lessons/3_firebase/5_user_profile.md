@@ -29,8 +29,8 @@ Because this display relies only on whether or not a user is logged in, we don't
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:music_party/models/app_state.dart';
-import 'package:music_party/selectors/selectors.dart';
+import 'package:me_suite/models/app_state.dart';
+import 'package:me_suite/selectors/selectors.dart';
 import 'package:redux/redux.dart';
 
 class CurrentUserProfile extends StatelessWidget {
@@ -73,9 +73,42 @@ class _ViewModel {
     		// We have to use the null aware operator here, so that
     		// when there isn't a user, it just fails silently
         displayName: store.state.currentUser?.displayName,
-        profileImgUrl: store.state.currentUser?.photoUrl;
-  }
+        profileImgUrl: store.state.currentUser?.photoUrl,
+    );
+  };
 }
+```
+
+Finally, in your `home_page`, update your `build` method:
+
+```dart
+// pages/home_page.dart
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(this.title),
+      ),
+      body: new Container(
+        child: new Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new GoogleAuthButtonContainer(),
+              new Padding(																			// new
+                padding: const EdgeInsets.symmetric(vertical: 16.0),  // new
+                child: new CurrentUserProfile(),								// new
+              ),
+              new Text(
+                'You have pushed the button this many times:',
+              ),
+              new Counter(),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: new IncreaseCountButton(),
+    );
+  }
 ```
 
 Once you've added this feature, you can click 'LogIn', and some text will appear showing the displayName of whichever use logged in.

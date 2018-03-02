@@ -32,6 +32,7 @@ On line 15 or so, in the new Store creation, there should be a named argument ca
 
 ```dart
 // main.dart
+import 'package:redux_logging/redux_logging.dart';
 ...
   final store = new Store<AppState>(
     appReducer,
@@ -41,7 +42,7 @@ On line 15 or so, in the new Store creation, there should be a named argument ca
 ...
 ```
 
-That's it. Save it, hot reload it, and then press the Increment button and watch your terminal.
+That's it. Save it, give it a **full restart**, and then press the Increment button and watch your terminal.
 
 You'll see something like this:
 

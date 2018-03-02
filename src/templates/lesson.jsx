@@ -16,7 +16,7 @@ export default class LessonTemplate extends React.Component {
     }
     const postTitleListToLink = postTitleList
       .map(word =>
-        word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '').toLowerCase()
+        word.replace(/[.,\/#!$%\^&\*;:{}=\-\'\"_`~()]/g, '').toLowerCase()
       )
       .join('-')
 

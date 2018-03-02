@@ -16,14 +16,15 @@ tags:
 
 Before we begin building, let's update your counter app to a bare-bones nothing app so we can begin fresh.
 
-First, the minimum requirement for a Flutter app.
+### 1. Bare Minimum Flutter App
 
 ```dart
+// main.dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MusicParty());
+void main() => runApp(new MainApp());
 
-class MusicParty extends StatelessWidget {
+class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container();
@@ -35,9 +36,13 @@ class MusicParty extends StatelessWidget {
 
 `flutter run`
 
-This will give you a blank screen. But it runs. You've made a mobile app that can deploy to iOS and Android.
+This will give you a blank screen. But it runs.
 
-Turn that contianer into a `MaterialApp` with a title and a home:
+**Celebration 1:** You've made a mobile app that can deploy to iOS and Android.
+
+### 2. MaterialApp and Scaffold widgets
+
+Turn that container into a `MaterialApp` with a title and a home:
 
 ```dart
 // main.dart
@@ -46,7 +51,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(new MusicParty());
 
 class MusicParty extends StatelessWidget {
-  String title = 'Music Party';                         // new
+  String title = 'Me Suite';                         // new
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(                             // updated
@@ -101,9 +106,9 @@ class HomePage extends StatelessWidget {
 
 ---
 
-Render your app now, and it'll look like this:
+Import your new file into `main.dart`. Render your app now, and it'll look like this:
 
-~~ scrren shot
+![screen shot blank app](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520028940/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-02_at_14.11.41.png)
 
 We just need to fill in some of that content:
 
@@ -138,12 +143,12 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-With this, you now have text in app bar and a functioning floating action button.
+With this, you now have text in app bar and a functioning floating action button. If you press it, you'll see some feedback in your console.
 
 Finally, let's add some body content:
 
 ```dart
-// pages/home_dart
+// pages/home_page.dart
 ...
   @override
   Widget build(BuildContext context) {
@@ -151,7 +156,7 @@ Finally, let's add some body content:
       appBar: new AppBar(
         title: new Text(this.title),
       ),
-body: new Container(
+			body: new Container(
         child: new Center(
           child: new Column(
             //mainAxisAlignment is an argument for Column, Row and other

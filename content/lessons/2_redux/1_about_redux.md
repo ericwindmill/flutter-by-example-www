@@ -13,7 +13,7 @@ tags:
     - dart
 ---
 
-**NB:** This is _not_ a Redux tutorial. Heres a small overview of what it is.
+**NB:** This is _not_ a Redux tutorial. Here's a small overview of what it is.
 
 [Redux](https://redux.js.org/) is a state management library and specification originally written in JavaScript and made for React Apps. Although you can use Redux in any kind of app, React not needed.
 
@@ -57,7 +57,6 @@ In a nutshell, Redux has two main qualities that we care about:
 The important thing here is that the button _does not_ tell the counter to repaint, nor does it update state directly. Redux gets the information, passes the information along with an action to the reducer and tells the counter to repaint. This is awesome and important because it means that, if you're following the rules, it's impossible for subtle issues to creep into your state.
 
 If you're brand new to Redux, check out the resources below.
-
 
 ### Redux Jargon
 

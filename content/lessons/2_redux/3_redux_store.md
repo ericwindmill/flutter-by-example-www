@@ -24,12 +24,12 @@ First, lets simply create a new Store. Like most things in OOP, it's just a clas
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';                              // new
 import 'package:flutter_redux/flutter_redux.dart';              // new
-import 'package:music_party_code_along/pages/home_page.dart';
+import 'package:me_suite/pages/home_page.dart';
 
-void main() => runApp(new MusicPartyApp());
+void main() => runApp(new MainApp());
 
-class MusicPartyApp extends StatelessWidget {
-  String title = 'Music Party';
+class MainApp extends StatelessWidget {
+  String title = 'MeSuite';
     //
     // Store is just a class that holds your apps State tree.
     // AppState is something that we will (but haven't yet) established
@@ -71,12 +71,12 @@ The second part of adding a Redux Store is passing the Store to all children in 
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:music_party_code_along/pages/home_page.dart';
+import 'package:me_suite/pages/home_page.dart';
 
-void main() => runApp(new MusicPartyApp());
+void main() => runApp(new MainApp());
 
-class MusicPartyApp extends StatelessWidget {
-  String title = 'Music Party';
+class MainApp extends StatelessWidget {
+  String title = 'MeSuite';
   final store = new Store<AppState>(
     appReducer,
     initialState: new AppState(),
@@ -99,4 +99,4 @@ class MusicPartyApp extends StatelessWidget {
 
 So that's pretty much it for passing the store down to all the widgets. Later, we'll look at the special widgets that allow us to access that store and make Redux do work for us.
 
-Right now,
+**NB:** Right now, your app will fail. Don't worry about bugs at the moment.

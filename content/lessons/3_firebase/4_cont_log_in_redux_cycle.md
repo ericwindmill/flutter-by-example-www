@@ -28,7 +28,7 @@ So far, we've done this:
 ```dart
 // reducers/auth_reducer.dart
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:music_party/actions/auth_actions.dart';
+import 'package:me_suite/actions/auth_actions.dart';
 import 'package:redux/redux.dart';
 
 // This is a built in method for creating type safe reducers.
@@ -84,14 +84,14 @@ The problem is that we haven't actually added this reducer to the `appReducer`
 
 ```dart
 // reducers/app_state_reducer.dart
-import 'package:music_party/models/app_state.dart';
-import 'package:music_party/reducers/auth_reducer.dart';        //new
-import 'package:music_party/reducers/counter_reducer.dart';
+import 'package:me_suite/models/app_state.dart';
+import 'package:me_suite/reducers/auth_reducer.dart';        //new
+import 'package:me_suite/reducers/counter_reducer.dart';
 
 AppState appReducer(AppState state, action) {
   return new AppState(
       isLoading: false,
-      currentCount: counterReducer(state.currentCount, action),
+      count: counterReducer(state.count, action),
       currentUser: authReducer(state.currentUser, action));     //new
 }
 ```
@@ -144,12 +144,12 @@ At this point, your Redux cycle is complete. Execept we don't have a way to make
 	- auth_actions.dart
 	- counter_actions.dart
 - containers
-	- auth_button
-		- auth_button_container.dart
-		- google_auth_button.dart
-	- counter                                                     // new
-		- counter.dart                                              // new
-		- increase_counter.dart                                     // new
+	- auth_button                                                 // new
+		- auth_button_container.dart                                // new
+		- google_auth_button.dart                                   // new
+	- counter
+		- counter.dart
+		- increase_counter.dart
 - models
 	- app_state.dart
 - pages
@@ -173,9 +173,9 @@ This is the smart component, it'll have access to the Store.
 // containers/auth_button/auth_button_container.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:music_party/actions/auth_actions.dart';
-import 'package:music_party/models/app_state.dart';
-import 'package:music_party/containers/auth_button/google_auth_button.dart';
+import 'package:me_suite/actions/auth_actions.dart';
+import 'package:me_suite/models/app_state.dart';
+import 'package:me_suite/containers/auth_button/google_auth_button.dart';
 import 'package:redux/redux.dart';
 
 class GoogleAuthButtonContainer extends StatelessWidget {
@@ -302,7 +302,7 @@ class GoogleAuthButton extends StatelessWidget {
 Let's add our button container to our HomePage:
 
 ```dart
-// pages/main_page.dart
+// pages/home_page.dart
 ...
 
 Widget build(BuildContext context) {

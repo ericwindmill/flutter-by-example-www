@@ -13,9 +13,9 @@ tags:
     - dart
 ---
 
-So far, this is what we have:
+So far, this is what we have. It's just the starter app, but it's updating via Redux. Which is cool.
 
-~~app so far~~
+![end of redux gif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520031199/flutter_by_example/end-of-redux.gif)
 
 Now, we're going to add a realtime database, as well as the ability to sign in users.
 
@@ -23,7 +23,7 @@ Now, we're going to add a realtime database, as well as the ability to sign in u
 
 Firebase is collection of tools that app developers can use to solve 'boilerplate' problems. The biggest of which are user authentication and a realtime database.
 
-Every app pretty much needs these two things. Rather than handrolling a solution to these problems on every project you make, why not just defer to the experts?
+Every app pretty much needs these two things. Rather than hand-rolling a solution to these problems on every project you make, why not just defer to the experts?
 
 I encourage you to poke around the Firebase homepage if you aren't convinced, and return to this when you're ready to set it up.
 

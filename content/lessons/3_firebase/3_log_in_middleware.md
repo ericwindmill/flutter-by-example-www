@@ -23,8 +23,8 @@ We need to write our first Middleware for Redux. I'll explain things a bit more 
 // lib/middleware/auth_middleware.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:music_party/actions/auth_actions.dart';
-import 'package:music_party/models/app_state.dart';
+import 'package:me_suite/actions/auth_actions.dart';
+import 'package:me_suite/models/app_state.dart';
 import 'package:redux/redux.dart';
 
 
@@ -134,21 +134,24 @@ Middleware<AppState> _createLogInMiddleware() {
 }
 
 Middleware<AppState> _createLogOutMiddleware() {
-	// Temporary instance
-	final FirebaseAuth _auth = FirebaseAuth.instance;
-	// Typecheck -- beceuse all Middleware functions will be called
-	// for all actions. If it *isnt* LogOut, don't waste time.
-	if (action is LogOut) {
-		try {
-			await _auth.signOut();
-			print('logging out...');
-			store.dispatch(new LogOutSuccessful());
-		} catch (error) {
-			print(error);
+  return (Store store, action, NextDispatcher next) async {
+		// Temporary instance
+		final FirebaseAuth _auth = FirebaseAuth.instance;
+
+		// Typecheck -- beceuse all Middleware functions will be called
+		// for all actions. If it *isnt* LogOut, don't waste time.
+		if (action is LogOut) {
+			try {
+				await _auth.signOut();
+				print('logging out...');
+				store.dispatch(new LogOutSuccessful());
+			} catch (error) {
+				print(error);
+			}
 		}
+		next(action);
+		};
 	}
-	next(action);
-  };
 }
 ```
 
