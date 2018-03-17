@@ -1,14 +1,10 @@
-/**
-This theme is poorly based on the
- */
-
 .gatsby-highlight {
   padding-bottom: 30px;
 }
 
-code[class*='language-'],
 pre[class*='language-'] {
   color: #f8f8f2;
+  padding: 1em 1em 1em 1em;
   background: none;
   font-family: 'Fira Code', monospace;
   text-align: left;
@@ -27,10 +23,8 @@ pre[class*='language-'] {
 }
 
 /* Code blocks */
-pre[class*='language-'],
-pre > code[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
+pre[class*='language-'] {
+  margin: 0.1em 0;
   overflow: auto;
   border-radius: 0;
   background: #1d1f27;
