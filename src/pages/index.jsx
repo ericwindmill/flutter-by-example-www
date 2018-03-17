@@ -200,8 +200,6 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
-            tags
-            cover
           }
         }
       }

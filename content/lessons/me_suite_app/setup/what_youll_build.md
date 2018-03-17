@@ -1,16 +1,5 @@
 ---
 title: "What You'll Build"
-lesson: 1
-chapter: 1
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Basic Flutter App"
-next: "Getting to Start"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 This is what we're working towards:

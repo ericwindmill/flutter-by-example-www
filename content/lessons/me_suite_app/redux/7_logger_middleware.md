@@ -1,16 +1,5 @@
 ---
 title: "Logger Middleware"
-lesson: 7
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Counter Redux Cycle"
-next: "Redux Wrap Up"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 In the counter example, we skipped Middleware -- Middleware is only necessary if you want to:

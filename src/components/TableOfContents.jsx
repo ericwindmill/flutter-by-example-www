@@ -47,16 +47,16 @@ class TableOfContents extends React.Component {
       }
     })
 
-    postNodeChapters.forEach(chapter => {
+    postNodeChapters.forEach((chapter) => {
       chapter.sort((a, b) => a.lessonNumber > b.lessonNumber)
     })
     return postNodeChapters
   }
 
   nodeListItems() {
-    const postNodeChapters = this.buildNodes()
-    const listItems = []
-    const chapterTitles = this.props.chapterTitles
+    // const postNodeChapters = this.buildNodes()
+    // const listItems = []
+    // const chapterTitles = this.props.chapterTitles
     postNodeChapters.forEach((chapter, idx) => {
       const chapterLessons = []
       chapter.forEach(node => {
@@ -65,7 +65,7 @@ class TableOfContents extends React.Component {
             <Link to={node.path}>
               <li>
                 <span>
-                  <p>{node.lessonNumber}.&nbsp;&nbsp; </p>
+                  <p>{node.lessonNumber}.&nbsp;&nbsp;</p>
                   <h5>{node.title}</h5>
                 </span>
               </li>
@@ -73,18 +73,27 @@ class TableOfContents extends React.Component {
           </LessonContainer>
         )
       })
+      // if(idx === 0) {
+      //   listItems.push(<h4 className='section-titles'>Intro to Flutter</h4>)
+      // }
+      // if (idx === 1) {
+      //   listItems.push(<h4 className='section-titles'>101: Basic Todo App</h4>)
+      // }
+      // if(idx === 2) {
+      //   listItems.push(<h4 className='section-titles'>Advanced Flutter App</h4>)
+      // }
       listItems.push(
         <div className="chapter">
-          <DropdownButton
-            className="buttonSection"
-            buttonId={`chapter${idx}`}
-            dropdownCallback={this.handleClick}
-          >
-            <h5 className="tocHeading">{chapterTitles[idx]}</h5>
-          </DropdownButton>
-          <ul className="chapterItems" id={`list${idx}`}>
-            {chapterLessons}
-          </ul>
+          {/*<DropdownButton*/}
+            {/*className="buttonSection"*/}
+            {/*buttonId={`chapter${idx}`}*/}
+            {/*dropdownCallback={this.handleClick}*/}
+          {/*>*/}
+            {/*<h5 className="tocHeading">{chapterTitles[idx]}</h5>*/}
+          {/*</DropdownButton>*/}
+          {/*<ul className="chapterItems" id={`list${idx}`}>*/}
+          {/*{chapterLessons}*/}
+        {/*</ul>*/}
         </div>
       )
     })
@@ -94,25 +103,25 @@ class TableOfContents extends React.Component {
   render() {
     return (
       <TableOfContentsContainer>
-        <div>
-          <Link to={'/'}>
-            <h1>Flutter By Example</h1>
-          </Link>
-          <h3>How to build a Flutter app from scratch.</h3>
-          <ul>{this.nodeListItems()}</ul>
-        </div>
-        <FooterSection>
-          <Link to={'/about'}>
-            <h5 className="github-cta">Contribute Lessons via Github</h5>
-          </Link>
-          <div className={'me-info'}>
-            <h5>
-              <a href="https://ericwindmill.com">2018 Eric Windmill</a>
-            </h5>
-            <h5 style={{ color: 'white' }}>|</h5>
-            <UserLinks />
-          </div>
-        </FooterSection>
+        {/*<div>*/}
+          {/*<Link to={'/'}>*/}
+            {/*<h1>Flutter By Example</h1>*/}
+          {/*</Link>*/}
+          {/*<h3>How to build a Flutter app from scratch.</h3>*/}
+          {/*<ul>{this.nodeListItems()}</ul>*/}
+        {/*</div>*/}
+        {/*<FooterSection>*/}
+          {/*<Link to={'/about'}>*/}
+            {/*<h5 className="github-cta">Contribute Lessons via Github</h5>*/}
+          {/*</Link>*/}
+          {/*<div className={'me-info'}>*/}
+            {/*<h5>*/}
+              {/*<a href="https://ericwindmill.com">2018 Eric Windmill</a>*/}
+            {/*</h5>*/}
+            {/*<h5 style={{ color: 'white' }}>|</h5>*/}
+            {/*<UserLinks />*/}
+          {/*</div>*/}
+        {/*</FooterSection>*/}
       </TableOfContentsContainer>
     )
   }
@@ -158,12 +167,12 @@ const TableOfContentsContainer = styled.div`
     margin-bottom: 15px;
   }
 
-  .chapterItems {
-    display: none;
-    transition: all 300ms ease;
-    list-style: none;
-    margin-left: ${props => props.theme.spacingUnit};
-  }
+  // .chapterItems {
+  //   display: none;
+  //   transition: all 300ms ease;
+  //   list-style: none;
+  //   margin-left: ${props => props.theme.spacingUnit};
+  // }
 
   & > ul,
   .chapterItems {
@@ -179,30 +188,36 @@ const TableOfContentsContainer = styled.div`
     margin: 0;
   }
 
-  .github-cta {
-    margin: 10px 0;
-    font-weight: 200;
-    font-size: 2rem;
-    color: ${props => props.theme.accent};
-
-    &:hover {
-      background: rgba(173, 210, 235, 0.2);
-      border: none;
-    }
+  // .github-cta {
+  //   margin: 10px 0;
+  //   font-weight: 200;
+  //   font-size: 2rem;
+  //   color: ${props => props.theme.accent};
+  //
+  //   &:hover {
+  //     background: rgba(173, 210, 235, 0.2);
+  //     border: none;
+  //   }
+  }
+  
+  .section-titles {
+    color: white;
+    margin: 50px 0 0 !important;
+    border-bottom: 1px solid white;
   }
 `
 
-const FooterSection = styled.div`
-  h5 {
-    margin: 0 0 10px 0;
-  }
-
-  .me-info {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-  }
-`
+// const FooterSection = styled.div`
+//   h5 {
+//     margin: 0 0 10px 0;
+//   }
+//
+//   .me-info {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: space-around;
+//   }
+// `
 
 const LessonContainer = styled.div`
   h5,

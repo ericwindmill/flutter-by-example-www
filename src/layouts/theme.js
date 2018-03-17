@@ -6,6 +6,7 @@ const theme = {
   accent: '#4edb9b',
   accentDarkened: '#39a172',
   redAccent: '#FF6666',
+  redAccentLightened: 'rgba(255, 102, 102, 0.8)',
   darkGrey: '#35495E',
   lightGrey: '#d8d8d8',
 
@@ -17,9 +18,12 @@ const theme = {
   codeEditBlue: '#2973b7',
   codeEditGreen: '#42b983',
 
+  // spacing:
+  spacingUnit: '10px',
+
   // content width:
   contentWidthLaptop: '950px',
-  sitePadding: '50px'
+  sitePadding: '25px'
 }
 
 export default theme

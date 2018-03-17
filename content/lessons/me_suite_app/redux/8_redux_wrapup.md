@@ -1,16 +1,5 @@
 ---
 title: "Redux Wrap Up"
-lesson: 8
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Logger Middleware"
-next: "Adding Firebase"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 That's it for the Redux lesson. You now have a fully functional state management system that scales well. It's easy to reason about, and easy to debug.

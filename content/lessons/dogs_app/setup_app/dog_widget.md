@@ -1,0 +1,232 @@
+---
+title: "Dog Cards"
+---
+
+### 1. Create Dog Card Widget
+
+We need a widget to nicely display the information in our `Dog` class.
+
+Create a new file caled 'dog_card.dart`.
+
+~~ screen shot of finished dog card
+
+In that file, make a new, blank stateful widget. It should take a Dog in it's constructor.
+
+For the time being, all this will do is display the name of a dog.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:we_rate_dogs_example/dog_model.dart';
+
+class DogCard extends StatefulWidget {
+  final Dog dog;
+
+  DogCard(this.dog);
+
+  @override
+  _DogCardState createState() => new _DogCardState(dog);
+}
+
+class _DogCardState extends State<DogCard> {
+   Dog dog;
+
+   _DogCardState(this.dog);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Text(widget.dog.name);
+  }
+}
+```
+
+In order to make this appear, let's modify the `build` method in `main.dart`
+
+```dart
+// main.dart
+...
+@override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text(widget.title),
+          backgroundColor: Colors.black87,
+        ),
+        body: new Container(
+          child: new DogCard(dogs[1]),                                  // new
+        ),
+    );
+  }
+```
+
+Refresh your app and you can see that we're wired up now. Time to build the card.
+
+### 2. Dog Card UI
+
+There are two main parts to this card. The image, and the actual Card that sits under it.
+
+First, lets make that image.
+
+Add this getter to you `DogCardState` class:
+
+```dart
+// dog_card.dart
+    // A class property that represents the URL flutter will render
+    // from the Dog class.
+  String renderUrl;
+  Widget get dogImage {
+    var dogAvatar = new Container(
+        // you can explicity set heights and widths on Containers.
+        // otherwise they take up as much space as their children.
+      width: 100.0,
+      height: 100.0,
+        // decoration is a property that lets you style the container.
+        // It expects a BoxDecoration
+      decoration: new BoxDecoration(
+        // BoxDecorations have many possible properties
+        // Using BoxShape with a background image
+        // is the easiest way to make a circle cropped avatar style
+        // image.
+        shape: BoxShape.circle,
+        image: new DecorationImage(
+           // Just like CSS's `imagesize` property
+          fit: BoxFit.cover,
+          // A NetworkImage widget is a widget that
+          // takes a URL to an image.
+          // ImageProviders (such as NetworkImage)
+          // are ideal when your image needs to be laoded or can
+          // change.
+          // Use the null check to avoid an error.
+          image: new NetworkImage(renderUrl ?? ''),
+        ),
+      ),
+    );
+
+    return dogAvatar;
+  }
+```
+
+In order to see this image, we first need to tell the Dog class to get that image from the internets.
+
+In your dog card, add this **hack** to your `DogCardState` class:
+```dart
+    // State classes run this method when the state is created.
+    // You shouldn't do async work in initState, so we'll defer it
+    // to another method.
+  void initState() {
+    super.initState();
+    renderDogPic();
+  }
+    // IRL, we'd want the Dog class itself to get the image
+    // but this is a simpler way to explain Flutter basics
+  void renderDogPic() async {
+    // this makes the service call
+    await dog.getImageUrl();
+    // setState tells Flutter to rerender anything that's been changed.
+    // setState cannot be async, so we use a variable that can be overwritten
+    setState(() {
+        renderUrl = dog.imageUrl
+    });
+  }
+```
+
+Now we have a dog avatar, that's properly getting the url to render.
+
+Let's start building the Card layout and add our image.
+
+In order to get overlap look of the card, we're going to use the built in widget `Stack`.
+
+The `Stack` widget lays out it's children relative to it's edges.
+
+In other words, it's CSS's `position, top, bottom, left and right` properties.
+
+Within a stack, you can wrap children in 'Position' widgets, but you don't have to.
+
+* Position wrapped widgets are outside of document flow, to use web development terms. They'll be at positon [0,0] by default -- the top corner of the Stack widget.
+* Non-wrapped widgets aren't positioned. They stay in normal 'document flow', laid out as a column of widgets by default.
+
+This is what our stack is going to start out as:
+
+```dart
+...
+@override
+  Widget build(BuildContext context) {
+    // Start with a container so we can add layout and style props:
+    return new Container(
+      // Arbitrary number that I decided looked good:
+      height: 115.0,
+      // A stack takes children, with a list of widgets.
+      child: new Stack(
+        children: <Widget>[
+          // position our dog image, so we can explicitly place it.
+          // We'll place it after we've made the card.
+          new Positioned(
+          child: dogImage,
+          ),
+        ],
+      ),
+    );
+  }
+```
+Refresh your app, you have a picture of a dog in the top corner.
+
+Let's create the Card and lay that out:
+
+```dart
+// dog_card.dart in DogCardState class
+Widget get dogCard {
+    // A new container
+    // The height and width are arbitrary numbers for styling
+    return new Container(
+      width: 290.0,
+      height: 115.0,
+      child: new Card(
+        color: Colors.black87,
+        // Wrap children in a Padding widget in order to give padding.
+        child: new Padding(
+          // The class that controls padding is called 'EdgeInsets'
+          // The EdgeInsets.only constructor is used to set
+          // paddings explicitly to each side of the child.
+          padding: const EdgeInsets.only(
+            top: 8.0,
+            bottom: 8.0,
+            left: 64.0,
+          ),
+          // Column is another layout widget -- like stack -- that
+          // takes a list of widgets as children, and lays the
+          // widgets out from top to bottom
+          child: new Column(
+            // these alignment properties function exactly like
+            // CSS flexbox properties.
+            // The main axis of a column is the vertical axis,
+            // `MainAxisAlignment.spaceAround` is equivelent of
+            // CSS's 'justify-content: space-around' in a vertically
+            // laid out flexbox.
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              new Text(widget.dog.name,
+                  // Themes are set inthe MaterialApp widget at the root of your app.
+                  // They have default values -- which we're using because we didn't set our own.
+                  // They're great for having consistent, app wide styling that's easily changable.
+                  style: Theme.of(context).textTheme.headline),
+              new Text(widget.dog.location,
+                  style: Theme.of(context).textTheme.subhead),
+              new Row(
+                children: <Widget>[
+                  new Icon(
+                    Icons.star,
+                  ),
+                  new Text(': ${widget.dog.rating} / 10')
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+```
+
+
+
+

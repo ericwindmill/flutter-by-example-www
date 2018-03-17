@@ -45,8 +45,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 node {
                   frontmatter {
                     title
-                    chapter
-                    lesson
                   }
                   fields {
                     slug

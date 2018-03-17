@@ -1,16 +1,5 @@
 ---
 title: "Add a Redux Store"
-lesson: 3
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Flutter Redux Setup"
-next: "App State Model"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 The Redux store is where all your application state lives in Redux apps.

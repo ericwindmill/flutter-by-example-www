@@ -16,7 +16,7 @@ pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.87;
+  line-height: 2;
   -moz-tab-size: 2;
   -o-tab-size: 2;
   tab-size: 2;
@@ -24,8 +24,6 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  box-shadow: 0.05555555555555555rem 0.05555555555555555rem
-    1.1111111111111112rem rgba(20, 20, 20, 0.37);
 }
 
 /* Code blocks */

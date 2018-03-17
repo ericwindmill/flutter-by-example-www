@@ -1,17 +1,5 @@
 ---
 title: "Getting To Start"
-lesson: 2
-chapter: 1
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-date: "01/01/2017"
-category: "flutter"
-type: "lesson"
-prev: "What You'll Build"
-next: "What is Redux?"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Before we begin building, let's update your counter app to a bare-bones nothing app so we can begin fresh.

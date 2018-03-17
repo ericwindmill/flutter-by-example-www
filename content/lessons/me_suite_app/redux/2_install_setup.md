@@ -1,16 +1,5 @@
 ---
 title: "Flutter Redux Setup"
-lesson: 2
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "What is Redux?"
-next: "Add a Redux Store"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Using Redux in Flutter is as easy as installing the dependancy libraries. We'll be using the Dart [redux](https://pub.dartlang.org/packages/redux) package as well as the [Flutter Redux](https://pub.dartlang.org/packages/flutter_redux) packacge.

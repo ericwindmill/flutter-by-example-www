@@ -1,16 +1,5 @@
 ---
 title: "LogIn Redux Cycle contd"
-lesson: 4
-chapter: 3
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Firebase Log In Middleware"
-next: "Add User Profile"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Back to the Redux cycle.

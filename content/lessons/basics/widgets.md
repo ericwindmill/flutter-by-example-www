@@ -1,16 +1,5 @@
 ---
 title: "Flutter Widgets"
-lesson: 2
-chapter: 0
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Setup and Tools"
-next: "Flutter State"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 If you've worked with React or Vue before, this'll be easy.

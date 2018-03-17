@@ -1,16 +1,5 @@
 ---
 title: "AppState Model"
-lesson: 4
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Add a Redux Store"
-next: "App Reducer"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 The next step is define out AppState class. This is an arbitrary name, by the way. Some things in Redux do require specific names, but this isn't one of 'em.

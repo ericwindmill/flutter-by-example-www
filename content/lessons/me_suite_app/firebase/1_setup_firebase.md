@@ -1,16 +1,5 @@
 ---
 title: "Adding Firebase"
-lesson: 1
-chapter: 3
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Redux Wrap Up"
-next: "LogIn Redux Cycle"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 So far, this is what we have. It's just the starter app, but it's updating via Redux. Which is cool.

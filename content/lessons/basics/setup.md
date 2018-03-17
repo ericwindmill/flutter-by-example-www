@@ -1,16 +1,5 @@
 ---
 title: "Setup and Tools"
-lesson: 1
-chapter: 0
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "About Basics Section"
-next: "Flutter Widgets"
-tags:
-    - programming
-    - stuff
-    - other
 ---
 
 ## Installing Flutter

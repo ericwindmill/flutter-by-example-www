@@ -1,16 +1,5 @@
 ---
 title: "Counter Redux Cycle"
-lesson: 6
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "App Reducer"
-next: "Logger Middleware"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Now, we have all the boiler plate we need to implement an entire Redux cycle. If anything hasn't made any sense yet, this should clear it up.

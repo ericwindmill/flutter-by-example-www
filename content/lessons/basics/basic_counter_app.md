@@ -1,16 +1,5 @@
 ---
-title: "Basic Flutter App"
-lesson: 5
-chapter: 0
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Basic UI"
-next: "What You'll Build"
-tags:
-    - programming
-    - flutter
-    - dart
+title: "Starter Counter App"
 ---
 
 The 'Hello World' Flutter app is a simple counter that looks like this:

@@ -1,16 +1,5 @@
 ---
 title: "Firebase LogIn Middleware"
-lesson: 3
-chapter: 3
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Firebase Auth Log In"
-next: "Log In Redux Cycle contd"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 We need to write our first Middleware for Redux. I'll explain things a bit more in-depth here than I will in the future.

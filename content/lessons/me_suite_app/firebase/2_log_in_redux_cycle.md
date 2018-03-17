@@ -1,16 +1,5 @@
 ---
 title: "LogIn Redux Cycle"
-lesson: 2
-chapter: 3
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Adding Firebase"
-next: "Firebase Log In Middleware"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Let's wire up a button in our app that logs in a user with Firebase.

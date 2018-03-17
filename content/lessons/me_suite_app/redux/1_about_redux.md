@@ -1,16 +1,5 @@
 ---
 title: "What is Redux"
-lesson: 1
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Getting to Start"
-next: "Flutter Redux Setup"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 **NB:** This is _not_ a Redux tutorial. Here's a small overview of what it is.

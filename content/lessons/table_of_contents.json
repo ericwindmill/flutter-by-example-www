@@ -1,0 +1,46 @@
+{
+  "id": "table-of-contents",
+  "chapters" : {
+    "intro_to_flutter": {
+      "flutter_basics": [
+        {
+          "post": "./basics/about_basics.md"
+        },
+        {"post": "./basics/setup.md"},
+        {"post": "./basics/widgets.md"},
+        {"post": "./basics/basic_counter_app.md"}
+      ]
+    },
+    "basic_app": {
+      "setup_dogs_app": [
+        {"post": "./dogs_app/setup_app/setup_dogs_app.md"},
+        {"post": "./dogs_app/setup_app/dog_model.md"},
+        {"post": "./dogs_app/setup_app/dog_widget.md"}
+      ]
+    },
+    "advanced_app": {
+      "setup_app": [
+        {"post": "./me_suite_app/setup/what_youll_build.md"},
+        {"post": "./me_suite_app/setup/getting_to_start.md"}
+      ],
+      "flutter_redux": [
+        {"post": "./me_suite_app/redux/1_about_redux.md"},
+        {"post": "./me_suite_app/redux/2_install_setup.md"},
+        {"post": "./me_suite_app/redux/3_redux_store.md"},
+        {"post": "./me_suite_app/redux/4_app_state_model.md"},
+        {"post": "./me_suite_app/redux/5_app_reducer.md"},
+        {"post": "./me_suite_app/redux/6_counter_redux_cycle.md"},
+        {"post": "./me_suite_app/redux/7_logger_middleware.md"},
+        {"post": "./me_suite_app/redux/8_redux_wrapup.md"}
+      ],
+      "firebase_auth": [
+        {"post": "./me_suite_app/firebase/1_setup_firebase.md"},
+        {"post": "./me_suite_app/firebase/2_log_in_redux_cycle.md"},
+        {"post": "./me_suite_app/firebase/3_log_in_middleware.md"},
+        {"post": "./me_suite_app/firebase/4_cont_log_in_redux_cycle.md"},
+        {"post": "./me_suite_app/firebase/5_user_profile.md"}
+      ]
+    },
+    "nuggets": {}
+  }
+}

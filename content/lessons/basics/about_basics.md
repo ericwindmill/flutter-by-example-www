@@ -1,16 +1,5 @@
 ---
 title: "About Basics Section"
-lesson: 0
-chapter: 0
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Getting To Start"
-next: "Flutter Widgets"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 #### This section is for reference, and should be skipped if you're even a bit familiar with Flutter.

@@ -6,7 +6,7 @@ import config from '../../data/SiteConfig'
 import './css/index.css'
 import './css/prism-okaidia.css'
 import theme from './theme'
-import TableOfContents from '../components/TableOfContents'
+import TableOfContents from '../components/Contents'
 
 const iconStyle = {
   width: '35px',
@@ -74,9 +74,7 @@ export default class MainLayout extends React.Component {
             <BodyGrid id="body-grid">
               <ToCContainer id="table-of-contents">
                 <TableOfContents
-                  posts={this.props.data.allPostTitles.edges}
-                  contentsType="lesson"
-                  chapterTitles={config.toCChapters}
+                  posts={this.props.data.tableOfContents}
                 />
               </ToCContainer>
               <MainContentContainer id="main-content">
@@ -195,34 +193,86 @@ const HideMenuButton = styled.div`
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
   query rootQuery {
-    allPostTitles: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            lesson
-            chapter
-            type
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
     allPosts: allMarkdownRemark(limit: 2000) {
       edges {
         node {
           fields {
             slug
           }
-          excerpt
-          timeToRead
           html
           frontmatter {
             title
-            tags
-            cover
+          }
+        }
+      }
+    },
+    tableOfContents: lessonsJson {
+      chapters {
+        intro_to_flutter {
+          flutter_basics {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+        }
+        basic_app {
+          setup_dogs_app {
+            post {
+              id
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+        }
+        advanced_app {
+          setup_app {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          flutter_redux {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          firebase_auth {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
           }
         }
       }

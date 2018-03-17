@@ -9,28 +9,27 @@ import Disqus from '../components/Disqus'
 import OptInForm from '../components/OptInForm'
 
 export default class LessonTemplate extends React.Component {
-  createPaginationLink(postTitle) {
-    const postTitleList = postTitle.split(' ')
-    if (postTitleList.length < 1) {
-      return ''
-    }
-    const postTitleListToLink = postTitleList
-      .map(word =>
-        word.replace(/[.,\/#!$%\^&\*;:{}=\-\'\"_`~()]/g, '').toLowerCase()
-      )
-      .join('-')
-
-    return postTitleListToLink
-  }
+  // createPaginationLink(postTitle) {
+  //   const postTitleList = postTitle.split(' ')
+  //   if (postTitleList.length < 1) {
+  //     return ''
+  //   }
+  //   const postTitleListToLink = postTitleList
+  //     .map(word =>
+  //       word.replace(/[.,\/#!$%\^&\*;:{}=\-\'\"_`~()]/g, '').toLowerCase()
+  //     )
+  //     .join('-')
+  //
+  //   return postTitleListToLink
+  // }
 
   render() {
     const { slug } = this.props.pathContext
     const postNode = this.props.data.postBySlug
     const post = postNode.frontmatter
 
-    console.log(post)
-    const prevLink = this.createPaginationLink(post.prev)
-    const nextLink = this.createPaginationLink(post.next)
+    // const prevLink = this.createPaginationLink(post.prev)
+    // const nextLink = this.createPaginationLink(post.next)
 
     if (!post.id) {
       post.id = slug
@@ -50,28 +49,7 @@ export default class LessonTemplate extends React.Component {
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </div>
-          <Divider style={{ margin: '100px 0 25px' }} />
-          <div className="pagination">
-            {prevLink !== '' ? (
-              <div className="prev">
-                <p>Previous:</p>
-                <Link to={prevLink}>← {post.prev}</Link>
-              </div>
-            ) : (
-              <div />
-            )}
-
-            {nextLink !== '' ? (
-              <div>
-                <p>Next:</p>
-                <Link to={nextLink}>{post.next} →</Link>
-              </div>
-            ) : (
-              <div />
-            )}
-          </div>
-
-          <Divider style={{ margin: '25px 0 100px' }} />
+          <Divider style={{ margin: '100px 0 100px' }} />
           <h5>Share This Page</h5>
           <SocialLinks postNode={postNode} postPath={slug} />
           <div style={{ height: '50px' }} />
@@ -159,32 +137,10 @@ const BodyContainer = styled.div`
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
   query LessonBySlug($slug: String!) {
-    allPostTitles: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            lesson
-            chapter
-            type
-            prev
-            next
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
     postBySlug: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
-        cover
-        category
-        tags
-        prev
-        next
       }
       fields {
         slug

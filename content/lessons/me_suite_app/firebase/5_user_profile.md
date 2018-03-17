@@ -1,16 +1,5 @@
 ---
 title: "Add User Profile"
-lesson: 5
-chapter: 3
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "Log In Redux Cycle contd"
-next: ""
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 As a last step here with Auth, lets add a bit of visual feedback.

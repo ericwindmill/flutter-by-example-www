@@ -1,16 +1,5 @@
 ---
 title: "App Reducer"
-lesson: 5
-chapter: 2
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-category: "flutter"
-type: "lesson"
-prev: "AppState Model"
-next: "Counter Redux Cycle"
-tags:
-    - programming
-    - flutter
-    - dart
 ---
 
 Redux works by firing `actions`, which express an _intent_ to change state. Then, if all is playing well together, your `reducer` is the actual pure function that updates your state.
