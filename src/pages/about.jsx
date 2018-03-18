@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import config from '../../data/SiteConfig'
 import OptInForm from '../components/OptInForm'
 import UserProfile from '../components/UserProfile'
+import thanksLinks from '../../data/thanks'
 
 class AboutPage extends Component {
   render() {
@@ -11,7 +12,7 @@ class AboutPage extends Component {
       <AboutPageContainer>
         <BodyContainer>
           <h1>About Flutter By Example</h1>
-          <img src={config.siteLogo} width="200px" style={{ float: 'right' }} />
+          <img src={config.siteLogo} width="200px" style={{float: 'right'}}/>
           <p>Flutter By Example is looking for more contributors!</p>
           <h3>Contribute to Flutter By Example</h3>
           <p>
@@ -38,7 +39,7 @@ class AboutPage extends Component {
             Contributors will be featured and acknowldged on the Flutter By
             Example <Link to={'/'}>Homepage</Link>.
           </p>
-          <div style={{ height: '50px' }} />
+          <div style={{height: '50px'}}/>
           <h3>Get Updates</h3>
           <p>
             Flutter by Example (and my helper resource: Dart for JavaScript
@@ -49,7 +50,7 @@ class AboutPage extends Component {
               Dart for Web Developers
             </a>.
           </p>
-          <OptInForm />
+          <OptInForm/>
           <h3>Contributors</h3>
           <UserProfile
             avatarUrl={config.userAvatar}
@@ -71,7 +72,15 @@ class AboutPage extends Component {
               contributed to.
             </p>
           </UserProfile>
-
+          <h3>Special Thanks</h3>
+          <p>These technologies and resources are used in this tutorial:</p>
+          <ul>
+            {Object.keys(thanksLinks).map(key => (
+              <li>
+                <a href={thanksLinks[key]}>{key}</a>
+              </li>
+            ))}
+          </ul>
         </BodyContainer>
       </AboutPageContainer>
     )

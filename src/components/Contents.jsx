@@ -29,13 +29,13 @@ class TableOfContents extends React.Component {
   addSubchapterJSX(node) {
     this.nodeListItemsToRender.push(
       <DropdownButton
+        key={node.id}
         className="buttonSection"
         buttonId={`chapter${node}`}
         dropdownCallback={(event) => this.handleClick(event, node)}
       >
         <SubchapterLIContainer
           className={'sub-chapter'}
-          key={node}
         >
           <h5>
             {this.formatChapterTitle(node)}
@@ -61,9 +61,8 @@ class TableOfContents extends React.Component {
   buildLessonItemNodes(nodeArray, nodeKey) {
     const lessonLis = [];
     nodeArray.forEach(node => {
-      console.log(node);
       lessonLis.push(
-        <LessonLIContainer>
+        <LessonLIContainer key={node.id}>
           <Link to={node.post.childMarkdownRemark.fields.slug}>
             <li>
               <h6>{node.post.childMarkdownRemark.frontmatter.title}</h6>
@@ -73,7 +72,10 @@ class TableOfContents extends React.Component {
       )
     })
     this.nodeListItemsToRender.push(
-      <LessonSectionUl id={`list${nodeKey}`}>
+      <LessonSectionUl
+        key={nodeArray.id}
+        id={`list${nodeKey}`}
+      >
         {lessonLis}
       </LessonSectionUl>
     );

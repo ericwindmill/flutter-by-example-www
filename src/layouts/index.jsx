@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { MdMenu, MdClose } from 'react-icons/lib/md'
-import styled, { ThemeProvider } from 'styled-components'
+import {MdMenu, MdClose} from 'react-icons/lib/md'
+import styled, {ThemeProvider} from 'styled-components'
 import config from '../../data/SiteConfig'
 import './css/index.css'
 import './css/prism-okaidia.css'
@@ -18,6 +18,7 @@ export default class MainLayout extends React.Component {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
     }
+
     const pathPrefix = config.pathPrefix ? config.pathPrefix : '/'
     const currentPath = this.props.location.pathname
       .replace(pathPrefix, '')
@@ -50,12 +51,12 @@ export default class MainLayout extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const {children} = this.props
     return (
       <div>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
-          <meta name="description" content={config.siteDescription} />
+          <meta name="description" content={config.siteDescription}/>
         </Helmet>
         <ThemeProvider theme={theme}>
           <LayoutContainer>
@@ -224,6 +225,58 @@ export const pageQuery = graphql`
         }
         basic_app {
           setup_dogs_app {
+            post {
+              id
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          basic_ui {
+            post {
+              id
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          simple_routes {
+            post {
+              id
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          user_input {
+            post {
+              id
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          make_it_fancy {
             post {
               id
               childMarkdownRemark {

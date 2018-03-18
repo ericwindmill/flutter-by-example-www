@@ -1,10 +1,10 @@
 const path = require('path')
 const _ = require('lodash')
 const webpackLodashPlugin = require('lodash-webpack-plugin')
-const { createPaginationPages } = require('gatsby-pagination')
+const {createPaginationPages} = require('gatsby-pagination')
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
+  const {createNodeField} = boundActionCreators
   let slug
   if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent)
@@ -27,12 +27,12 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     } else {
       slug = `/${parsedFilePath.dir}/`
     }
-    createNodeField({ node, name: 'slug', value: slug })
+    createNodeField({node, name: 'slug', value: slug})
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({graphql, boundActionCreators}) => {
+  const {createPage} = boundActionCreators
 
   return new Promise((resolve, reject) => {
     const lessonPage = path.resolve('src/templates/lesson.jsx')
@@ -60,7 +60,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           console.log(result.errors)
           reject(result.errors)
         }
-
         result.data.allMarkdownRemark.edges.forEach(edge => {
           createPage({
             path: edge.node.fields.slug,
@@ -75,7 +74,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.modifyWebpackConfig = ({config, stage}) => {
   if (stage === 'build-javascript') {
     config.plugin('Lodash', webpackLodashPlugin, null)
   }

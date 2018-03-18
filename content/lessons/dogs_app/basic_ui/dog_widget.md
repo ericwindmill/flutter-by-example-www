@@ -4,11 +4,13 @@ title: "Dog Cards"
 
 ### 1. Create Dog Card Widget
 
-We need a widget to nicely display the information in our `Dog` class.
+We need a widget to nicely display the information in our `Dog` class. 
+
+First you'll make a card that looks like this:
+
+![dog card](http://res.cloudinary.com/ericwindmill/image/upload/v1521328467/flutter_by_example/Screen_Shot_2018-03-10_at_10.28.18_AM.png)
 
 Create a new file caled 'dog_card.dart`.
-
-~~ screen shot of finished dog card
 
 In that file, make a new, blank stateful widget. It should take a Dog in it's constructor.
 
@@ -58,13 +60,13 @@ In order to make this appear, let's modify the `build` method in `main.dart`
   }
 ```
 
-Refresh your app and you can see that we're wired up now. Time to build the card.
+Refresh your app and you can see that it's wired up now. Time to build the card.
 
 ### 2. Dog Card UI
 
 There are two main parts to this card. The image, and the actual Card that sits under it.
 
-First, lets make that image.
+First, make that image.
 
 Add this getter to you `DogCardState` class:
 
@@ -105,9 +107,9 @@ Add this getter to you `DogCardState` class:
   }
 ```
 
-In order to see this image, we first need to tell the Dog class to get that image from the internets.
+In order to see this image, you'll first need to tell the Dog class to get that image from the internets.
 
-In your dog card, add this **hack** to your `DogCardState` class:
+In your dog card, add this to your `DogCardState` class:
 ```dart
     // State classes run this method when the state is created.
     // You shouldn't do async work in initState, so we'll defer it
@@ -124,16 +126,14 @@ In your dog card, add this **hack** to your `DogCardState` class:
     // setState tells Flutter to rerender anything that's been changed.
     // setState cannot be async, so we use a variable that can be overwritten
     setState(() {
-        renderUrl = dog.imageUrl
+        renderUrl = dog.imageUrl;
     });
   }
 ```
 
-Now we have a dog avatar, that's properly getting the url to render.
+Now you have a dog avatar, that's properly getting the url to render.
 
-Let's start building the Card layout and add our image.
-
-In order to get overlap look of the card, we're going to use the built in widget `Stack`.
+In order to get overlap look of the card, use the built-in widget `Stack`.
 
 The `Stack` widget lays out it's children relative to it's edges.
 
@@ -144,7 +144,7 @@ Within a stack, you can wrap children in 'Position' widgets, but you don't have 
 * Position wrapped widgets are outside of document flow, to use web development terms. They'll be at positon [0,0] by default -- the top corner of the Stack widget.
 * Non-wrapped widgets aren't positioned. They stay in normal 'document flow', laid out as a column of widgets by default.
 
-This is what our stack is going to start out as:
+This is how the stack is going to start:
 
 ```dart
 ...
@@ -226,6 +226,27 @@ Widget get dogCard {
     );
   }
 ```
+
+Almost there. One more thing you need to do to complete the DogCard UI. Add a bit more styling to the main widget in the build method:
+
+```dart
+// dog_card.dart in DogCardState class
+  @override
+  Widget build(BuildContext context) {
+    return new Padding(                                                                                                 new 
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: new Container(
+        height: 115.0,
+        child: new Stack(
+          children: <Widget>[
+            dogCard,
+            new Positioned(top: 7.5, child: dogImage),
+          ],
+        ),
+      ),
+    );
+  }
+``` 
 
 
 

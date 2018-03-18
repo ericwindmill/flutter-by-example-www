@@ -10,6 +10,7 @@
 table {
   border-collapse: collapse;
 }
+
 table,
 th,
 td {
@@ -64,27 +65,32 @@ dd {
 pre,
 code {
   font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
-    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
-    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
-    'Courier New', Courier, monospace, monospace;
+  'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+  'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+  'Courier New', Courier, monospace, monospace;
   font-size: 1.6rem;
 }
 
 h1 {
   font-size: 5rem;
 }
+
 h2 {
   font-size: 3.5rem;
 }
+
 h3 {
   font-size: 3rem;
 }
+
 h4 {
   font-size: 2.4rem;
 }
+
 h5 {
   font-size: 2rem;
 }
+
 h6 {
   font-size: 1.6rem;
   padding: 10px;
@@ -107,6 +113,14 @@ a {
 }
 
 a:hover {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+label, button, input, select {
   cursor: pointer;
 }
 
@@ -137,3 +151,8 @@ blockquote::before {
   left: 10px;
   top: 5px;
 }
+
+/* Accessibility */
+/*img[alt*=".jpg"], img[alt*=".jpeg"], img[alt*=".gif"], img[alt*=".webp"], img[alt*=".png"], img[alt*="Photographer:"], img[alt*="Image of:"], img[alt*="Photo of:"], img:not([alt$="."]) {*/
+/*outline: 5px solid orange;*/
+/*}*/

@@ -1,11 +1,11 @@
 ---
-title: "App Scaffold and Data Model"
+title: "Data Model & HTTP"
 ---
 
 
 ### 1. Get to a Clean Slate
 
-All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff:
+All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff, and you'll end up with this: 
 
 ```dart
 // main.dart
@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
     /// Gives us access to routing, context, and meta info functionality.
     return new MaterialApp(
       title: 'We Rate Dogs',
+      // Make all our text default to white 
+      // and backgrounds default to dark
+      theme: new ThemeData(brightness: Brightness.dark),
       home: new MyHomePage(title: 'We Rate Dogs'),
     );
   }
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
+  
   final String title;
 
   @override
@@ -35,7 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
     @override
     Widget build(BuildContext context) {
         /// Scaffold is the base for a page.
@@ -90,7 +92,7 @@ class Dog {
 
 ### 3. Get Dog Pics
 
-This is one slight detour. We're going to use a super simple API to generate the dog images. This API doesn't require an API key or anything.
+This is our one slight detour. We're going to use a super simple API to generate the dog images. This API doesn't require an API key or anything.
 
 You can find it at [dog.ceo](https://dog.ceo). All it does is give us random images of dogs.
 

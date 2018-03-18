@@ -7,51 +7,51 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import OptInForm from '../components/OptInForm'
 import BlockquoteWAttrib from '../components/BlockquoteWAttrib'
-
-const ThanksLinks = {
-  flutter_redux: 'https://pub.dartlang.org/packages/flutter_redux',
-  dart_redux: '',
-  'Dart By Example': 'http://jpryan.me/dartbyexample/',
-  'Elixir School': 'https://elixirschool.com/en/'
-}
+import thanksLinks from '../../data/thanks'
 
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges
     return (
       <div className="index-container">
-        <Helmet title={config.siteTitle} />
-        <SEO postEdges={postEdges} />
+        <Helmet title={config.siteTitle}/>
+        <SEO postEdges={postEdges}/>
         <BodyContainer>
           <h1>Flutter By Example</h1>
-          <img src={config.siteLogo} width="200px" style={{ float: 'right' }} />
+          <img src={config.siteLogo} width="200px" style={{float: 'right'}}/>
           <p>
             Flutter By Example is a complete tutorial for building a mobile
             application with Google's Flutter SDK, inspired by{' '}
             <a href="https://elixirschool.com/en/">Elixir School</a>.
           </p>
-          <div style={{ height: '25px' }} />
+          <div style={{height: '25px'}}/>
           <h3>Who's this For?</h3>
-          <p>
-            This tutorial probably <strong>isn't</strong> what you're looking
-            for if you just want to dabble with Flutter and you have plenty of
-            experience build web or mobile applications.
-          </p>
-          <p>
-            This tutorial makes strong, opinionated decisions that are not
-            inherent parts of building with Flutter (i.e. using Redux for state
-            management, and Firebase as a database).
-          </p>
           <p>
             <strong>This tutorial is ideal for you</strong> if you want to learn
             how to build a mobile app with Flutter from start to finish --
             including aspects that are applicable outside Flutter.
           </p>
           <p>
-            Feel free to download boilerplate app and skip straight into the
-            Flutter-y aspects of the tutorial.
+            It starts with a simple, pure Flutter app. After you build that, theres a more advanced, opinionated app you
+            can build. Many of the aspects of that app are applicable outside of the Flutter world. (i.e. using Firebase
+            and Redux).
           </p>
-          <div style={{ height: '25px' }} />
+          <div style={{height: '25px'}}/>
+          <p>
+            <strong>Today,</strong> this tutorial covers:
+            <ul>
+              <li>Set up and Tooling for Flutter dev environment</li>
+              <li>Creating a new Flutter Project</li>
+              <li>Flutter Basic UI</li>
+              <li>Built in Flutter Animations</li>
+              <li>The simplest State Management</li>
+              <li>Basic Routing</li>
+              <li>Using Redux for state management</li>
+              <li>Use Firebase for data storage and authentication</li>
+              <li>More added each week.</li>
+            </ul>
+          </p>
+          <div style={{height: '25px'}}/>
           <p>
             <strong>
               If you've never used a type language before, or aren't comfortable
@@ -71,17 +71,7 @@ class Index extends React.Component {
               -- if you're coming from a JS background, or you're a newer dev.
             </li>
           </ul>
-          <p>
-            <strong>Today,</strong> this tutorial covers:
-            <ul>
-              <li>Set up and Tooling for Flutter dev environment</li>
-              <li>Creating a new Flutter Project</li>
-              <li>Using Redux for state management</li>
-              <li>Use Firebase for data storage and authentication</li>
-              <li>More added each week.</li>
-            </ul>
-          </p>
-          <div style={{ height: '25px' }} />
+          <div style={{height: '25px'}}/>
           <h3>About Flutter</h3>
           <p>
             <a href="https://flutter.io">Flutter</a> is an open-source,
@@ -120,8 +110,8 @@ class Index extends React.Component {
               Dart for Web Developers
             </a>.
           </p>
-          <OptInForm />
-          <div style={{ height: '25px' }} />
+          <OptInForm/>
+          <div style={{height: '25px'}}/>
           <h3>Contribute to Flutter By Example</h3>
           <p>
             I'm hopeful that more Flutter developers will help make this
@@ -129,17 +119,18 @@ class Index extends React.Component {
             <a href="mailto:ericwindmill@gamil.com">email me</a>.
           </p>
           <Link to={'/about'}>More about Contributing </Link>
-          <div style={{ height: '25px' }} />
+          <div style={{height: '25px'}}/>
           <h3>Special Thanks</h3>
           <p>These technologies and resources are used in this tutorial:</p>
           <ul>
-            {Object.keys(ThanksLinks).map(key => (
+            {Object.keys(thanksLinks).map(key => (
               <li>
-                <a href={ThanksLinks[key]}>{key}</a>
+                <a href={thanksLinks[key]}>{key}</a>
               </li>
             ))}
           </ul>
           <Link to={'/about'}>More About Technologies Used</Link>
+          <div style={{height: '100px'}}/>
         </BodyContainer>
       </div>
     )

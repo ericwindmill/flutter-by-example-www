@@ -8,7 +8,7 @@ In this basic app tutorial we'll build a very simple, **pure Flutter app**, insp
 
 The idea here is that we won't pull in any extra packages, we won't think about architecture or state management. We'll just use the tools that Flutter gives us out of the box to learn the basics.
 
-By the end of this, you won't know nearly all Flutter has to offer, but you'll understand how much Flutter provides us as developers.
+By the end of this, you should be pretty amazed by how much Flutter gives us out of the box -- and we won't cover nearly everything.
 
 This is what you're making:
 
