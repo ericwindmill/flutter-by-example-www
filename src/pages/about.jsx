@@ -18,26 +18,29 @@ class AboutPage extends Component {
           <p>
             I'm hopeful that more Flutter developers will help make this
             resource rock solid. If you'd like to help, do so on
-            <a href="https://github.com/ericwindmill/flutter_by_example_docs/contributing.md">
+            <a
+              href="https://github.com/ericwindmill/flutter_by_example_docs/contributing.md">
               Github
             </a>
             or <a href="mailto:ericwindmill@gamil.com">email me</a>.
           </p>
           <p>
-            I'd like this resource to be like a choose-your-own-adventure book.
-            Each feature section (i.e. adding a 'Post to Twitter' functionality)
-            could stand alone as a tutorial for that specific aspect, but if
+            I'd like this resource to be a 'choose-your-own-adventure book'.
+            Each feature section can stand alone as a tutorial for a specific
+            piece of Flutter, but if
             someone wanted to they could follow all the lessons for one complete
-            app. Of course, a foundation of architecture must be consistent (in
-            this case, using Redux and Firebase).
+            app. Of course, a foundation of architecture must be consistent.
           </p>
+          <p>To be honest, I dream of future where FlutterByExample is the CSS
+            Tricks of Flutter development.</p>
           <p>
             That said, I encourage you to add a whole new section, improve one
             that exists, or just fix errors.
           </p>
           <p>
-            Contributors will be featured and acknowldged on the Flutter By
-            Example <Link to={'/'}>Homepage</Link>.
+            <strong>Contributors will be featured and acknowledged on the
+              Flutter By
+              Example <Link to={'/'}>Homepage</Link>.</strong>
           </p>
           <div style={{height: '50px'}}/>
           <h3>Get Updates</h3>

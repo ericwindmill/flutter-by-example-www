@@ -1,22 +1,23 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
-import { FaChevronDown } from 'react-icons/lib/fa'
+import {FaChevronDown} from 'react-icons/lib/fa'
 
 const iconStyle = {
   width: '15px',
-  height: '15px'
+  height: '15px',
+  color: "white",
 }
 
 class DropdownButton extends Component {
   render() {
-    const { children } = this.props
+    const {children} = this.props
     return (
       <ButtonContainer
         id={this.props.buttonId}
         onClick={this.props.dropdownCallback}
       >
         {children}
-        <FaChevronDown style={iconStyle} />
+        <FaChevronDown style={iconStyle}/>
       </ButtonContainer>
     )
   }
@@ -27,6 +28,7 @@ const ButtonContainer = styled.button`
   color: inherit;
   border: none;
   width: 100%;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,6 +36,7 @@ const ButtonContainer = styled.button`
 
   &:hover {
     background: rgba(173, 210, 235, 0.2);
+    border-radius: 5px;
     cursor: pointer;
   }
 

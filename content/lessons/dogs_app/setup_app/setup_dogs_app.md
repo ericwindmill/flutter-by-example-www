@@ -15,14 +15,15 @@ This is what you're making:
 ![add dog](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699901/flutter_by_example/new_dog.gif)
 ![good dogs](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699902/flutter_by_example/good_dogs.gif)
 
-Finished source code: [We Rate Dogs example app](https://github.com/ericwindmill/flutter_by_example_dogs_example)
+Finished source code: [We Rate Dogs example app](https://github.com/ericwindmill/flutter_by_example_apps)
 
 We'll just start this from a fresh app. Once you have [Flutter installed on your machine and your environment set up](https://flutter.io), enter the following in the your terminal:
 
 ```bash
-flutter create we_rate_dogs
-cd we_rate_dogs
+git clone https://github.com/ericwindmill/flutter_by_example_apps.git
+cd flutter_by_example_apps/blank_flutter_app
 flutter packages get
+flutter run
 ```
 
-This will give you a fresh [Flutter counter app](https://flutterbyexample.com/basic-flutter-app).
+This will give you a fresh, blank Flutter app.

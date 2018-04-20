@@ -11,11 +11,9 @@ import thanksLinks from '../../data/thanks'
 
 class Index extends React.Component {
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle}/>
-        <SEO postEdges={postEdges}/>
         <BodyContainer>
           <h1>Flutter By Example</h1>
           <img src={config.siteLogo} width="200px" style={{float: 'right'}}/>
@@ -24,53 +22,6 @@ class Index extends React.Component {
             application with Google's Flutter SDK, inspired by{' '}
             <a href="https://elixirschool.com/en/">Elixir School</a>.
           </p>
-          <div style={{height: '25px'}}/>
-          <h3>Who's this For?</h3>
-          <p>
-            <strong>This tutorial is ideal for you</strong> if you want to learn
-            how to build a mobile app with Flutter from start to finish --
-            including aspects that are applicable outside Flutter.
-          </p>
-          <p>
-            It starts with a simple, pure Flutter app. After you build that, theres a more advanced, opinionated app you
-            can build. Many of the aspects of that app are applicable outside of the Flutter world. (i.e. using Firebase
-            and Redux).
-          </p>
-          <div style={{height: '25px'}}/>
-          <p>
-            <strong>Today,</strong> this tutorial covers:
-            <ul>
-              <li>Set up and Tooling for Flutter dev environment</li>
-              <li>Creating a new Flutter Project</li>
-              <li>Flutter Basic UI</li>
-              <li>Built in Flutter Animations</li>
-              <li>The simplest State Management</li>
-              <li>Basic Routing</li>
-              <li>Using Redux for state management</li>
-              <li>Use Firebase for data storage and authentication</li>
-              <li>More added each week.</li>
-            </ul>
-          </p>
-          <div style={{height: '25px'}}/>
-          <p>
-            <strong>
-              If you've never used a type language before, or aren't comfortable
-              with OOP
-            </strong>, you may want to spend some time getting to know Dart.
-          </p>
-          <p>Here's two handy resources:</p>
-          <ul>
-            <li>
-              <a href="http://jpryan.me/dartbyexample/">Dart By Example</a> --
-              if you're comfortable with C-like, typed languages.
-            </li>
-            <li>
-              <a href="https://dartforwebdevelopers.com">
-                Dart For Web Developers
-              </a>{' '}
-              -- if you're coming from a JS background, or you're a newer dev.
-            </li>
-          </ul>
           <div style={{height: '25px'}}/>
           <h3>About Flutter</h3>
           <p>

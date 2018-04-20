@@ -164,7 +164,7 @@ const Contents = styled.div`
   h1 {
     color: white;
     line-height: 1;
-    font-size: 6rem;
+    font-size: 5rem;
     border: 2px solid transparent;
     transition: all 200ms ease;
   }
@@ -176,6 +176,7 @@ const Contents = styled.div`
   h3 {
     color: ${props => props.theme.brandDarkened};
     line-height: 1;
+    margin: 10px 0 50px 0;
   }
 
   ul {
@@ -186,11 +187,12 @@ const Contents = styled.div`
 `
 
 const LessonLIContainer = styled.div`
-  margin: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
   li {
     h6, p {
       background: inherit;
       color: white !important;
+      font-weight: 400 !important;
       margin: 0;
       padding: 0 0 5px;
       border-bottom: 1px solid transparent;
@@ -212,25 +214,28 @@ const LessonSectionUl = styled.ul`
     display: none;
     transition: all 300ms ease;
     list-style: none;
-    padding: 0;
-    margin-bottom: ${props => props.theme.spacingUnit};
-    margin-left: ${props => props.theme.spacingUnit};
+    padding: 10px !important;
+    border-radius: 5px !important; 
+    background: ${props => props.theme.brandSlightLight};
 `
 
 const ChapterLIContainer = styled.li`
+     margin: 20px 0 0; 
   h5 {
      font-size: 2.8rem;
-     color: white;
-     text-decoration: underline;
-     margin: 10px 0 5px; 
+     font-weight: 400;
+     color: ${props => props.theme.accent};
+     margin: 0;
   }
 
 `
 
 const SubchapterLIContainer = styled.li`
+  margin: 0;
   h5 {
-     color: ${props => props.theme.accent};
+     color: white;
      margin: 0 0 5px;
+     font-weight: 400;
   }
 `
 
@@ -239,6 +244,8 @@ const FooterSection = styled.div`
 
   h5 {
     margin: 0 0 10px 0;
+    color: white;
+    font-weight: 300;
   }
 
   .me-info {

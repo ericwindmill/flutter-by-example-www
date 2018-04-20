@@ -7,6 +7,7 @@ import './css/index.css'
 import './css/prism-okaidia.css'
 import theme from './theme'
 import TableOfContents from '../components/Contents'
+import SEO from "../components/SEO";
 
 const iconStyle = {
   width: '35px',
@@ -57,6 +58,7 @@ export default class MainLayout extends React.Component {
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription}/>
+          <SEO postEdges={this.props.data.allPosts}/>
         </Helmet>
         <ThemeProvider theme={theme}>
           <LayoutContainer>
@@ -226,7 +228,6 @@ export const pageQuery = graphql`
         basic_app {
           setup_dogs_app {
             post {
-              id
               childMarkdownRemark {
                 fields {
                   slug
@@ -239,7 +240,6 @@ export const pageQuery = graphql`
           }
           basic_ui {
             post {
-              id
               childMarkdownRemark {
                 fields {
                   slug
@@ -252,7 +252,6 @@ export const pageQuery = graphql`
           }
           simple_routes {
             post {
-              id
               childMarkdownRemark {
                 fields {
                   slug
@@ -265,7 +264,6 @@ export const pageQuery = graphql`
           }
           user_input {
             post {
-              id
               childMarkdownRemark {
                 fields {
                   slug
@@ -278,7 +276,6 @@ export const pageQuery = graphql`
           }
           make_it_fancy {
             post {
-              id
               childMarkdownRemark {
                 fields {
                   slug
@@ -291,6 +288,32 @@ export const pageQuery = graphql`
           }
         }
         advanced_app {
+          setup {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+          inherited_widget_auth {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+        }
+        redux_and_firebase {
           setup_app {
             post {
               childMarkdownRemark {
@@ -316,6 +339,20 @@ export const pageQuery = graphql`
             }
           }
           firebase_auth {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
+        }
+        nuggets {
+          sample {
             post {
               childMarkdownRemark {
                 fields {

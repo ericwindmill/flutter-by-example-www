@@ -66,58 +66,88 @@
       ]
     },
     "advanced_app": {
-      "setup_app": [
+      "setup": [
         {
-          "post": "./me_suite_app/setup/what_youll_build.md"
+          "post": "./advanced_app/setup/a_third_app.md"
         },
         {
-          "post": "./me_suite_app/setup/getting_to_start.md"
+          "post": "./advanced_app/setup/advanced_getting_to_start.md"
+        }
+      ],
+      "inherited_widget_auth": [
+        {
+          "post": "./advanced_app/inherited_widget_auth/section_starter.md"
+        },
+        {
+          "post": "./advanced_app/inherited_widget_auth/set_inherited_widget.md"
+        },
+        {
+          "post": "./advanced_app/inherited_widget_auth/app_loading.md"
+        },
+        {
+          "post": "./advanced_app/inherited_widget_auth/setup_firebase.md"
+        }
+      ]
+    },
+    "redux_and_firebase": {
+      "setup_app": [
+        {
+          "post": "./redux_and_firebase/setup/what_youll_build.md"
+        },
+        {
+          "post": "./redux_and_firebase/setup/getting_to_start.md"
         }
       ],
       "flutter_redux": [
         {
-          "post": "./me_suite_app/redux/1_about_redux.md"
+          "post": "./redux_and_firebase/redux/1_about_redux.md"
         },
         {
-          "post": "./me_suite_app/redux/2_install_setup.md"
+          "post": "./redux_and_firebase/redux/2_install_setup.md"
         },
         {
-          "post": "./me_suite_app/redux/3_redux_store.md"
+          "post": "./redux_and_firebase/redux/3_redux_store.md"
         },
         {
-          "post": "./me_suite_app/redux/4_app_state_model.md"
+          "post": "./redux_and_firebase/redux/4_app_state_model.md"
         },
         {
-          "post": "./me_suite_app/redux/5_app_reducer.md"
+          "post": "./redux_and_firebase/redux/5_app_reducer.md"
         },
         {
-          "post": "./me_suite_app/redux/6_counter_redux_cycle.md"
+          "post": "./redux_and_firebase/redux/6_counter_redux_cycle.md"
         },
         {
-          "post": "./me_suite_app/redux/7_logger_middleware.md"
+          "post": "./redux_and_firebase/redux/7_logger_middleware.md"
         },
         {
-          "post": "./me_suite_app/redux/8_redux_wrapup.md"
+          "post": "./redux_and_firebase/redux/8_redux_wrapup.md"
         }
       ],
       "firebase_auth": [
         {
-          "post": "./me_suite_app/firebase/1_setup_firebase.md"
+          "post": "./redux_and_firebase/firebase/1_setup_firebase.md"
         },
         {
-          "post": "./me_suite_app/firebase/2_log_in_redux_cycle.md"
+          "post": "./redux_and_firebase/firebase/2_log_in_redux_cycle.md"
         },
         {
-          "post": "./me_suite_app/firebase/3_log_in_middleware.md"
+          "post": "./redux_and_firebase/firebase/3_log_in_middleware.md"
         },
         {
-          "post": "./me_suite_app/firebase/4_cont_log_in_redux_cycle.md"
+          "post": "./redux_and_firebase/firebase/4_cont_log_in_redux_cycle.md"
         },
         {
-          "post": "./me_suite_app/firebase/5_user_profile.md"
+          "post": "./redux_and_firebase/firebase/5_user_profile.md"
         }
       ]
     },
-    "nuggets": {}
+    "nuggets": {
+      "sample": [
+        {
+          "post": "./nuggets/sample/sample_lesson.md"
+        }
+      ]
+    }
   }
 }

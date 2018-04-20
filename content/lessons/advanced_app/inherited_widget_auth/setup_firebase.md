@@ -1,12 +1,12 @@
 ---
-title: "Adding Firebase"
+title: "Set Up Firebase"
 ---
 
-So far, this is what we have. It's just the starter app, but it's updating via Redux. Which is cool.
+Next, it's time to add auth via Firebase, as well as Firestore database while
+you're at it.
 
-![end of redux gif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520031199/flutter_by_example/end-of-redux.gif)
-
-Now, we're going to add a realtime database, as well as the ability to sign in users.
+Firebase is especially appealing in Flutter apps because its another Google product, which means you can bet it'll 
+always be compatible, regardless of dependencies and upgrades.
 
 [Firebase](https://firebase.google.com/) makes this incredibly easy.
 

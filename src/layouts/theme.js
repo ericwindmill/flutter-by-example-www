@@ -1,6 +1,7 @@
 const theme = {
   // named colors:
   brand: '#19456e',
+  brandSlightLight: '#1b4a76',
   brandLightend: '#2f84d2',
   brandDarkened: '#215f96',
   accent: '#4edb9b',
