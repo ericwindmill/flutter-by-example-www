@@ -6,7 +6,7 @@ Adding functionality to that form on your `AddDogForm` isn a pretty easy feat.
 
 Essentially, you just need to add a couple built in Flutter classes that keep track of form input, and a function that returns the data to the main page through the router.
 
-## 1. TextEditingController class
+### 1. TextEditingController class
 
 There are a couple ways to go about tracking text input form elements. You can use Form widgets, or you can track each text input separately.
 
@@ -97,11 +97,11 @@ class _AddDogFormPageState extends State<AddDogFormPage> {
 
 Now, even though it doesn't look like anything new is happening, the `TextEditingControllers` are keeping track of you form.
 
-## 2. Submit The Form
+### 2. Submit The Form
 
 In the same class, add this function, which will pass the form information back via the Navigator:
 
-```
+```dart
   // You'll need the context
   // in order for the Navigator to work.
   void submitPup(context) {
@@ -125,7 +125,7 @@ In the same class, add this function, which will pass the form information back 
 
 And lastly, add that method to your 'raised button'
 
-```
+```dart 
 // lib/new_dog_form.dart in the bottom of the build method:
 ...
     builder: (context) {

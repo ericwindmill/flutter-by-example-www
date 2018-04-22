@@ -13,7 +13,7 @@ I've set up this section, called 'Nuggets.' Here, you'll (one day) find small
  because you don't need to work on an app that's already being built. (Though
   I would love to see that, too!)
   
-I dream of a future when this `Nuggets` section is the `CSS Tricks` of 
+I dream of a future when this `Nuggets` section is the CSS Tricks of 
 Flutter. Quick and easy tips!
    
 If you've figured out how to do something awesome in Flutter, share it!

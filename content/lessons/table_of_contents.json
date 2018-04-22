@@ -143,6 +143,14 @@
       ]
     },
     "nuggets": {
+      "styles": [
+        {
+          "post": "./nuggets/styles/theme_and_branding.md"
+        },
+        {
+          "post": "./nuggets/styles/custom_theme_inherited.md"
+        }
+      ],
       "sample": [
         {
           "post": "./nuggets/sample/sample_lesson.md"

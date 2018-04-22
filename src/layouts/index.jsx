@@ -352,6 +352,18 @@ export const pageQuery = graphql`
           }
         }
         nuggets {
+          styles {
+            post {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
+              }
+            }
+          }
           sample {
             post {
               childMarkdownRemark {

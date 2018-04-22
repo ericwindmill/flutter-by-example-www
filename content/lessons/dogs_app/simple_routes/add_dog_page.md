@@ -6,7 +6,7 @@ The only other page in this app is the page to add dogs.
 
 The next section will show you how to handle user input, but you might as well add that route now, while we're on the subject.
 
-## 1. Add NewDogPage
+### 1. Add NewDogPage
 
 Create a new file in the `lib` folder called `new_dog_form.dart`.
 
@@ -16,7 +16,7 @@ The UI of this page is simple:
 
 Here's the code with no functionality (again, you'll add the user input functionality in the next section:
 
-```
+```dart
 // lib/new_dog_form.dart
 import 'package:flutter/material.dart';
 import 'package:we_rate_dogs/dog_model.dart';
@@ -100,7 +100,7 @@ class _AddDogFormPageState extends State<AddDogFormPage> {
 }
 ```
 
-## 2. Add the Routing
+### 2. Add the Routing
 
 Like the last section, you now have a page that you can't access. Add the button and routing information to the `main.dart` page.
 

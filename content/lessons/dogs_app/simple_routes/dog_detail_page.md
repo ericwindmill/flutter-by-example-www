@@ -8,7 +8,7 @@ For all pages you *know* will exist, you can use declared routes.
 
 But this app just builds pages on the fly for each individual dog. This is a good case for route builders.
 
-# 1. Create a Dog Detail Page:
+### 1. Create a Dog Detail Page:
 
 Create a new file called `dog_detail_page.dart`
 
@@ -171,7 +171,7 @@ class _DogDetailPageState extends State<DogDetailPage> {
 
 ```
 
-# 2. Add the Routing mechanism:
+### 2. Add the Routing mechanism:
 
 Now you have this page that you can't get to. Let's add the routing.
 

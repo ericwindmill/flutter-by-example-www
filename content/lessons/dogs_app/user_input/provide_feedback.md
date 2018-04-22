@@ -6,7 +6,7 @@ Good UX is all about being explicit about what's going on the in app when someth
 1. When you try to add a new dog but the form is wrong.
 2. When you try to update a dogs rating but the form is wrong.
 
-## 1. Feedback when Adding a New Dog
+### 1. Feedback when Adding a New Dog
 
 ![show snackbar on error screenshot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,r_5,w_300/v1521398916/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_11.48.20.png)
 
@@ -47,7 +47,7 @@ Anyways, update your `submitPup` method:
 
 Now, try to submit a dog without a name.
 
-## 2. Dialog Feedback when the Rating Form is wrong
+### 2. Dialog Feedback when the Rating Form is wrong
 
 Again, this is as easy as writing one method.
 

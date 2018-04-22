@@ -10,7 +10,7 @@ This is what a hero animation does:
 
 And you can make it happen with four new lines of code.
 
-## 1. Update your DogCard dogImage again
+### 1. Update your DogCard dogImage again
 
 ```dart
 // lib/dog_card.dart in _DogCardState
@@ -31,7 +31,7 @@ And you can make it happen with four new lines of code.
       // at the bottom of your widget!
 ```
 
-## 1. Update your DogDetailPageState dogImage
+### 2. Update your DogDetailPageState dogImage
 
 Add almost the exact same two links of code:
 
@@ -57,6 +57,6 @@ Refresh your app. You implemented a Hero Transition. !
 
 
 ___
-#### That's the end, for now!
+## That's the end, for now!
 Sign up below to get notified when more tutorials are added weekly!
 

@@ -9,7 +9,7 @@ But there is some really easy animations Flutter gives you that will enhance the
 1. Add placeholder for images, so they fade in on load.
 2. Add a [hero animation](http://ericwindmill.com/ux-transitions-in-flutter-fade-in-image-animated-cross-fade-and-hero-transitions) that connects your DogCard to the dog_detail_page.
 
-## 1. Add an AnimatedCrossFade to load Widgets on state change
+### 1. Add an AnimatedCrossFade to load Widgets on state change
 
 This all happens in your `dog_card` file. And it's easy
 

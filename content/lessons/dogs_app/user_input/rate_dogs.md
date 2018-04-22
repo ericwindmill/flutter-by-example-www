@@ -4,7 +4,7 @@ title: "Rate Dogs"
 
 The time has come to add the most important feature. The ability to add a rating to a dog.
 
-## 1. Add the Form
+### 1. Add the Form
 
 Start by adding the form UI to the the `dog_detail` page.
 
@@ -142,7 +142,7 @@ class _DogDetailPageState extends State<DogDetailPage> {
 
 If you hot reload your app, you should have a working slider.
 
-## 2. Wire up the Submit button
+### 2. Wire up the Submit button
 
 The submit button does what could *technically*  be done in the `onChanged` callback.
 
