@@ -87,8 +87,8 @@ In `_AppStateContainerState`...
 class AppStateContainer extends StatefulWidget {/*..*/}
 
 class _AppStateContainerState extends State<AppStateContainer> {
-  // Just padding the state through so we don't have to 
-  // manipulate it with widget.state.
+  // Pass the state through because on a StatefulWidget, 
+  // properties are immutable. This way we can update it. 
   AppState state;
 
   @override

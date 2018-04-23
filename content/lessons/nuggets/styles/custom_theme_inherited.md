@@ -110,6 +110,8 @@ new Container(
 ),
 ```
 
+![Using an inherited widget](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498808/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-23_at_08.53.02.png)
+
 ## 3. A design system suggestion:
 
 At the company I work for, we *mostly* follow material guidelines, but we 

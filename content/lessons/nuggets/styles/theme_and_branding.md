@@ -1,9 +1,7 @@
 ---
 title: "Effective Theme Use"
 ---
-
-> What's the Point?
-> Effectively using ThemeData will potentially save you from having to ever thing about colors, typography and global styles. It's truly set it and forget it. 
+Effectively using ThemeData will potentially save you from having to ever thing about colors, typography and global styles. It's truly set it and forget it. 
 
 In Flutter, *everything* is a widget. Because of that, styling and UI in 
 Flutter is handled similarly to component-based, scoped CSS on the web (a la 
@@ -65,7 +63,7 @@ Flutter also includes a Dark theme.
   );
 ```
 
-![Flutter Dark Theme]()
+![Flutter Dark Theme](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498592/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-22_at_10.29.48.png)
 
 ## Setting Theme Data
 
@@ -100,7 +98,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-![Simple theme changes]()
+![Simple theme changes](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498592/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-22_at_10.45.27.png)
 
 ## Build A Theme Effectively
 
@@ -118,7 +116,7 @@ textTheme: Theme.of(context).textTheme.copyWith(
  ```
  
  
- ![Simple theme changes with copyWith]()
+ ![Simple theme changes with copyWith](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498592/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-22_at_10.51.39.png)
  
 The best way to build a theme is start with the default built into 
 `MaterialApp`, and use `copyWith` for all the new information. 
@@ -149,7 +147,7 @@ new Text(
 ),
 ``` 
 
-![Theme changes body2]()
+![Theme changes body2](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498592/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-22_at_11.00.46.png)
 
 That's all there is to it.
 

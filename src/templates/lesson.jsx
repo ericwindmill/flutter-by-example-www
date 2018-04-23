@@ -9,27 +9,11 @@ import Disqus from '../components/Disqus'
 import OptInForm from '../components/OptInForm'
 
 export default class LessonTemplate extends React.Component {
-  // createPaginationLink(postTitle) {
-  //   const postTitleList = postTitle.split(' ')
-  //   if (postTitleList.length < 1) {
-  //     return ''
-  //   }
-  //   const postTitleListToLink = postTitleList
-  //     .map(word =>
-  //       word.replace(/[.,\/#!$%\^&\*;:{}=\-\'\"_`~()]/g, '').toLowerCase()
-  //     )
-  //     .join('-')
-  //
-  //   return postTitleListToLink
-  // }
 
   render() {
     const { slug } = this.props.pathContext
     const postNode = this.props.data.postBySlug
     const post = postNode.frontmatter
-
-    // const prevLink = this.createPaginationLink(post.prev)
-    // const nextLink = this.createPaginationLink(post.next)
 
     if (!post.id) {
       post.id = slug

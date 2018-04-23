@@ -5,16 +5,11 @@ title: "Set Up Firebase"
 Next, it's time to add auth via Firebase, as well as Firestore database while
 you're at it.
 
+Firebase is collection of tools that app developers can use to solve 
+'boilerplate' problems. The biggest of which are user authentication and a real-time database.
+
 Firebase is especially appealing in Flutter apps because its another Google product, which means you can bet it'll 
 always be compatible, regardless of dependencies and upgrades.
-
-[Firebase](https://firebase.google.com/) makes this incredibly easy.
-
-Firebase is collection of tools that app developers can use to solve 'boilerplate' problems. The biggest of which are user authentication and a realtime database.
-
-Every app pretty much needs these two things. Rather than hand-rolling a solution to these problems on every project you make, why not just defer to the experts?
-
-I encourage you to poke around the Firebase homepage if you aren't convinced, and return to this when you're ready to set it up.
 
 ***
 
