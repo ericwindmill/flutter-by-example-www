@@ -86,6 +86,13 @@
         },
         {
           "post": "./advanced_app/inherited_widget_auth/setup_firebase.md"
+        },
+        {
+          "post":
+            "./advanced_app/inherited_widget_auth/state_container_login.md"
+        },
+        {
+          "post": "./advanced_app/inherited_widget_auth/auto_login.md"
         }
       ]
     },
@@ -149,6 +156,14 @@
         },
         {
           "post": "./nuggets/styles/custom_theme_inherited.md"
+        }
+      ],
+      "animations": [
+        {
+          "post": "./nuggets/animations/stepone_tween.md"
+        },
+        {
+          "post": "./nuggets/animations/steptwo_animated_widget.md"
         }
       ],
       "sample": [

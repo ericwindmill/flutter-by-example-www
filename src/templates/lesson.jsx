@@ -1,25 +1,24 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
-import SocialLinks from '../components/SocialLinks'
-import Disqus from '../components/Disqus'
-import OptInForm from '../components/OptInForm'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
+import SocialLinks from "../components/SocialLinks";
+import Disqus from "../components/Disqus";
+import OptInForm from "../components/OptInForm";
 
 export default class LessonTemplate extends React.Component {
-
   render() {
-    const { slug } = this.props.pathContext
-    const postNode = this.props.data.postBySlug
-    const post = postNode.frontmatter
+    const { slug } = this.props.pathContext;
+    const postNode = this.props.data.postBySlug;
+    const post = postNode.frontmatter;
 
     if (!post.id) {
-      post.id = slug
+      post.id = slug;
     }
     if (!post.id) {
-      post.category_id = config.postDefaultCategoryID
+      post.category_id = config.postDefaultCategoryID;
     }
 
     return (
@@ -29,27 +28,37 @@ export default class LessonTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <BodyContainer>
-          <div className={'post-content'}>
+          <HeaderContainer>
+            <h5>Flutter by Example</h5>
+            <SocialLinks postNode={postNode} postPath={slug} />
+          </HeaderContainer>
+          <div className={"post-content"}>
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </div>
-          <Divider style={{ margin: '100px 0 100px' }} />
-          <h5>Share This Page</h5>
-          <SocialLinks postNode={postNode} postPath={slug} />
-          <div style={{ height: '50px' }} />
+          <Divider style={{ margin: "100px 0 100px" }} />
           <h5>Get Updates When New Lessons are Published</h5>
           <OptInForm />
-          <div style={{ height: '50px' }} />
+          <div style={{ height: "50px" }} />
           <Disqus postNode={postNode} />
         </BodyContainer>
       </div>
-    )
+    );
   }
 }
 const Divider = styled.div`
   border-bottom: 0.5px solid black;
   margin: 100px 0;
-`
+`;
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid ${props => props.theme.brand};
+  h5 {
+    margin: 15px 0;
+  }
+`;
+
 const BodyContainer = styled.div`
   grid-column: 2 / 3;
   overflow: scroll;
@@ -116,7 +125,7 @@ const BodyContainer = styled.div`
     display: block;
     border: 0.5px solid ${props => props.theme.lightGrey};
   }
-`
+`;
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
@@ -131,4 +140,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
