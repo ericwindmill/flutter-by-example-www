@@ -1,5 +1,5 @@
 ---
-title: "Rate Dogs"
+title: "Forms 2: Sliders and Buttons"
 ---
 
 The time has come to add the most important feature. The ability to add a rating to a dog.

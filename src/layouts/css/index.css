@@ -36,38 +36,51 @@ p,
 a,
 li,
 ul {
-  font-family: "Avenir", "Helvetica Neue", sans-serif;
-  color: black;
+  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+  color: #333333;
 }
 
-h1,
-h2,
-h3,
+h1 {
+  margin: 3rem 0 1.2rem;
+}
+h2 {
+  margin: 2.4rem 0 1rem;
+}
+h3 {
+  margin: 2rem 0 1rem;
+}
 h4,
-h5 {
-  margin: 50px 0 15px;
+h5,
+h6 {
+  margin: 1.4rem 0 1rem;
 }
 
 p,
 ul,
 ol,
 dl {
-  margin: 20px 0;
+  margin: 0 0 4rem;
 }
 
 li,
-li > *,
-dt,
-dd {
+li > * {
   margin: 10px 0;
+}
+
+dt {
+  margin: 0;
+}
+
+dd {
+  margin: 0 0 0 25px;
 }
 
 pre,
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
-    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
-    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
-    "Courier New", Courier, monospace, monospace;
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+    'Courier New', Courier, monospace, monospace;
   font-size: 1.4rem;
 }
 
@@ -93,9 +106,6 @@ h5 {
 
 h6 {
   font-size: 1.6rem;
-  padding: 10px;
-  margin: 0;
-  background: #e8e8ea;
 }
 
 p,
@@ -145,7 +155,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: "\201C"; /*Unicode for Left Double Quote*/
+  content: '\201C'; /*Unicode for Left Double Quote*/
 
   /*Font*/
   font-family: Georgia, serif;

@@ -1,5 +1,5 @@
 ---
-title: "Add Dog Page"
+title: "Routing 2: Add New Dog Page"
 ---
 
 The only other page in this app is the page to add dogs.

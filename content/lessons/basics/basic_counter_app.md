@@ -1,5 +1,5 @@
 ---
-title: "Starter Counter App"
+title: "Dissecting the Counter App"
 ---
 
 The 'Hello World' Flutter app is a simple counter that looks like this:
@@ -7,16 +7,16 @@ The 'Hello World' Flutter app is a simple counter that looks like this:
 ![screen_shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377792/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_11.34.36.png)
 ![screen_shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377793/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_10.34.27.png)
 
-#### 1. In your terminal run:
+### 1. In your terminal run:
 
 ```
-flutter create music_party
-cd music_party
+flutter create my_app
+cd my_app
 ```
 
 Open the project in your editor.
 
-#### 2. Now, run the app using your IDE or terminal.
+### 2. Now, run the app using your IDE or terminal.
 
 In the terminal:
 
@@ -24,9 +24,8 @@ In the terminal:
 flutter run
 ```
 
-In IntelliJ:
-
-Across the top of the IDE there's a toolbar that looks something like this (although I have installed a theme so yours probably has different icons):
+** In IntelliJ:** Across the top of the IDE there's a toolbar that looks
+something like this (although I have installed a theme so yours probably has different icons):
 
 ![IntelliJ toolbar](http://res.cloudinary.com/ericwindmill/image/upload/v1518916683/flutter_by_example/Screen_Shot_2018-02-17_at_5.17.47_PM.png)
 
@@ -34,115 +33,23 @@ Across the top of the IDE there's a toolbar that looks something like this (alth
 2. When it launches, click the 'play' button to run the app.
    **NB**: You can also click the 'debug' button to launch in Debug mode. I usually always just run it in debug mode while developing. It's the same thing but allows for breakpoints and the inspector.
 
-   Once the app launches:
+Once the app launches:
 
-#### 3. Click the '+' Button in the bottom-right of the app.
+### 3. Click the '+' Button in the bottom-right of the app.
 
 That's the only functionality. Watch the counter change.
 
-What's happening? Very simply -- the button has an event listener of sorts that increases the variable in your apps state that represents the counter. Flutter knows that whenever you change that state, it needs to repaint that number. More on this in just a bit.
+What's happening? The button has an event listener of sorts that increases the
+variable in your apps state that represents the counter. Flutter knows that
+whenever you change that state, it needs to repaint the widgets that rely on
+that state -- in this case the number.
 
-#### 4. Make some code changes
+### 4. Understand the Code
 
-One of the best things about the Flutter dev environment is hot reload. Lets see it in action.
-
-In the code, go to line 22:
-
-```dart
-// ...
-  ),
-  home: new MyHomePage(title: 'Flutter Demo Home Page'),
-);
-// ...
-```
-
-Change the String 'Flutter Demo Home Page' to whatever you'd like. Save the code. Watch the title of the app page change before your very eyes.
-
-![screen-shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518378024/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_11.40.04.png)
-
-Let's try something else. On line 20:
-
-```dart
-// ...
-  ),
-  primarySwatch: Colors.blue,
-);
-// ...
-```
-
-Change `Colors.blue` to `Colors.amber`.
-
-Viola:
-
-![screen-shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377793/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_11.34.45.png)
-
-## Whirlwind Intro to Dart and Flutter
-
----
-
-**NB:** If you haven't ever written a line of Dart, I recommend spending some time with that first. In Flutter, there is no markup language or CSS. Everything is written in Dart. You may have noticed that to set the color we passed an argument of `Colors.amber`. That's Object Oriented Programming in action. We're passing a const called Colors with a property `amber` on it to the `color` argument. If that was gibberish, I suggest checking out [Dart By Example](http://jpryan.me/dartbyexample/) or [Dart for Web Developers](https://dartforwebdevelopers.com).
-
----
-
-If you've worked with React before, this may be easy. Everything in Flutter is a `Widget`, much like in React or Vue you're working with small reusable components.
-
-A `widget` is just a Dart class that extends a Widget class from Flutter. Widget classes have basically only one requirement: it **must** have a `build` method which returns sub-widgets. Other than that, just write methods and properties on the class that the widget needs.
-
-Super-basic widget example:
-
-```dart
-Class RedTextWidget extends StatelessWidget {
-  // Arbitrary text to render. Passed in from wherever this class is created.
-  final String text;
-
-  // constructor
-  // This is the method that executes when the widget is constructed
-  RedTextWidget(this.text);
-
-  /* Build Method
-  Don't get hung up on understanding this completely
-  The point is that we're just returning a new instance of the 'Text' class
-    and passing it a couple arguments.
-  That's all Flutter is. Nested classes and arguments.
-  */
-  Widget build(BuildContext context) {
-    return new Text(
-      this.text,
-      style: new TextStyle(color: Colors.red),
-    ),
-  }
-}
-```
-
-Then somewhere else in an app we'd use the widget like this. The point is, again, that we're just creating a new instance of the class.
-
-```dart
-// ...
-// This is how we'd use the RedTextWidget within another widget.
-child: new RedTextWidget('This string would render'),
-// ...
-```
-
-### Flutter's Material and Cupertino Widgets
-
-The Flutter SDK is extra nice becasue there are loads of built in widgets in the style of Android and iOS.
-
-I hate to gush, but it's actually quite amazing what Flutter gives you out of the box. You can create pretty damn good looking and accessible mobile apps with no design chops at all. And, building layouts is super easy thanks to Flutter's layout widgets.
-
-Imagine if you started a new React, Vue, React Native, etc project, and it came ready with hundreds of components that we're just ready to go with design standards in mind. That's what Material and Cupertino widgets are -- Material widgets are designed to look like Android apps and Cupertino like iOS.
-
-These built in Widgets _and_ the ability to create completely custom widgets gives you a lot of power. You can create a completely custom app with lower-level custom widgets, or you can just use what you're given to get to MVP.
-
-[Flutter Widget Library](https://flutter.io/widgets/)
-
-## Back to the Counter App
-
-Alrighty-- let's see what's actually going on here with our _current_ code.
-
-First, the directory structure:
+First, whats going on in the the directory structure:
 
 ```
-music-party
+my_app
   |- android
   |  ... a bunch of junk
   |- ios
@@ -185,15 +92,9 @@ class MyApp extends Stateless Widget {
 
 ### Stateless and StatefulWidgets
 
-Flutter widgets must extend a handful of classes from the Flutter library. The two you'll use almost always are `StatelessWidget` and `StatefulWidget`.
-
-The difference is that one has a concept of `state` within the Widget and some built in methods that tells Flutter to re-render if that state changes. **This is a key concept in Flutter.** Infact, this is arguably the basis of building Flutter apps.
-
----
-
-**NB**: One of the most important ideas in Flutter is how it re-renders based on changes to `state` or data within your app.
-
----
+Flutter widgets must extend a handful of classes from the Flutter library. The
+two you'll use almost always are `StatelessWidget` and `StatefulWidget`. The difference is that one has a concept of `state` within the Widget and some
+built in methods that tells Flutter to re-render if that state changes.
 
 ```dart
 // Stateless Widgets won't do anything to change state.
@@ -312,16 +213,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
----
-
-**NB**: That's a quick run down of the code in a startr app. If you're lost, don't worry. Next we're going to start from scratch, which will help it make sense.
-
----
-
 ### The Widget Tree
 
 If all of this class-nesting is confusing, perhaps this visual of the `Widget tree` will help. This is what your current counter application looks like. You can think of nested widgets simply as nested React Components or HTML web components with all the JS functionality built in.
 
 ![widget-tree](http://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/simple_tree.png)
-
-The root of reactive, modular UI programing in Flutter is simply building tiny widgets, giving them data, and telling flutter when to render them, swap them out, or update them using `setState()`

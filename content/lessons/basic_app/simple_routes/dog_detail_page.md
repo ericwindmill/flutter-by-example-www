@@ -1,5 +1,5 @@
 ---
-title: "Dog Detail Page"
+title: "Routing 1: Pages on the Fly"
 ---
 
 There are a couple different ways to add more pages to your Flutter app.

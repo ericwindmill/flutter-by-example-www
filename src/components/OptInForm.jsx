@@ -60,9 +60,13 @@ const OptInContainer = styled.div`
   grid-template-areas: "input submitButton";
   grid-template-columns: 1fr 200px;
   grid-gap: 20px;
-  background: rgba(42,57,74,0.53);
+  background: ${props => props.theme.greyBackgroundDarker};
   padding: 25px;
+  border-radius: 5px;
   margin-bottom: 25px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+  -2px 1px 5px 0 rgba(0, 0, 0, 0.12);
+  
   .mc-field-group {
     grid-area: input; 
     width: 100%;
@@ -84,7 +88,7 @@ const OptInContainer = styled.div`
     }
     &:focus {
       outline: none;
-      background: #a2e9ff;
+      background: ${props => props.theme.gatsbyLightest};
     }
   }
 
@@ -97,6 +101,7 @@ const OptInContainer = styled.div`
     background: #FF6666;
     font-size: 2rem;
     padding: 0 10px;
+    transition: 300ms all ease;
     &:hover {
       background: #ff4648;
       cursor: pointer;

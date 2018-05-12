@@ -1,7 +1,6 @@
 const path = require('path')
 const _ = require('lodash')
 const webpackLodashPlugin = require('lodash-webpack-plugin')
-const {createPaginationPages} = require('gatsby-pagination')
 
 exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   const {createNodeField} = boundActionCreators

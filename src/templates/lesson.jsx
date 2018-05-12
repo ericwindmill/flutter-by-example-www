@@ -1,24 +1,23 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import SEO from "../components/SEO";
-import config from "../../data/SiteConfig";
-import SocialLinks from "../components/SocialLinks";
-import Disqus from "../components/Disqus";
-import OptInForm from "../components/OptInForm";
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import SEO from '../components/SEO'
+import config from '../../data/SiteConfig'
+import Disqus from '../components/Disqus'
+import OptInForm from '../components/OptInForm'
+import SiteHeader from '../components/SiteHeader'
 
 export default class LessonTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pathContext;
-    const postNode = this.props.data.postBySlug;
-    const post = postNode.frontmatter;
+    const { slug } = this.props.pathContext
+    const postNode = this.props.data.postBySlug
+    const post = postNode.frontmatter
 
     if (!post.id) {
-      post.id = slug;
+      post.id = slug
     }
     if (!post.id) {
-      post.category_id = config.postDefaultCategoryID;
+      post.category_id = config.postDefaultCategoryID
     }
 
     return (
@@ -28,39 +27,27 @@ export default class LessonTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <BodyContainer>
-          <HeaderContainer>
-            <h5>Flutter by Example</h5>
-            <SocialLinks postNode={postNode} postPath={slug} />
-          </HeaderContainer>
-          <div className={"post-content"}>
+          <SiteHeader isLesson postNode={postNode} slug={slug} />
+          <div className={'post-content'}>
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </div>
-          <Divider style={{ margin: "100px 0 100px" }} />
+          <Divider style={{ margin: '100px 0 100px' }} />
           <h5>Get Updates When New Lessons are Published</h5>
           <OptInForm />
-          <div style={{ height: "50px" }} />
+          <div style={{ height: '50px' }} />
           <Disqus postNode={postNode} />
         </BodyContainer>
       </div>
-    );
+    )
   }
 }
 const Divider = styled.div`
   border-bottom: 0.5px solid black;
   margin: 100px 0;
-`;
-const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid ${props => props.theme.brand};
-  h5 {
-    margin: 15px 0;
-  }
-`;
+`
 
 const BodyContainer = styled.div`
-  grid-column: 2 / 3;
   overflow: scroll;
   justify-self: center;
   width: 100%;
@@ -71,26 +58,8 @@ const BodyContainer = styled.div`
   max-width: ${props => props.theme.contentWidthLaptop};
   margin: auto;
 
-  & > h1 {
-    color: ${props => props.theme.accentDark};
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: space-between;
-
-    .prev {
-      text-align: right;
-    }
-
-    & div p {
-      font-size: 2rem;
-      margin: 0;
-    }
-    a {
-      font-size: 2.2rem !important;
-      background: none;
-    }
+  .post-content {
+    margin-top: ${props => props.theme.spacingUnit(3)};
   }
 
   a {
@@ -103,7 +72,7 @@ const BodyContainer = styled.div`
   }
   a:hover {
     border-bottom: 2px solid ${props => props.theme.brand};
-    background: ${props => props.theme.brandLightend};
+    background: ${props => props.theme.brandLightest};
   }
 
   img {
@@ -111,21 +80,23 @@ const BodyContainer = styled.div`
     margin: auto;
   }
 
+  // This is a hack for Image captions.
+  // The Markdown is wrapping images in p tags for some reason?
   p + h6 {
-    margin-top: -25px;
+    margin-top: -35px;
   }
 
   ul,
   ol,
   dl {
-    margin-left: 15px;
+    margin-left: ${props => props.theme.spacingUnit(2)};
   }
 
   hr {
     display: block;
     border: 0.5px solid ${props => props.theme.lightGrey};
   }
-`;
+`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
@@ -140,4 +111,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

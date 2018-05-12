@@ -1,58 +1,58 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { MdMenu, MdClose } from "react-icons/lib/md";
-import styled, { ThemeProvider } from "styled-components";
-import config from "../../data/SiteConfig";
-import "./css/index.css";
-import "./css/prism-okaidia.css";
-import theme from "./theme";
-import TableOfContents from "../components/Contents";
-import SEO from "../components/SEO";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { MdMenu } from 'react-icons/lib/md'
+import styled, { ThemeProvider } from 'styled-components'
+import config from '../../data/SiteConfig'
+import './css/index.css'
+import './css/prism-okaidia.css'
+import theme from './theme'
+import TableOfContents from '../components/TableOfContents'
+import SEO from '../components/SEO'
 
 const iconStyle = {
-  width: "35px",
-  height: "35px",
-};
+  width: '35px',
+  height: '35px',
+}
 
 export default class MainLayout extends React.Component {
   getLocalTitle() {
     function capitalize(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+      return string.charAt(0).toUpperCase() + string.slice(1)
     }
 
-    const pathPrefix = config.pathPrefix ? config.pathPrefix : "/";
+    const pathPrefix = config.pathPrefix ? config.pathPrefix : '/'
     const currentPath = this.props.location.pathname
-      .replace(pathPrefix, "")
-      .replace("/", "");
-    let title = "";
-    if (currentPath === "") {
-      title = "Home";
-    } else if (currentPath === "tags/") {
-      title = "Tags";
-    } else if (currentPath === "categories/") {
-      title = "Categories";
-    } else if (currentPath === "about/") {
-      title = "About";
-    } else if (currentPath.includes("posts")) {
-      title = "Article";
-    } else if (currentPath.includes("tags/")) {
+      .replace(pathPrefix, '')
+      .replace('/', '')
+    let title = ''
+    if (currentPath === '') {
+      title = 'Home'
+    } else if (currentPath === 'tags/') {
+      title = 'Tags'
+    } else if (currentPath === 'categories/') {
+      title = 'Categories'
+    } else if (currentPath === 'about/') {
+      title = 'About'
+    } else if (currentPath.includes('posts')) {
+      title = 'Article'
+    } else if (currentPath.includes('tags/')) {
       const tag = currentPath
-        .replace("tags/", "")
-        .replace("/", "")
-        .replace("-", " ");
-      title = `Tagged in ${capitalize(tag)}`;
-    } else if (currentPath.includes("categories/")) {
+        .replace('tags/', '')
+        .replace('/', '')
+        .replace('-', ' ')
+      title = `Tagged in ${capitalize(tag)}`
+    } else if (currentPath.includes('categories/')) {
       const category = currentPath
-        .replace("categories/", "")
-        .replace("/", "")
-        .replace("-", " ");
-      title = `${capitalize(category)}`;
+        .replace('categories/', '')
+        .replace('/', '')
+        .replace('-', ' ')
+      title = `${capitalize(category)}`
     }
-    return title;
+    return title
   }
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props
     return (
       <div>
         <Helmet>
@@ -61,75 +61,67 @@ export default class MainLayout extends React.Component {
           <SEO postEdges={this.props.data.allPosts} />
         </Helmet>
         <ThemeProvider theme={theme}>
-          <LayoutContainer>
-            <HideMenuButton id="menu-button" className="white">
-              <MdClose
-                id="close-button"
-                onClick={this.handleHideMenu}
-                style={iconStyle}
+          <BodyGrid id="body-grid">
+            <ToCContainer id="table-of-contents">
+              <TableOfContents
+                chapters={this.props.data.tableOfContents.chapters}
               />
-              <MdMenu
-                id="open-button"
-                onClick={this.handleShowMenu}
-                style={iconStyle}
-              />
-            </HideMenuButton>
-            <BodyGrid id="body-grid">
-              <ToCContainer id="table-of-contents">
-                <TableOfContents posts={this.props.data.tableOfContents} />
-              </ToCContainer>
-              <MainContentContainer id="main-content">
-                {children()}
-              </MainContentContainer>
-            </BodyGrid>
-          </LayoutContainer>
+            </ToCContainer>
+            <MainContentContainer id="main-content">
+              <HideMenuButton id="menu-button" className="white">
+                <MdMenu
+                  id="close-button"
+                  onClick={this.handleHideMenu}
+                  style={iconStyle}
+                />
+                <MdMenu
+                  id="open-button"
+                  onClick={this.handleShowMenu}
+                  style={iconStyle}
+                />
+              </HideMenuButton>
+              {children()}
+            </MainContentContainer>
+          </BodyGrid>
         </ThemeProvider>
       </div>
-    );
+    )
   }
 
   handleHideMenu() {
-    const menu = document.querySelector("#table-of-contents");
-    const bodyGrid = document.querySelector("#body-grid");
-    const menuButton = document.querySelector("#menu-button");
-    const closeMenu = document.querySelector("#close-button");
-    const openMenu = document.querySelector("#open-button");
-    const mainContent = document.querySelector("#main-content");
+    const menu = document.querySelector('#table-of-contents')
+    const bodyGrid = document.querySelector('#body-grid')
+    const closeMenu = document.querySelector('#close-button')
+    const openMenu = document.querySelector('#open-button')
+    const mainContent = document.querySelector('#main-content')
 
-    menu.style.left = "-500px";
-    bodyGrid.style.gridTemplateColumns = "1px 1fr";
-    menuButton.style.color = "black";
-    closeMenu.style.opacity = "0";
-    closeMenu.style.zIndex = "2";
-    openMenu.style.opacity = "1";
-    openMenu.style.zIndex = "3";
-    mainContent.style.left = "0";
-    mainContent.style.width = "100vw";
+    menu.style.left = '-500px'
+    bodyGrid.style.gridTemplateColumns = '1px 1fr'
+    closeMenu.style.opacity = '0'
+    closeMenu.style.zIndex = '2'
+    openMenu.style.opacity = '1'
+    openMenu.style.zIndex = '3'
+    mainContent.style.left = '0'
+    mainContent.style.width = '100vw'
   }
 
   handleShowMenu() {
-    const menu = document.querySelector("#table-of-contents");
-    const bodyGrid = document.querySelector("#body-grid");
-    const menuButton = document.querySelector("#menu-button");
-    const closeMenu = document.querySelector("#close-button");
-    const openMenu = document.querySelector("#open-button");
-    const mainContent = document.querySelector("#main-content");
+    const menu = document.querySelector('#table-of-contents')
+    const bodyGrid = document.querySelector('#body-grid')
+    const closeMenu = document.querySelector('#close-button')
+    const openMenu = document.querySelector('#open-button')
+    const mainContent = document.querySelector('#main-content')
 
-    menu.style.left = "0px";
-    bodyGrid.style.gridTemplateColumns = "350px 1fr";
-    menuButton.style.color = "white";
-    closeMenu.style.opacity = "1";
-    closeMenu.style.zIndex = "3";
-    openMenu.style.opacity = "0";
-    openMenu.style.zIndex = "2";
-    mainContent.style.left = "350px";
-    mainContent.style.width = "calc(100vw - 350px)";
+    menu.style.left = '0px'
+    bodyGrid.style.gridTemplateColumns = '350px 1fr'
+    closeMenu.style.opacity = '1'
+    closeMenu.style.zIndex = '3'
+    openMenu.style.opacity = '0'
+    openMenu.style.zIndex = '2'
+    mainContent.style.left = '350px'
+    mainContent.style.width = 'calc(100vw - 350px)'
   }
 }
-
-const LayoutContainer = styled.div`
-  position: relative;
-`;
 
 const MainContentContainer = styled.div`
   position: absolute;
@@ -138,7 +130,8 @@ const MainContentContainer = styled.div`
   overflow: scroll;
   height: 100vh;
   width: calc(100vw - 350px);
-`;
+  padding-left: 40px;
+`
 
 const BodyGrid = styled.div`
   height: 100vh;
@@ -150,13 +143,12 @@ const BodyGrid = styled.div`
     flex-direction: column;
     height: inherit;
   }
-`;
+`
 
 const ToCContainer = styled.div`
   position: relative;
   left: 0;
-  grid-column: 1 / 2;
-  background: ${props => props.theme.brand};
+  background: ${props => props.theme.greyBackground};
   overflow: scroll;
   transition: 1s ease all;
   width: 350px;
@@ -166,15 +158,20 @@ const ToCContainer = styled.div`
     order: 3;
     overflow: inherit;
   }
-`;
+`
 
 const HideMenuButton = styled.div`
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 20px;
   z-index: 1;
-  color: white;
+  color: ${props => props.theme.brandLight};
   transition: 1s all ease;
+
+  &:hover {
+    cursor: pointer;
+    color: ${props => props.theme.brand};
+  }
 
   #open-button {
     position: absolute;
@@ -189,7 +186,7 @@ const HideMenuButton = styled.div`
     z-index: 3;
     transition: 500ms all ease;
   }
-`;
+`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
@@ -208,181 +205,18 @@ export const pageQuery = graphql`
       }
     }
     tableOfContents: lessonsJson {
+      id
       chapters {
-        intro_to_flutter {
-          flutter_basics {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
+        title
+        entries {
+          entry {
+            id
+            childMarkdownRemark {
+              fields {
+                slug
               }
-            }
-          }
-        }
-        basic_app {
-          setup_dogs_app {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          basic_ui {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          simple_routes {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          user_input {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          make_it_fancy {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-        }
-        advanced_app {
-          setup {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          inherited_widget_auth {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-        }
-        redux_and_firebase {
-          setup_app {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          flutter_redux {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          firebase_auth {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-        }
-        nuggets {
-          styles {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          animations {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-              }
-            }
-          }
-          sample {
-            post {
-              childMarkdownRemark {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
+              frontmatter {
+                title
               }
             }
           }
@@ -390,4 +224,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

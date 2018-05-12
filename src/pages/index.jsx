@@ -1,148 +1,121 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-
-import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import OptInForm from '../components/OptInForm'
-import BlockquoteWAttrib from '../components/BlockquoteWAttrib'
-import thanksLinks from '../../data/thanks'
+import ExampleListing from '../components/ExampleList'
+import SiteHeader from '../components/SiteHeader'
+import CtaButton from '../components/CtaButton'
 
-class Index extends React.Component {
+export default class HomePage extends React.Component {
   render() {
+    const examples = this.props.data.allMarkdownRemark.edges
     return (
-      <div className="index-container">
-        <Helmet title={config.siteTitle}/>
+      <HomePageContainer>
+        <Helmet title={config.siteTitle} />
         <BodyContainer>
-          <h1>Flutter By Example</h1>
-          <img src={config.siteLogo} width="200px" style={{float: 'right'}}/>
-          <p>
-            Flutter By Example is a complete tutorial for building a mobile
-            application with Google's Flutter SDK, inspired by{' '}
-            <a href="https://elixirschool.com/en/">Elixir School</a>.
-          </p>
-          <div style={{height: '25px'}}/>
-          <h3>About Flutter</h3>
-          <p>
-            <a href="https://flutter.io">Flutter</a> is an open-source,
-            cross-platform mobile application development SDK created by Google.
-            Flutter is written in the Dart Programming Language.
-          </p>
-          <BlockquoteWAttrib>
-            "Flutter makes it easy and fast to build beautiful mobile apps."
-            <a href="https://flutter.io">Flutter.io</a>
-          </BlockquoteWAttrib>
-          <div className="cards">
-            <div className="left">
-              <h5>Fast Development with Hot Reload</h5>
+          <SiteHeader />
+          <img
+            className={'hero'}
+            src="http://res.cloudinary.com/ericwindmill/image/upload/v1525634840/flutter_by_example/hero-image-fbe.png"
+            alt=""
+          />
+          <div className="main-copy">
+            <div className="words">
               <p>
-                Flutter's hot reload makes development time extremely fast.
-                Changing state and rebuilding your app in development is
-                inconsequential.
+                Flutter By Example is a collection of example tutorials that
+                will help you master Flutter by coding real apps.
               </p>
-            </div>
-            <div className="right">
-              <h5>Used by Google in Production</h5>
-              <p>Flutter is used by world-class companies in production:</p>
-              <ul>
-                <li>Google</li>
-                <li>AppTree Software</li>
-                <li>Hamilton</li>
-                <li>Posse</li>
-              </ul>
+              <p>
+                Whether you've been writing software for years and want to pick
+                up Flutter quickly, of this is your first go at building an
+                application, this is for you.
+              </p>
+              <p>
+                We encourage you to get involved, contribute and teach what you
+                know about Dart and Flutter.
+              </p>
+              <div className="button-row">
+                <CtaButton isExternalLink>
+                  <a href="https://github.com/ericwindmill/flutter_by_example_apps">
+                    Example Apps Github
+                  </a>
+                </CtaButton>
+                <CtaButton to={'/about'}>About FbE</CtaButton>
+                <CtaButton to={'contributors'}>Contribute</CtaButton>
+              </div>
             </div>
           </div>
-          <h3>Get Updates</h3>
-          <p>
-            Get free updates to your inbox when I publish more lessons in
-            Flutter By Example or{' '}
-            <a href="https://dartforwebdevelopers.com">
-              Dart for Web Developers
-            </a>.
-          </p>
-          <OptInForm/>
-          <div style={{height: '25px'}}/>
-          <h3>Contribute to Flutter By Example</h3>
-          <p>
-            I'm hopeful that more Flutter developers will help make this
-            resource rock solid. If you'd like to help, do so on Github or{' '}
-            <a href="mailto:ericwindmill@gamil.com">email me</a>.
-          </p>
-          <Link to={'/about'}>More about Contributing </Link>
-          <div style={{height: '25px'}}/>
-          <h3>Special Thanks</h3>
-          <p>These technologies and resources are used in this tutorial:</p>
-          <ul>
-            {Object.keys(thanksLinks).map(key => (
-              <li>
-                <a href={thanksLinks[key]}>{key}</a>
-              </li>
-            ))}
-          </ul>
-          <Link to={'/about'}>More About Technologies Used</Link>
-          <div style={{height: '100px'}}/>
+          <ExampleList>
+            <h2>Examples</h2>
+            <ExampleListing postEdges={examples} />
+          </ExampleList>
         </BodyContainer>
-      </div>
+      </HomePageContainer>
     )
   }
 }
+
+const HomePageContainer = styled.div``
 
 const BodyContainer = styled.div`
   overflow: scroll;
   justify-self: center;
   width: 100%;
   padding: ${props => props.theme.sitePadding};
+
   @media screen and (max-width: 600px) {
     order: 2;
   }
 
-  max-width: 850px;
+  max-width: ${props => props.theme.contentWidthLaptop};
   margin: auto;
 
-  a {
-    color: black;
-    background: ${props => props.theme.linkBackground};
-    border-bottom: 2px solid ${props => props.theme.brand};
-    text-decoration: none;
-    transition: 500ms all ease;
-    padding: 0 5px;
-  }
-  a:hover {
-    border-bottom: 2px solid ${props => props.theme.brand};
-    background: ${props => props.theme.brandLightend};
+  .button-row {
+    display: flex;
+    justify-content: center;
+    div {
+      margin-right: 15px;
+    }
   }
 
-  ul {
-    margin-left: 50px;
-  }
-  h3 {
-    color: ${props => props.theme.redAccent};
+  .hero {
+    box-shadow: ${props => props.theme.matShadow};
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    width: 100%;
+    margin-top: ${props => props.theme.spacingUnit(3)};
   }
 
-  .cards {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 25px;
+  .main-copy {
+    display: flex;
+    margin: 25px 0;
+    .words {
+      padding-right: 25px;
+    }
   }
 `
 
-export default Index
+const ExampleList = styled.div``
 
-/* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark {
+  query NuggetsQuery {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "example" } } }) {
       edges {
         node {
           fields {
             slug
           }
-          html
           frontmatter {
+            order
             title
+            image
+            description
+            exampleUrl
+            type
           }
+          html
         }
       }
     }

@@ -1,5 +1,5 @@
 ---
-title: "Dog Cards"
+title: "Reusable Custom Card Widget"
 ---
 
 ### 1. Create Dog Card Widget

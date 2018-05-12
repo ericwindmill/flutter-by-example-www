@@ -3,7 +3,7 @@
 }
 
 pre[class*='language-'] {
-  color: #f8f8f2;
+  color: #323232;
   padding: 1em 1em 1em 1em;
   background: none;
   font-family: 'Fira Code', monospace;
@@ -27,7 +27,7 @@ pre[class*='language-'] {
   margin: 0.1em 0;
   overflow: auto;
   border-radius: 0;
-  background: #1d1f27;
+  background: #f5f3f7;
 }
 
 /* Inline code */
@@ -60,7 +60,7 @@ pre[class*='language-'] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #ffffff;
+  color: #323232;
 }
 
 /*The most important things to call attention to:*/
@@ -72,7 +72,7 @@ pre[class*='language-'] {
 .token.atrule,
 .token.attr-value,
 .token.function {
-  color: #51e2a0;
+  color: #ca619d;
 }
 
 /*Important things that are mainly user inputs and arbitrary*/
@@ -83,13 +83,13 @@ pre[class*='language-'] {
 .token.variable,
 .token.regex,
 .token.number {
-  color: #3698f2;
+  color: #5ab68a;
 }
 
 /*very important framework specific*/
 .token.important,
 .token.keyword {
-  color: #ff8480;
+  color: #538eb6;
 }
 
 .token.important,
