@@ -2,20 +2,15 @@
 title: "Setup and Tools"
 ---
 
-## Installing Flutter
-
 The first step to using Flutter is installing the Flutter SDK, which will also install Dart.
-
 Follow this super in-depth guide to get started:
 [Flutter.io Getting Started Guide](https://flutter.io).
 
-Once you've gotten Flutter and Dart installed, checkout relevant tooling:
-
-## Choose an Editor with Dart Plugins
+### Choose an Editor with Dart Plugins
 
 You can use whichever text editor you'd like to write Dart code, but you'll have a much more productive experience if you choose an IDE with Flutter support. These are the two that I'd suggest:
 
-### IntelliJ Idea Community
+### 1. IntelliJ Idea
 
 I highly recommend [JetBrains Intellij IDEA](https://www.jetbrains.com/idea/). The community edition is free.
 
@@ -27,22 +22,19 @@ In order to use IntelliJ, you'll need to install the Dart and Flutter plugins wi
 
 ###### Flutter inspector showing the widget tree -- similar to view HTML in browser dev tools.
 
-[Flutter.io in depth IDE guide](https://flutter.io/ide-setup/)
+---
 
-### VS Code
+### 2. VS Code
 
-The Dart community has built an amazing Dart plugin for VS code which has Flutter feature support.
+The Dart community has built a Dart plugin for VS code which has Flutter
+feature support. It won't be as robust, but it's a fine alternative.
 
 * [VSCode](https://code.visualstudio.com/)
 * [Dart Plugin for VS Code](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
 
 ## Pub and Libraries
 
-Libraries are your friend. Don't reinvent the wheel.
-
-`pub` is the Dart version of `npm`.
-
-There's a website where can browse, search and get info about all the available packages for Dart and Flutter. We'll use some of these in the tutorial.
+`pub` is the Dart package management system. There's a website where can browse, search and get info about all the available packages for Dart and Flutter.
 
 [Dart Pub Packages](https://pub.dartlang.org/)
 

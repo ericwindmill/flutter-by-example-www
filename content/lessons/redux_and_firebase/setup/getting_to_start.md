@@ -1,5 +1,5 @@
 ---
-title: "Getting To Start"
+title: "Redux App: Getting To Start"
 ---
 
 Before we begin building, let's update your counter app to a bare-bones nothing app so we can begin fresh.

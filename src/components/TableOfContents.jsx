@@ -1,242 +1,208 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-
-import DropdownButton from './DropdownButton'
+import { FaChevronDown } from 'react-icons/lib/fa'
 import UserLinks from './UserLinks'
+import CtaButton from './CtaButton'
 
-class TableOfContents extends React.Component {
-  constructor() {
-    super()
-    this.handleClick = this.handleClick.bind(this)
+/* eslint react/no-array-index-key: "off" */
+
+function handleClick(event, title) {
+  const list = document.getElementById(`list-${title}`)
+  const chevron = document.getElementById(`chevron-${title}`)
+  if (list.style.display === 'inherit') {
+    list.style.display = 'none'
+    chevron.style.transform = 'rotate(0deg)'
+  } else {
+    list.style.display = 'inherit'
+    chevron.style.transform = 'rotate(180deg)'
   }
+}
 
-  handleClick(e) {
-    const { id } = e.target
-    const idNum = id[id.length - 1]
-    const list = document.querySelector(`#list${idNum}`)
-    if (list.style.display === 'inherit') {
-      list.style.display = 'none'
-    } else {
-      list.style.display = 'inherit'
-    }
-  }
+const Links = ({ entries }) => (
+  <StyledLinkList>
+    {entries.map(({ entry }, key) => (
+      <EntryListItem key={key}>
+        <Link to={entry.childMarkdownRemark.fields.slug}>
+          <EntryTitle>{entry.childMarkdownRemark.frontmatter.title}</EntryTitle>
+        </Link>
+      </EntryListItem>
+    ))}
+  </StyledLinkList>
+)
 
-  buildNodes() {
-    const { posts } = this.props
-    const type = this.props.contentsType
-    const postNodes = []
-    posts.forEach(post => {
-      if (post.node.frontmatter.type === type) {
-        const postNode = {
-          title: post.node.frontmatter.title,
-          path: post.node.fields.slug,
-          lessonNumber: post.node.frontmatter.lesson,
-          chapter: post.node.frontmatter.chapter
-        }
-        postNodes.push(postNode)
-      }
-    })
+const ChapterList = ({ chapters, entries, title, level = 0 }) => (
+  <StyledChapterList>
+    {title && (
+      <ChapterListItem
+        key={`${title}${level}`}
+        className={'head'}
+        id={`head-${title}`}
+        onClick={event => handleClick(event, title)}
+      >
+        <ChapterTitle level={level}>{title}</ChapterTitle>
+        <FaChevronDown className={'chevron'} id={`chevron-${title}`} />
+      </ChapterListItem>
+    )}
+    <ChapterListItem id={`list-${title}`} style={{ display: 'none' }}>
+      {entries && <Links entries={entries} />}
+    </ChapterListItem>
+    <ChapterListItem id={title}>
+      {chapters &&
+        chapters.map((chapter, index) => (
+          <ChapterList {...chapter} level={level + 1} key={`${index}`} />
+        ))}
+    </ChapterListItem>
+  </StyledChapterList>
+)
 
-    const postNodeChapters = []
-    postNodes.forEach(post => {
-      if (postNodeChapters[post.chapter]) {
-        postNodeChapters[post.chapter].push(post)
-      } else {
-        postNodeChapters[post.chapter] = [post]
-      }
-    })
-
-    postNodeChapters.forEach((chapter) => {
-      chapter.sort((a, b) => a.lessonNumber > b.lessonNumber)
-    })
-    return postNodeChapters
-  }
-
-  nodeListItems() {
-    // const postNodeChapters = this.buildNodes()
-    // const listItems = []
-    // const chapterTitles = this.props.chapterTitles
-    postNodeChapters.forEach((chapter, idx) => {
-      const chapterLessons = []
-      chapter.forEach(node => {
-        chapterLessons.push(
-          <LessonContainer>
-            <Link to={node.path}>
-              <li>
-                <span>
-                  <p>{node.lessonNumber}.&nbsp;&nbsp;</p>
-                  <h5>{node.title}</h5>
-                </span>
-              </li>
-            </Link>
-          </LessonContainer>
-        )
-      })
-      // if(idx === 0) {
-      //   listItems.push(<h4 className='section-titles'>Intro to Flutter</h4>)
-      // }
-      // if (idx === 1) {
-      //   listItems.push(<h4 className='section-titles'>101: Basic Todo App</h4>)
-      // }
-      // if(idx === 2) {
-      //   listItems.push(<h4 className='section-titles'>Advanced Flutter App</h4>)
-      // }
-      listItems.push(
-        <div className="chapter">
-          {/*<DropdownButton*/}
-            {/*className="buttonSection"*/}
-            {/*buttonId={`chapter${idx}`}*/}
-            {/*dropdownCallback={this.handleClick}*/}
-          {/*>*/}
-            {/*<h5 className="tocHeading">{chapterTitles[idx]}</h5>*/}
-          {/*</DropdownButton>*/}
-          {/*<ul className="chapterItems" id={`list${idx}`}>*/}
-          {/*{chapterLessons}*/}
-        {/*</ul>*/}
-        </div>
-      )
-    })
-    return listItems
-  }
-
+export default class TableOfContents extends React.Component {
   render() {
+    const { chapters } = this.props
     return (
-      <TableOfContentsContainer>
-        {/*<div>*/}
-          {/*<Link to={'/'}>*/}
-            {/*<h1>Flutter By Example</h1>*/}
-          {/*</Link>*/}
-          {/*<h3>How to build a Flutter app from scratch.</h3>*/}
-          {/*<ul>{this.nodeListItems()}</ul>*/}
-        {/*</div>*/}
-        {/*<FooterSection>*/}
-          {/*<Link to={'/about'}>*/}
-            {/*<h5 className="github-cta">Contribute Lessons via Github</h5>*/}
-          {/*</Link>*/}
-          {/*<div className={'me-info'}>*/}
-            {/*<h5>*/}
-              {/*<a href="https://ericwindmill.com">2018 Eric Windmill</a>*/}
-            {/*</h5>*/}
-            {/*<h5 style={{ color: 'white' }}>|</h5>*/}
-            {/*<UserLinks />*/}
-          {/*</div>*/}
-        {/*</FooterSection>*/}
-      </TableOfContentsContainer>
+      <TOCWrapper>
+        <div className="toc-main">
+          <TocHeader>
+            <Link to={'/'}>
+              <h4>Examples</h4>
+            </Link>
+          </TocHeader>
+          {chapters.map((chapter, index) => (
+            <ChapterList {...chapter} key={index} />
+          ))}
+        </div>
+        <div className={'toc-footer'}>
+          <CtaButton id={'cta-btn'} isExternalLink>
+            <a
+              id="src-btn"
+              href="https://github.com/ericwindmill/flutter_by_example_apps"
+            >
+              Example Apps Source Code
+            </a>
+          </CtaButton>
+          <a href="https://ericwindmill.com">
+            &copy; 2018 Eric Windmill & Contributors
+          </a>
+        </div>
+      </TOCWrapper>
     )
   }
 }
-const TableOfContentsContainer = styled.div`
-  padding: 25px;
+
+const TOCWrapper = styled.div`
+  padding: ${props => props.theme.sitePadding};
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  transition: all 500ms ease;
 
-  li {
-    list-style: none;
+  div:first-child {
+    align-self: flex-start;
+    margin-bottom: 10px;
   }
 
-  h5 {
-    a {
-      color: white;
+  .toc-footer {
+    display: flex;
+    flex-flow: column;
+    a:not(#src-btn) {
+      transition: 500ms all ease;
+      text-decoration: underline;
     }
-    a:hover {
-      border-bottom: 1px solid white;
+    a:hover:not(#src-btn) {
+      background: ${props => props.theme.brandLightest};
     }
-  }
-  h1 {
-    color: white;
-    line-height: 1;
-    font-size: 6rem;
-    border: 2px solid transparent;
-    transition: all 300ms ease;
-  }
-
-  h1:hover {
-    border-bottom: 2px solid white;
-  }
-
-  h3 {
-    color: ${props => props.theme.brandDarkened};
-    line-height: 1;
-  }
-
-  .chapter {
-    margin-bottom: 15px;
-  }
-
-  // .chapterItems {
-  //   display: none;
-  //   transition: all 300ms ease;
-  //   list-style: none;
-  //   margin-left: ${props => props.theme.spacingUnit};
-  // }
-
-  & > ul,
-  .chapterItems {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  p,
-  h5 {
-    display: inline-block;
-    font-weight: 200;
-    margin: 0;
-  }
-
-  // .github-cta {
-  //   margin: 10px 0;
-  //   font-weight: 200;
-  //   font-size: 2rem;
-  //   color: ${props => props.theme.accent};
-  //
-  //   &:hover {
-  //     background: rgba(173, 210, 235, 0.2);
-  //     border: none;
-  //   }
-  }
-  
-  .section-titles {
-    color: white;
-    margin: 50px 0 0 !important;
-    border-bottom: 1px solid white;
   }
 `
 
-// const FooterSection = styled.div`
-//   h5 {
-//     margin: 0 0 10px 0;
-//   }
-//
-//   .me-info {
-//     display: flex;
-//     align-items: flex-start;
-//     justify-content: space-around;
-//   }
-// `
+const TocHeader = styled.div`
+  border-bottom: 1px solid ${props => props.theme.brandLightest};
+  h4 {
+    color: ${props => props.theme.ink};
+  }
 
-const LessonContainer = styled.div`
-  h5,
   p {
-    color: white !important;
-    margin: 0;
-    line-height: 1.5;
+    margin: 5px 0;
+  }
+`
+
+const StyledChapterList = styled.ol`
+  border-bottom: 1px solid ${props => props.theme.brandLightest};
+  list-style: none;
+  margin: 0;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+`
+
+const StyledLinkList = styled.ol`
+  list-style: none;
+`
+
+const EntryTitle = styled.h6`
+  display: inline-block;
+  font-weight: 200;
+  color: black;
+  margin: 0;
+  line-height: 1.5;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+`
+
+const ChapterListItem = styled.li`
+  margin: 0;
+  transition: all 300ms ease-in-out;
+
+  .chevron {
+    height: 15px;
+    width: 15px;
+    color: ${props => props.theme.gatsbyLight};
+    transform: rotate(0deg);
     transition: all 300ms ease-in-out;
   }
-  li {
-    margin: 5px 0 5px 15px;
-  }
-  &:hover {
-    li {
-      span {
-        border-bottom: 1px solid white;
-      }
-    }
+`
+
+const EntryListItem = styled.li`
+  margin: 0;
+  background: transparent;
+  a:hover {
+    border-bottom: 1px solid black;
   }
 `
 
-export default TableOfContents
+const ChapterTitle = styled.h5`
+  font-weight: ${({ level }) => {
+    switch (level % 3) {
+      case 1:
+        return '600'
+      case 2:
+        return '400'
+      default:
+        return '200'
+    }
+  }};
+  font-size: ${({ level }) => {
+    switch (level % 3) {
+      case 1:
+        return '1.8rem'
+      case 2:
+        return '1.8rem'
+      default:
+        return '1.8rem'
+    }
+  }};
+  color: ${({ level, theme }) => {
+    switch (level % 3) {
+      case 1:
+        return 'black'
+      case 2:
+        return theme.accent
+      default:
+        return theme.brand
+    }
+  }};
+`

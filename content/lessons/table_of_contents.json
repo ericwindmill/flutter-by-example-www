@@ -1,176 +1,76 @@
 {
   "id": "table-of-contents",
-  "chapters": {
-    "intro_to_flutter": {
-      "flutter_basics": [
-        {
-          "post": "./basics/about_basics.md"
-        },
-        {
-          "post": "./basics/setup.md"
-        },
-        {
-          "post": "./basics/widgets.md"
-        },
-        {
-          "post": "./basics/basic_counter_app.md"
-        }
+  "chapters": [
+    {
+      "title": "Getting Started with Flutter",
+      "entries": [
+        { "entry": "./basics/setup.md" },
+        { "entry": "./basics/widgets.md" },
+        { "entry": "./basics/basic_counter_app.md" }
       ]
     },
-    "basic_app": {
-      "setup_dogs_app": [
-        {
-          "post": "./dogs_app/setup_app/setup_dogs_app.md"
-        },
-        {
-          "post": "./dogs_app/setup_app/dog_model.md"
-        }
-      ],
-      "basic_ui": [
-        {
-          "post": "./dogs_app/basic_ui/dog_widget.md"
-        },
-        {
-          "post": "./dogs_app/basic_ui/dog_list.md"
-        },
-        {
-          "post": "./dogs_app/basic_ui/hot_styles.md"
-        }
-      ],
-      "simple_routes": [
-        {
-          "post": "./dogs_app/simple_routes/dog_detail_page.md"
-        },
-        {
-          "post": "./dogs_app/simple_routes/add_dog_page.md"
-        }
-      ],
-      "user_input": [
-        {
-          "post": "./dogs_app/user_input/add_dogs.md"
-        },
-        {
-          "post": "./dogs_app/user_input/rate_dogs.md"
-        },
-        {
-          "post": "./dogs_app/user_input/provide_feedback.md"
-        }
-      ],
-      "make_it_fancy": [
-        {
-          "post": "./dogs_app/make_it_fancy/animated_cross_fade.md"
-        },
-        {
-          "post": "./dogs_app/make_it_fancy/hero_animation.md"
-        }
+    {
+      "title": "Build a Basic App",
+      "entries": [
+        { "entry": "./basic_app/setup_app/setup_dogs_app.md" },
+        { "entry": "./basic_app/setup_app/dog_model.md" },
+        { "entry": "./basic_app/basic_ui/dog_widget.md" },
+        { "entry": "./basic_app/basic_ui/dog_list.md" },
+        { "entry": "./basic_app/basic_ui/hot_styles.md" },
+        { "entry": "./basic_app/simple_routes/dog_detail_page.md" },
+        { "entry": "./basic_app/simple_routes/add_dog_page.md" },
+        { "entry": "./basic_app/user_input/add_dogs.md" },
+        { "entry": "./basic_app/user_input/rate_dogs.md" },
+        { "entry": "./basic_app/user_input/provide_feedback.md" },
+        { "entry": "./basic_app/make_it_fancy/animated_cross_fade.md" },
+        { "entry": "./basic_app/make_it_fancy/hero_animation.md" }
       ]
     },
-    "advanced_app": {
-      "setup": [
-        {
-          "post": "./advanced_app/setup/a_third_app.md"
-        },
-        {
-          "post": "./advanced_app/setup/advanced_getting_to_start.md"
-        }
-      ],
-      "inherited_widget_auth": [
-        {
-          "post": "./advanced_app/inherited_widget_auth/section_starter.md"
-        },
-        {
-          "post": "./advanced_app/inherited_widget_auth/set_inherited_widget.md"
-        },
-        {
-          "post": "./advanced_app/inherited_widget_auth/app_loading.md"
-        },
-        {
-          "post": "./advanced_app/inherited_widget_auth/setup_firebase.md"
-        },
-        {
-          "post":
-            "./advanced_app/inherited_widget_auth/state_container_login.md"
-        },
-        {
-          "post": "./advanced_app/inherited_widget_auth/auto_login.md"
-        }
+    {
+      "title": "Auth, InheritedWidget, Firebase",
+      "entries": [
+        { "entry": "./inherited_auth/setup_firebase.md" },
+        { "entry": "./inherited_auth/section_starter.md" },
+        { "entry": "./inherited_auth/set_inherited_widget.md" },
+        { "entry": "./inherited_auth/app_loading.md" },
+        { "entry": "./inherited_auth/state_container_login.md" },
+        { "entry": "./inherited_auth/auto_login.md" }
       ]
     },
-    "redux_and_firebase": {
-      "setup_app": [
+    {
+      "title": "Redux + Firebase",
+      "entries": [
+        { "entry": "./redux_and_firebase/setup/getting_to_start.md" },
+        { "entry": "./redux_and_firebase/redux/1_about_redux.md" },
+        { "entry": "./redux_and_firebase/redux/2_install_setup.md" },
+        { "entry": "./redux_and_firebase/redux/3_redux_store.md" },
+        { "entry": "./redux_and_firebase/redux/4_app_state_model.md" },
+        { "entry": "./redux_and_firebase/redux/5_app_reducer.md" },
+        { "entry": "./redux_and_firebase/redux/6_counter_redux_cycle.md" },
+        { "entry": "./redux_and_firebase/redux/7_logger_middleware.md" },
+        { "entry": "./redux_and_firebase/redux/8_redux_wrapup.md" },
+        { "entry": "./redux_and_firebase/firebase/1_setup_firebase.md" },
+        { "entry": "./redux_and_firebase/firebase/2_log_in_redux_cycle.md" },
+        { "entry": "./redux_and_firebase/firebase/3_log_in_middleware.md" },
         {
-          "post": "./redux_and_firebase/setup/what_youll_build.md"
+          "entry": "./redux_and_firebase/firebase/4_cont_log_in_redux_cycle.md"
         },
-        {
-          "post": "./redux_and_firebase/setup/getting_to_start.md"
-        }
-      ],
-      "flutter_redux": [
-        {
-          "post": "./redux_and_firebase/redux/1_about_redux.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/2_install_setup.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/3_redux_store.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/4_app_state_model.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/5_app_reducer.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/6_counter_redux_cycle.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/7_logger_middleware.md"
-        },
-        {
-          "post": "./redux_and_firebase/redux/8_redux_wrapup.md"
-        }
-      ],
-      "firebase_auth": [
-        {
-          "post": "./redux_and_firebase/firebase/1_setup_firebase.md"
-        },
-        {
-          "post": "./redux_and_firebase/firebase/2_log_in_redux_cycle.md"
-        },
-        {
-          "post": "./redux_and_firebase/firebase/3_log_in_middleware.md"
-        },
-        {
-          "post": "./redux_and_firebase/firebase/4_cont_log_in_redux_cycle.md"
-        },
-        {
-          "post": "./redux_and_firebase/firebase/5_user_profile.md"
-        }
+        { "entry": "./redux_and_firebase/firebase/5_user_profile.md" }
       ]
     },
-    "nuggets": {
-      "styles": [
-        {
-          "post": "./nuggets/styles/theme_and_branding.md"
-        },
-        {
-          "post": "./nuggets/styles/custom_theme_inherited.md"
-        }
-      ],
-      "animations": [
-        {
-          "post": "./nuggets/animations/stepone_tween.md"
-        },
-        {
-          "post": "./nuggets/animations/steptwo_animated_widget.md"
-        }
-      ],
-      "sample": [
-        {
-          "post": "./nuggets/sample/sample_lesson.md"
-        }
+    {
+      "title": "Custom Animations",
+      "entries": [
+        { "entry": "./animations/stepone_tween.md" },
+        { "entry": "./animations/steptwo_animated_widget.md" }
+      ]
+    },
+    {
+      "title": "Appendix",
+      "entries": [
+        { "entry": "./appendix/theme_and_branding.md" },
+        { "entry": "./appendix/custom_theme_inherited.md" }
       ]
     }
-  }
+  ]
 }

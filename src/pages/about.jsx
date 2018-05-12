@@ -1,49 +1,28 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import config from '../../data/SiteConfig'
 import OptInForm from '../components/OptInForm'
-import UserProfile from '../components/UserProfile'
 import thanksLinks from '../../data/thanks'
+import SiteHeader from '../components/SiteHeader'
 
 class AboutPage extends Component {
   render() {
     return (
       <AboutPageContainer>
         <BodyContainer>
-          <h1>About Flutter By Example</h1>
-          <img src={config.siteLogo} width="200px" style={{float: 'right'}}/>
-          <p>Flutter By Example is looking for more contributors!</p>
-          <h3>Contribute to Flutter By Example</h3>
-          <p>
-            I'm hopeful that more Flutter developers will help make this
-            resource rock solid. If you'd like to help, do so on
-            <a
-              href="https://github.com/ericwindmill/flutter_by_example_docs/contributing.md">
-              Github
-            </a>
-            or <a href="mailto:ericwindmill@gamil.com">email me</a>.
-          </p>
-          <p>
-            I'd like this resource to be a 'choose-your-own-adventure book'.
-            Each feature section can stand alone as a tutorial for a specific
-            piece of Flutter, but if
-            someone wanted to they could follow all the lessons for one complete
-            app. Of course, a foundation of architecture must be consistent.
-          </p>
-          <p>To be honest, I dream of future where FlutterByExample is the CSS
-            Tricks of Flutter development.</p>
-          <p>
-            That said, I encourage you to add a whole new section, improve one
-            that exists, or just fix errors.
-          </p>
-          <p>
-            <strong>Contributors will be featured and acknowledged on the
-              Flutter By
-              Example <Link to={'/'}>Homepage</Link>.</strong>
-          </p>
-          <div style={{height: '50px'}}/>
-          <h3>Get Updates</h3>
+          <SiteHeader />
+          <h2>Odds and Ends</h2>
+          <p>These technologies and resources are used in this tutorial:</p>
+          <ul>
+            {Object.keys(thanksLinks).map(key => (
+              <li>
+                <a href={thanksLinks[key]}>{key}</a>
+              </li>
+            ))}
+          </ul>
+          <div style={{ height: '50px' }} />
+          <h2>Get Updates</h2>
           <p>
             Flutter by Example (and my helper resource: Dart for JavaScript
             Developers), are both being updated all the time. Get free updates
@@ -53,37 +32,16 @@ class AboutPage extends Component {
               Dart for Web Developers
             </a>.
           </p>
-          <OptInForm/>
-          <h3>Contributors</h3>
-          <UserProfile
-            avatarUrl={config.userAvatar}
-            username={'Eric Windmill'}
-            mainLink={'https://ericwindmill.com'}
-          >
-            <p>
-              Dart and Flutter dev by day. JS and CSS on the side. Founder of
-              this project.
-            </p>
-          </UserProfile>
-          <UserProfile
-            avatarUrl={''}
-            username={'Your name here!'}
-            mainLink={'/'}
-          >
-            <p>
-              Contributors will be featured here, as well as on the page they
-              contributed to.
-            </p>
-          </UserProfile>
-          <h3>Special Thanks</h3>
-          <p>These technologies and resources are used in this tutorial:</p>
-          <ul>
-            {Object.keys(thanksLinks).map(key => (
-              <li>
-                <a href={thanksLinks[key]}>{key}</a>
-              </li>
-            ))}
-          </ul>
+          <p>
+            <strong>
+              NB: This will show up in your inbox as an email from
+              ericwindmill.com.{' '}
+              <a href="https://ericwindmill.com/optin">
+                Get more information about what you're opting into.
+              </a>
+            </strong>
+          </p>
+          <OptInForm />
         </BodyContainer>
       </AboutPageContainer>
     )
@@ -102,7 +60,7 @@ const BodyContainer = styled.div`
     order: 2;
   }
 
-  max-width: 850px;
+  max-width: ${props => props.theme.contentWidthLaptop};
   margin: auto;
 
   a {
@@ -115,7 +73,7 @@ const BodyContainer = styled.div`
   }
   a:hover {
     border-bottom: 2px solid ${props => props.theme.brand};
-    background: ${props => props.theme.brandLightend};
+    background: ${props => props.theme.brandLightest};
   }
 
   ul {

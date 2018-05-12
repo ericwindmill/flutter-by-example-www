@@ -12,12 +12,13 @@ const Container = styled.div`
 `
 const UserIcon = styled.a`
   margin-left: 10px;
-  color: white;
+  color: ${props => props.theme.gatsby};
   background: transparent !important;
   border-bottom: none !important;
+  transition: all 300ms ease;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.2);
+    color: ${props => props.theme.gatsbyLight};
     border-bottom: none;
   }
 
@@ -28,7 +29,7 @@ const UserIcon = styled.a`
 const iconStyle = {
   width: '20px',
   height: '20px',
-  background: 'transparent'
+  background: 'transparent',
 }
 
 class UserLinks extends Component {

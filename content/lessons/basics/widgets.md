@@ -2,11 +2,9 @@
 title: "Flutter Widgets"
 ---
 
-If you've worked with React or Vue before, this'll be easy.
-
-Everything in Flutter is a `Widget`, much like in JS frameworks you're working with small reusable components.
-
-And a Widget is nothing more than a Dart class that extends a Flutter class.
+If you've worked with React or Vue before, this'll be easy. Everything in
+Flutter is a `Widget`, much like in JS frameworks you're working with small
+reusable components. And a Widget is nothing more than a Dart class that extends a Flutter class.
 
 All Flutter widgets look like this:
 
@@ -48,7 +46,7 @@ class BigText extends StatelessWidget {
 }
 ```
 
-Then somewhere else in an app we'd use the widget like this. The point is, again, that we're just creating a new instance of the class.
+Then somewhere else in an app you'd use the widget like this:
 
 ```dart
 // ...
@@ -63,11 +61,10 @@ child: new BigText('This string would render and be big'),
 
 Flutter widgets must extend a handful of classes from the Flutter library. The two you'll use almost always are `StatelessWidget` and `StatefulWidget`.
 
-The difference is that one has a concept of `state` within the Widget and some built in methods that tells Flutter to re-render if that state changes. **This is a key concept in Flutter.**
+The difference is that one has a concept of `state` within the Widget and some built in methods that tells Flutter to re-render if that state changes. This is a key concept in Flutter.
 
-A `Stateful Widget` looks a bit different.
-
-It's actually two classes: the state and the widget. This is how you'd write it:
+A `Stateful Widget` looks a bit different. It's actually two classes: the state
+and the widget. This is how you'd write it:
 
 ```dart
 class Counter extends StatefulWidget {
@@ -102,3 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
 	}
 }
 ```
+
+### Flutter's Material and Cupertino Widgets
+
+The Flutter SDK is extra nice becasue there are loads of built in widgets in the style of Android and iOS.
+
+I hate to gush, but it's actually quite amazing what Flutter gives you out of the box. You can create pretty damn good looking and accessible mobile apps with no design chops at all. And, building layouts is super easy thanks to Flutter's layout widgets.
+
+Imagine if you started a new React, Vue, React Native, etc project, and it came ready with hundreds of components that we're just ready to go with design standards in mind. That's what Material and Cupertino widgets are -- Material widgets are designed to look like Android apps and Cupertino like iOS.
+
+These built in Widgets _and_ the ability to create completely custom widgets gives you a lot of power. You can create a completely custom app with lower-level custom widgets, or you can just use what you're given to get to MVP.
+
+[Flutter Widget Library](https://flutter.io/widgets/)

@@ -49,14 +49,3 @@ Add almost the exact same two links of code:
     // dont forget to close that Hero parentheses
     // at the bottom of your widget!
 ```
-
-
-Refresh your app. You implemented a Hero Transition. !
-
-
-
-
-___
-## That's the end, for now!
-Sign up below to get notified when more tutorials are added weekly!
-

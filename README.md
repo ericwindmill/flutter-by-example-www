@@ -6,13 +6,13 @@ This is the repo for the [Flutter By Example Website](https://flutterbyexample.c
 
 ---
 
+![screenshot](http://res.cloudinary.com/ericwindmill/image/upload/v1526137253/Screen_Shot_2018-05-12_at_7.59.57_AM_xhqow8.png)
+
 Flutter By Example is a complete tutorial for building a mobile application with Google's Flutter SDK, inspired by [Elixir School](https://elixirschool.com/).
 
 Flutter is a new, awesome SDK for building cross-platform mobile apps. It's still in Alpha (as of 2/25/18).
 
 This is simply a resource for learning Flutter from scratch.
-
-![home page ](http://res.cloudinary.com/ericwindmill/image/upload/v1519588101/flutter_by_example/Screen_Shot_2018-02-25_at_11.47.41_AM.png)
 
 ---
 
@@ -35,5 +35,3 @@ There are multiple ways you can contribute:
 Contributors will be featured and acknowledged on the Flutter By Example website.
 
 ---
-
-![lesson example](http://res.cloudinary.com/ericwindmill/image/upload/v1519588103/flutter_by_example/Screen_Shot_2018-02-25_at_11.47.56_AM.png)

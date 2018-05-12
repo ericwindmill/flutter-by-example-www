@@ -1,5 +1,5 @@
 ---
-title: "Add Dog Functionality"
+title: "Forms 1: User Input"
 ---
 
 Adding functionality to that form on your `AddDogForm` isn a pretty easy feat.
@@ -125,7 +125,7 @@ In the same class, add this function, which will pass the form information back 
 
 And lastly, add that method to your 'raised button'
 
-```dart 
+```dart
 // lib/new_dog_form.dart in the bottom of the build method:
 ...
     builder: (context) {
@@ -137,6 +137,5 @@ And lastly, add that method to your 'raised button'
     },
 ...
 ```
-
 
 And that's that. Now, you should be able to submit a new dog and see it on your main page!
