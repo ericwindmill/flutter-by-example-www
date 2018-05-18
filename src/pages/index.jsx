@@ -17,7 +17,7 @@ export default class HomePage extends React.Component {
           <SiteHeader />
           <img
             className={'hero'}
-            src="http://res.cloudinary.com/ericwindmill/image/upload/v1525634840/flutter_by_example/hero-image-fbe.png"
+            src="https://res.cloudinary.com/ericwindmill/image/upload/v1525634840/flutter_by_example/hero-image-fbe.png"
             alt=""
           />
           <div className="main-copy">

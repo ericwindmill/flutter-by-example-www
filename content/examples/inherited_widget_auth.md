@@ -1,7 +1,7 @@
 ---
 order: 3
 title: "Architecture: Auth with Firebase + Inherited Widget"
-image: "http://res.cloudinary.com/ericwindmill/image/upload/v1525792616/inherited_auth_kw4kea.gif"
+image: "https://res.cloudinary.com/ericwindmill/image/upload/v1525792616/inherited_auth_kw4kea.gif"
 description: ""
 exampleUrl: "/state-management-the-flutter-way"
 type: "example"
