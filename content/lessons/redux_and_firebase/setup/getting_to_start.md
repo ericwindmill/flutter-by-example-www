@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
 
 Import your new file into `main.dart`. Render your app now, and it'll look like this:
 
-![screen shot blank app](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520028940/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-02_at_14.11.41.png)
+![screen shot blank app](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520028940/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-02_at_14.11.41.png)
 
 We just need to fill in some of that content:
 

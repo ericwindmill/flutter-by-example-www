@@ -21,7 +21,7 @@ flutter run
 
 This is an app with a blank screen. But it runs. This is what you should see:
 
-![blank_flutter_app screen shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1523979312/flutter_by_example/blank.png)
+![blank_flutter_app screen shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1523979312/flutter_by_example/blank.png)
 
 Very blank.
 

@@ -14,17 +14,18 @@ In laymens terms, the important part of Redux for us is that it have a very smal
 
 In the early stages of an application, your state is probably simple. In the starter Flutter app with the counter, the only state of the application is current count. And the only way to interact with that state is a single action: increasing the count.
 
-![simple widget tree](http://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/simple_tree.png)
+![simple widget tree](https://res.cloudinary
+.com/ericwindmill/image/upload/v1518974500/flutter_by_example/simple_tree.png)
 
 In this situation, you don't really need to think about Redux or state management. But as your app grows, you might want to have a button on a different page that increases the count. So maybe it looks like this:
 
-![kind of complicated tree](http://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/medium_tree.png)
+![kind of complicated tree](https://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/medium_tree.png)
 
 And this is fine. You have a `counter` variable high up in that StatefulWidget, as well as `setState` function that increases it. Pass the method all the way down to the button, and the counter var to your Text widget that displays it.
 
 But eventually your app will be more like this:
 
-![very complicated widget tree](http://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/hairy_tree.png)
+![very complicated widget tree](https://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/hairy_tree.png)
 
 This is a poor representation of a very simple todo app. But, just looking at the chart sucks, so you can image that actually implementing this using a single widget could get hairy fast.
 

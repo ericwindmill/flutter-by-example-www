@@ -8,7 +8,7 @@ We need a widget to nicely display the information in our `Dog` class.
 
 First you'll make a card that looks like this:
 
-![dog card](http://res.cloudinary.com/ericwindmill/image/upload/v1521328467/flutter_by_example/Screen_Shot_2018-03-10_at_10.28.18_AM.png)
+![dog card](https://res.cloudinary.com/ericwindmill/image/upload/v1521328467/flutter_by_example/Screen_Shot_2018-03-10_at_10.28.18_AM.png)
 
 Create a new file caled 'dog_card.dart`.
 

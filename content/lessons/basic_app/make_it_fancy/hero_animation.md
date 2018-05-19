@@ -6,7 +6,7 @@ The hero transition is even more impressive. And easier to work with.
 
 This is what a hero animation does:
 
-![Hero animation screenshot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,r_5,w_300/v1521400580/flutter_by_example/hero_animation.gif)
+![Hero animation screenshot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,r_5,w_300/v1521400580/flutter_by_example/hero_animation.gif)
 
 And you can make it happen with four new lines of code.
 

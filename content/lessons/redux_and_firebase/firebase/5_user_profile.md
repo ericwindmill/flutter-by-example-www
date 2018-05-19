@@ -106,4 +106,5 @@ Once you've added this feature, you can click 'LogIn', and some text will appear
 
 And now, we've built the boiler plate app. This is what you should have:
 
-![boiler app](http://res.cloudinary.com/ericwindmill/image/upload/v1518921043/flutter_by_example/boiler_plate_app.gif)
+![boiler app](https://res.cloudinary
+.com/ericwindmill/image/upload/v1518921043/flutter_by_example/boiler_plate_app.gif)

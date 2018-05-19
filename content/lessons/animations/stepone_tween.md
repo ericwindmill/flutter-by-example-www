@@ -4,7 +4,7 @@ title: "Step One: Tweening"
 
 In this nugget, you're going to build a simple animation that looks like this:
 
-![custom animation gif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_250/v1525022858/flutter_by_example/animation.gif)
+![custom animation gif](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_250/v1525022858/flutter_by_example/animation.gif)
 
 This is actually 8 animation intervals in one animation, but divided over only
 4 widgets.
@@ -127,25 +127,25 @@ But if you wanted to animate from blue to green, Flutter Tweens can do that too:
 
 ```dart
 ColorTween colorTween = new ColorTween(
-  begin: Colors.blue[400], 
+  begin: Colors.blue[400],
   end: Colors.green[400],
 );
 
 // then you'd animate it, but more on that in bit.
 ```
 
-The point is, Tween's return values at periods between start and finish, which 
-you can pass as props to whatever you're animating, so it's always getting 
+The point is, Tween's return values at periods between start and finish, which
+you can pass as props to whatever you're animating, so it's always getting
 updated.
 
 ### 2.5 Detour: Color Tween Example
 
 Go ahead and add this to your boiler plate. It's a small detour to see the most
- basic animation in Flutter.
+basic animation in Flutter.
 
 ```dart
 // You have to add this class mixin in order for flutter to know to treat it as
-// an animation containing widget 
+// an animation containing widget
 class _BarLoadingScreenState extends State<BarLoadingScreen>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;                                    // new

@@ -52,4 +52,4 @@ Start by building the decoration of the `Container` widget in your `main.dart` b
 
 Now, gradients:
 
-![gradient screen shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521385515/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_07.54.46.png)
+![gradient screen shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521385515/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_07.54.46.png)

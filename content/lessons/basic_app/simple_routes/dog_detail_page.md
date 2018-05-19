@@ -16,7 +16,7 @@ This is going to be a stateful Widget, so the user of your app can rate dogs lat
 
 For now this is what you'll be building:
 
-![dog detail screenshot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521388587/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_08.51.49.png)
+![dog detail screenshot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521388587/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_08.51.49.png)
 
 ```dart
 // lib/dog_detail_page.dart

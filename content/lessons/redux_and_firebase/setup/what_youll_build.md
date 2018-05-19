@@ -16,10 +16,10 @@ The first feature is a basic Habit Tracker.
 
 Here's a few mockups. This is just so we have a basic direction -- we won't stick to these.
 
-![auth_sreen](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114771/flutter_by_example/Auth_Screen.png)
-![loading screen](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/Loading_Screen.png)
-![habit list](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/Habits.png)
-![habit detail](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/HabitDetail.png)
+![auth_sreen](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114771/flutter_by_example/Auth_Screen.png)
+![loading screen](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/Loading_Screen.png)
+![habit list](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/Habits.png)
+![habit detail](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520114736/flutter_by_example/HabitDetail.png)
 
 ---
 
@@ -34,7 +34,7 @@ This is what we've built out so far:
 
 **NB**: This is what I'll call the 'boiler plate' for this app. Every feature from here on out is `choose-your-own-adventure` style. But they'll all rely on having Firebase and Redux wired up.
 
-![boiler plate app](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518921043/flutter_by_example/boiler_plate_app.gif)
+![boiler plate app](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518921043/flutter_by_example/boiler_plate_app.gif)
 
 You can look at the source code or just trust that Redux is actually managing the state and that the Log In button is actually logging me in with Firebase.
 

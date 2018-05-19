@@ -10,7 +10,7 @@ Start by adding the form UI to the the `dog_detail` page.
 
 This is what the page will look like:
 
-![dog rating page](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,r_5,w_300/v1521395106/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_10.44.53.png)
+![dog rating page](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,r_5,w_300/v1521395106/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_10.44.53.png)
 
 This will consist of two main widgets:
   1. a `Slider`

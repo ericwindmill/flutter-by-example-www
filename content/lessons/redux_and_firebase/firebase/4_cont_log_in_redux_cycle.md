@@ -267,7 +267,7 @@ class GoogleAuthButton extends StatelessWidget {
               // Image, like everyhting, is just a class.
               // This constructor expects an image URL -- I found this one on Google
  							child: new Image.network(
-                'http://diylogodesigns.com/blog/wp-content/uploads/2016/04/google-logo-icon-PNG-Transparent-Background.png',
+                'https://diylogodesigns.com/blog/wp-content/uploads/2016/04/google-logo-icon-PNG-Transparent-Background.png',
                 width: 30.0,
               ),
             ),

@@ -12,7 +12,7 @@ Create a new file in the `lib` folder called `new_dog_form.dart`.
 
 The UI of this page is simple:
 
-![form page screen shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521390457/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_09.27.27.png)
+![form page screen shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521390457/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_09.27.27.png)
 
 Here's the code with no functionality (again, you'll add the user input functionality in the next section:
 

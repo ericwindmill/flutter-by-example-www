@@ -4,7 +4,8 @@ title: "Adding Firebase"
 
 So far, this is what we have. It's just the starter app, but it's updating via Redux. Which is cool.
 
-![end of redux gif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520031199/flutter_by_example/end-of-redux.gif)
+![end of redux gif](https://res.cloudinary
+.com/ericwindmill/image/upload/c_scale,w_300/v1520031199/flutter_by_example/end-of-redux.gif)
 
 Now, we're going to add Firebase Firestore, as well as the ability to sign in users.
 
