@@ -33,7 +33,7 @@ class BigText extends StatelessWidget {
 	final String text;
 
 	// a constructor for this class
-	BigText(this.url);
+	BigText(this.text);
 
 	Widget build(context) {
 		// Pass the text down to a nother widget
