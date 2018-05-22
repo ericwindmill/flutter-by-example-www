@@ -15,24 +15,47 @@ const rightArrangement = {
 class CardContainer extends Component {
   render() {
     const { title, image, children, arrangement, exampleUrl } = this.props
-    return (
-      <ExampleCardContainer>
-        <Link to={`${exampleUrl}`}>
-          <Card
-            className={'hover-div'}
-            style={
-              arrangement === 'rightArrangement'
-                ? leftArrangement
-                : leftArrangement
-            }
-          >
-            <h2>{title}</h2>
-            <img src={image} alt={'project logo'} width={'200px'} />
-            {children}
-          </Card>
-        </Link>
-      </ExampleCardContainer>
-    )
+    const internal = /^\/(?!\/)/.test(exampleUrl);
+    if (internal) {
+      return (
+        <ExampleCardContainer>
+          <Link to={`${exampleUrl}`}>
+            <Card
+              className={'hover-div'}
+              style={
+                arrangement === 'rightArrangement'
+                  ? leftArrangement
+                  : leftArrangement
+              }
+            >
+              <h2>{title}</h2>
+              <img src={image} alt={'project logo'} width={'200px'} />
+              {children}
+            </Card>
+          </Link>
+        </ExampleCardContainer>
+      )
+    } else {
+      return (
+        <ExampleCardContainer>
+          <a href={exampleUrl}>
+            <Card
+              className={'hover-div'}
+              style={
+                arrangement === 'rightArrangement'
+                  ? leftArrangement
+                  : leftArrangement
+              }
+            >
+              <h2>{title}</h2>
+              <img src={image} alt={'project logo'} width={'200px'} />
+              {children}
+            </Card>
+          </a>
+        </ExampleCardContainer>
+      )
+    }
+
   }
 }
 
