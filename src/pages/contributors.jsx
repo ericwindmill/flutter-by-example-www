@@ -17,7 +17,7 @@ export default class Contributors extends React.Component {
           <a href="https://github.com/ericwindmill/flutter_by_example_docs/contributing.md">
             Github
           </a>
-          or <a href="mailto:ericwindmill@gamil.com">email me</a>.
+          or <a href="mailto:eric@ericwindmill.com">email me</a>.
         </p>
         <div style={{ height: '50px' }} />
         <UserProfile

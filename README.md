@@ -20,7 +20,7 @@ This is simply a resource for learning Flutter from scratch.
 
 I'm hopeful that more Flutter developers will help make this resource rock solid. If you'd like to help, simply fork and make a PR.
 
-This page is written using Gatsby.js. That said, the only thing you _need_ to know how to do is add a file in the proper place and then write content in markdown. If you're unsure about adding new content, please email me at ericwindmill@gmail.com.
+This page is written using Gatsby.js. That said, the only thing you _need_ to know how to do is add a file in the proper place and then write content in markdown. If you're unsure about adding new content, please email me at eric@ericwindmill.com.
 
 There are multiple ways you can contribute:
 
