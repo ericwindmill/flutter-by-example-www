@@ -125,18 +125,14 @@ Middleware<AppState> _createLogOutMiddleware() {
   return (Store store, action, NextDispatcher next) async {
 		// Temporary instance
 		final FirebaseAuth _auth = FirebaseAuth.instance;
-
-		// Typecheck -- beceuse all Middleware functions will be called
-		// for all actions. If it *isnt* LogOut, don't waste time.
-			try {
-				await _auth.signOut();
-				print('logging out...');
-				store.dispatch(new LogOutSuccessful());
-			} catch (error) {
-				print(error);
-			}
-		};
-	}
+    try {
+      await _auth.signOut();
+      print('logging out...');
+      store.dispatch(new LogOutSuccessful());
+    } catch (error) {
+      print(error);
+    }
+	};
 }
 ```
 
