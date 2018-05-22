@@ -69,8 +69,7 @@
       "title": "Appendix",
       "entries": [
         { "entry": "./appendix/theme_and_branding.md" },
-        { "entry": "./appendix/custom_theme_inherited.md" },
-        { "entry": "./appendix/lifecycle_hooks.md" }
+        { "entry": "./appendix/custom_theme_inherited.md" }
       ]
     }
   ]
