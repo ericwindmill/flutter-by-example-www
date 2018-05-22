@@ -36,8 +36,8 @@ final authReducer = combineTypedReducers<FirebaseUser>([
 		// In this case, auth methods take a user as the piece
 		// of state
 		//
-  new ReducerBinding<FirebaseUser, LogInSuccessful>(_logIn),
-  new ReducerBinding<FirebaseUser, LogOut>(_logOut),
+  new TypedReducer<FirebaseUser, LogInSuccessful>(_logIn),
+  new TypedReducer<FirebaseUser, LogOut>(_logOut),
 ]);
 
 // Create the actual reducer methods:

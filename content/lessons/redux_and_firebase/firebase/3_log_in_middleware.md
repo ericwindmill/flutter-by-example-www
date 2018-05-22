@@ -37,8 +37,8 @@ List<Middleware<AppState>> createAuthMiddleware() {
   // As the app grows, we can add more Auth related middleware
   // here.
   return combineTypedMiddleware([
-    new MiddlewareBinding<AppState, LogIn>(logIn),
-    new MiddlewareBinding<AppState, LogOut>(logOut)
+    new TypedMiddleware<AppState, LogIn>(logIn),
+    new TypedMiddleware<AppState, LogOut>(logOut)
   ]);
 }
 
@@ -117,7 +117,6 @@ Middleware<AppState> _createLogInMiddleware() {
         store.dispatch(new LogInFail(error));
       }
     }
-    // I don't actually know if this is necessary. Let me know!
     next(action);
   };
 }
@@ -129,7 +128,6 @@ Middleware<AppState> _createLogOutMiddleware() {
 
 		// Typecheck -- beceuse all Middleware functions will be called
 		// for all actions. If it *isnt* LogOut, don't waste time.
-		if (action is LogOut) {
 			try {
 				await _auth.signOut();
 				print('logging out...');
@@ -137,8 +135,6 @@ Middleware<AppState> _createLogOutMiddleware() {
 			} catch (error) {
 				print(error);
 			}
-		}
-		next(action);
 		};
 	}
 }
