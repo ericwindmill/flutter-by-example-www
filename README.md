@@ -6,7 +6,7 @@ This is the repo for the [Flutter By Example Website](https://flutterbyexample.c
 
 ---
 
-![screenshot](http://res.cloudinary.com/ericwindmill/image/upload/v1526137253/Screen_Shot_2018-05-12_at_7.59.57_AM_xhqow8.png)
+![screenshot](https://res.cloudinary.com/ericwindmill/image/upload/v1526137253/Screen_Shot_2018-05-12_at_7.59.57_AM_xhqow8.png)
 
 Flutter By Example is a complete tutorial for building a mobile application with Google's Flutter SDK, inspired by [Elixir School](https://elixirschool.com/).
 
