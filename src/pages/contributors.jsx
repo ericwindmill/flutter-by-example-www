@@ -3,8 +3,26 @@ import styled from 'styled-components'
 import config from '../../data/SiteConfig'
 import UserProfile from '../components/UserProfile'
 import SiteHeader from '../components/SiteHeader'
+import bios from '../../data/contributors'
 
 export default class Contributors extends React.Component {
+  getContributors() {
+    return Object.keys(bios).map(name => (
+      <UserProfile
+        avatarUrl={bios[name].avatarUrl}
+        username={name}
+        mainLink={bios[name].portfolio}
+        messenger={bios[name].messenger}
+        email={bios[name].email}
+        instagram={bios[name].instagram}
+        twitter={bios[name].twitter}
+        github={bios[name].github}
+      >
+        <p>{bios[name].bio}</p>
+      </UserProfile>
+    ))
+  }
+
   render() {
     return (
       <ContributorsContainer>
@@ -20,22 +38,7 @@ export default class Contributors extends React.Component {
           or <a href="mailto:eric@ericwindmill.com">email me</a>.
         </p>
         <div style={{ height: '50px' }} />
-        <UserProfile
-          avatarUrl={config.userAvatar}
-          username={'Eric Windmill'}
-          mainLink={'https://ericwindmill.com'}
-        >
-          <p>
-            Dart and Flutter dev by day. JS and CSS on the side. Founder of this
-            project.
-          </p>
-        </UserProfile>
-        <UserProfile avatarUrl={''} username={'Your name here!'} mainLink={'/'}>
-          <p>
-            Contributors will be featured here, as well as on the page they
-            contributed to.
-          </p>
-        </UserProfile>
+        {this.getContributors()}
       </ContributorsContainer>
     )
   }

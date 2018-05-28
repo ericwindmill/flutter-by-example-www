@@ -96,6 +96,24 @@ const BodyContainer = styled.div`
     display: block;
     border: 0.5px solid ${props => props.theme.lightGrey};
   }
+
+  // autolink headers
+  h1 > a,
+  h2 > a,
+  h3 > a,
+  h4 > a {
+    color: black;
+    background: transparent;
+    border-bottom: none;
+    text-decoration: none;
+    transition: 500ms all ease;
+    padding: 0;
+
+    &:hover {
+      border-bottom: none;
+      background: none;
+    }
+  }
 `
 
 /* eslint no-undef: "off"*/

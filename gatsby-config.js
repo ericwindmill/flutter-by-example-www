@@ -13,8 +13,8 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
       author: config.userName,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -23,8 +23,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -33,34 +33,35 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 690
-            }
+              maxWidth: 690,
+            },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe'
+            resolve: 'gatsby-remark-responsive-iframe',
           },
+          `gatsby-remark-autolink-headers`,
           'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files'
-        ]
-      }
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: config.googleAnalyticsID
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
     'gatsby-plugin-sitemap',
-    "gatsby-transformer-json",
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -75,17 +76,17 @@ module.exports = {
           {
             src: '/logos/logo-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: '/logos/logo-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
+            type: 'image/png',
+          },
+        ],
+      },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify'
-  ]
+    'gatsby-plugin-netlify',
+  ],
 }

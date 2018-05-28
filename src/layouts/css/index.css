@@ -151,7 +151,7 @@ blockquote {
   text-align: justify;
 
   /*Borders - (Optional)*/
-  border-left: 15px solid #ff6666;
+  border-left: 8px solid #9d7cbf;
 }
 
 blockquote::before {
@@ -172,4 +172,43 @@ blockquote > h3,
 h4,
 h5 {
   margin: 15px 0;
+}
+
+.aside,
+.tip,
+.warning,
+.caption {
+  padding: 15px 20px 15px 20px;
+  margin: 0 0 20px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  /*Font*/
+  font-size: 1.6rem;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+/* Asides */
+.aside {
+  background: #f5f3f7;
+  box-shadow: none;
+}
+
+.tip {
+  background: rgba(124, 191, 159, 0.43);
+  border-left: 8px solid #7cbf9f;
+}
+
+.warning {
+  background: rgba(255, 102, 102, 0.51);
+  border-left: 8px solid #ff6666;
+}
+
+.aside p,
+.tip p,
+.warning p,
+.caption p {
+  margin: 0px;
 }

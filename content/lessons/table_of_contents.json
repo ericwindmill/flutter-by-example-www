@@ -2,11 +2,13 @@
   "id": "table-of-contents",
   "chapters": [
     {
-      "title": "Getting Started with Flutter",
+      "title": "Brief Framework Tour",
       "entries": [
         { "entry": "./basics/setup.md" },
         { "entry": "./basics/widgets.md" },
-        { "entry": "./basics/basic_counter_app.md" }
+        { "entry": "./basics/build_context.md" },
+        { "entry": "./basics/basic_counter_app.md" },
+        { "entry": "./basics/lifecycle_methods.md" }
       ]
     },
     {
@@ -59,7 +61,7 @@
       ]
     },
     {
-      "title": "Custom Animations",
+      "title": "Custom Loader Animation",
       "entries": [
         { "entry": "./animations/stepone_tween.md" },
         { "entry": "./animations/steptwo_animated_widget.md" }
@@ -68,6 +70,7 @@
     {
       "title": "Appendix",
       "entries": [
+        { "entry": "./appendix/dart_intro.md" },
         { "entry": "./appendix/theme_and_branding.md" },
         { "entry": "./appendix/custom_theme_inherited.md" }
       ]
