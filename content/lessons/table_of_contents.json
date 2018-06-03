@@ -68,6 +68,14 @@
       ]
     },
     {
+      "title": "Google Static Maps API",
+      "entries": [
+        { "entry": "./google_static_maps/maps_pt_1.md" },
+        { "entry": "./google_static_maps/maps_pt_2.md" },
+        { "entry": "./google_static_maps/maps_pt_3.md" }
+      ]
+    },
+    {
       "title": "Appendix",
       "entries": [
         { "entry": "./appendix/dart_intro.md" },

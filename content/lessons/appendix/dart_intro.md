@@ -2,6 +2,12 @@
 title: "Dart for Web Developers"
 ---
 
+<div class='tip'>
+
+For a full intro into the language, checkout [Dart for Web Developers](https://dartforwebdevelopers.com/)
+
+</div>
+
 <div class='aside'>
 
 ## Sections
@@ -215,3 +221,9 @@ void _subscribeToMessages() {
   });
 }
 ```
+
+<div class='tip'>
+
+For a full intro into the language, checkout [Dart for Web Developers](https://dartforwebdevelopers.com/)
+
+</div>
