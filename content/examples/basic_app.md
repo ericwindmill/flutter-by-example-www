@@ -1,7 +1,7 @@
 ---
 order: 1
 title: "Build a Basic Flutter App"
-image: "https://res.cloudinary.com/ericwindmill/image/upload/v1525537088/flutter_by_example/dogs_square_gif.gif"
+image: "http://res.cloudinary.com/ericwindmill/image/upload/c_scale,h_500/v1521385459/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-10_at_10.27.34.png"
 description: ""
 exampleUrl: "/basic-dogs-app-setup"
 type: "example"
