@@ -2,8 +2,9 @@
   "id": "table-of-contents",
   "chapters": [
     {
-      "title": "Brief Framework Tour",
+      "title": "A Brief Framework Tool",
       "entries": [
+        { "entry": "./basics/about.md" },
         { "entry": "./basics/setup.md" },
         { "entry": "./basics/widgets.md" },
         { "entry": "./basics/build_context.md" },
