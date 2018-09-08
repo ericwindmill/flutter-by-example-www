@@ -34,6 +34,7 @@ class SocialLinks extends Component {
 
     return (
       <SocialLinksContainer>
+        <p>Share this post:</p>
         <RedditShareButton url={url} title={post.title}>
           <RedditIcon round size={iconSize} />
           <RedditShareCount url={url}>
@@ -92,6 +93,10 @@ const SocialLinksContainer = styled.div`
 
   .share-count {
     text-align: center;
+  }
+
+  p {
+    margin: 0;
   }
 `
 

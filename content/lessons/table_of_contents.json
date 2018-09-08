@@ -2,7 +2,7 @@
   "id": "table-of-contents",
   "chapters": [
     {
-      "title": "A Brief Framework Tool",
+      "title": "A Brief Framework Tour",
       "entries": [
         { "entry": "./basics/about.md" },
         { "entry": "./basics/setup.md" },

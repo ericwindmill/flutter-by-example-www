@@ -145,7 +145,7 @@ const StyledLinkList = styled.ol`
 
 const EntryTitle = styled.h6`
   display: inline-block;
-  font-weight: 200;
+  font-weight: 500;
   color: black;
   margin: 0;
   line-height: 1.5;
@@ -180,9 +180,9 @@ const ChapterTitle = styled.h5`
       case 1:
         return '600'
       case 2:
-        return '400'
+        return '500'
       default:
-        return '200'
+        return '500'
     }
   }};
   font-size: ${({ level }) => {
