@@ -130,7 +130,7 @@ class _AppStateContainerState extends State<AppStateContainer> {
 
 Once this is done, your app should be doing this:
 
-![gif of basic app](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524232766/flutter_by_example/inherited_fake_login.gif)
+![gif of basic app](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524232766/flutter_by_example/inherited_fake_login.gif)
 
 That's proof that your inherited widget is working, and setting state 
 at the proper time. Nice!

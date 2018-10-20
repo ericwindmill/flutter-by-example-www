@@ -18,7 +18,7 @@ This IDE will give you all the nice features you'd want for any language: code c
 
 In order to use IntelliJ, you'll need to install the Dart and Flutter plugins within IntelliJ.
 
-![flutter inspector](http://res.cloudinary.com/ericwindmill/image/upload/v1518914480/flutter_by_example/inspector_screenshot.png)
+![flutter inspector](https://res.cloudinary.com/ericwindmill/image/upload/v1518914480/flutter_by_example/inspector_screenshot.png)
 
 ###### Flutter inspector showing the widget tree -- similar to view HTML in browser dev tools.
 

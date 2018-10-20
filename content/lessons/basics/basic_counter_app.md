@@ -4,8 +4,8 @@ title: "Dissecting the Counter App"
 
 The 'Hello World' Flutter app is a simple counter that looks like this:
 
-![screen_shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377792/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_11.34.36.png)
-![screen_shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377793/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_10.34.27.png)
+![screen_shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377792/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_11.34.36.png)
+![screen_shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1518377793/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-02-11_at_10.34.27.png)
 
 ### 1. In your terminal run:
 
@@ -27,7 +27,7 @@ flutter run
 ** In IntelliJ:** Across the top of the IDE there's a toolbar that looks
 something like this (although I have installed a theme so yours probably has different icons):
 
-![IntelliJ toolbar](http://res.cloudinary.com/ericwindmill/image/upload/v1518916683/flutter_by_example/Screen_Shot_2018-02-17_at_5.17.47_PM.png)
+![IntelliJ toolbar](https://res.cloudinary.com/ericwindmill/image/upload/v1518916683/flutter_by_example/Screen_Shot_2018-02-17_at_5.17.47_PM.png)
 
 1. Where mine says 'iPhone X' yours might be blank. If so, select 'Open iOS Simulator' in that drop down.
 2. When it launches, click the 'play' button to run the app.
@@ -217,4 +217,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
 If all of this class-nesting is confusing, perhaps this visual of the `Widget tree` will help. This is what your current counter application looks like. You can think of nested widgets simply as nested React Components or HTML web components with all the JS functionality built in.
 
-![widget-tree](http://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/simple_tree.png)
+![widget-tree](https://res.cloudinary.com/ericwindmill/image/upload/v1518974500/flutter_by_example/simple_tree.png)

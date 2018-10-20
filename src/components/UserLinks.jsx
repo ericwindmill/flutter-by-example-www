@@ -37,18 +37,26 @@ class UserLinks extends Component {
     const { twitter, github, messenger, email, instagram } = this.props
     return (
       <Container className="user-links">
-        <UserIcon href={github ? github : config.github}>
-          <FaGithubAlt style={iconStyle} />
-        </UserIcon>
-        <UserIcon href={twitter ? twitter : config.twitter}>
-          <FaTwitter style={iconStyle} />
-        </UserIcon>
-        <UserIcon href={messenger ? messenger : config.messenger}>
-          <MdMessage style={iconStyle} />
-        </UserIcon>
-        <UserIcon href={email ? email : config.email}>
-          <MdEmail style={iconStyle} />
-        </UserIcon>
+        {github &&
+          <UserIcon href={github || config.github}>
+            <FaGithubAlt style={iconStyle} />
+          </UserIcon>
+        }
+        {twitter &&
+          <UserIcon href={twitter || config.twitter}>
+            <FaTwitter style={iconStyle} />
+          </UserIcon>
+        }
+        {messenger &&
+          <UserIcon href={messenger || config.messenger}>
+            <MdMessage style={iconStyle} />
+          </UserIcon>
+        }
+        {email &&
+          <UserIcon href={"mailto:" + (email || config.email)}>
+            <MdEmail style={iconStyle} />
+          </UserIcon>
+        }
       </Container>
     )
   }

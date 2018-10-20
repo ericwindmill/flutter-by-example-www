@@ -17,7 +17,7 @@ inherited Widget, so it would work exactly like that.
 The `InheritedWidget` takes a bit of boiler plate to set up, so if it's your
 first time, you may benefit from a 'zero-to-one' explanation:
 
-[Here's a detailed explanation of how to use an InhertiedWidget.](http://ericwindmill.com/using-flutter-inherited-widgets-effectively)
+[Here's a detailed explanation of how to use an InhertiedWidget.](https://ericwindmill.com/using-flutter-inherited-widgets-effectively)
 
 What you'll actually need to set this up is 3 classes:
 
@@ -110,7 +110,7 @@ new Container(
 ),
 ```
 
-![Using an inherited widget](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498808/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-23_at_08.53.02.png)
+![Using an inherited widget](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1524498808/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-04-23_at_08.53.02.png)
 
 ## 3. A design system suggestion:
 

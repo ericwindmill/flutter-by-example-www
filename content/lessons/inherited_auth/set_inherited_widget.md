@@ -16,7 +16,7 @@ You can take advantage of this by writing your own Widgets that extend `Inherite
 InheritedWidget at the Root of your application, you can use an `of` method (that you'll write) to access it's 
 properties anywhere in your app. In other words, it can be a central storage that holds your application state.
 
-(For a more detailed explanation, [read this blog post](http://ericwindmill.com/using-flutter-inherited-widgets-effectively))
+(For a more detailed explanation, [read this blog post](https://ericwindmill.com/using-flutter-inherited-widgets-effectively))
 
 ### 1. Setup AppState model
 

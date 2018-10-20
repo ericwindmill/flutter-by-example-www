@@ -200,12 +200,12 @@ Finally, back in our `main.dart`, add the raised button we'll need:
 
 #### What You Have So Far:
 
-![Gif demonstration](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1513448014/get_location_z0pvdy.gif)
+![Gif demonstration](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1513448014/get_location_z0pvdy.gif)
 
 Nice! An app that renders static maps based on device location. This is nice, but we need to add _a bit_ more functionality to see how this can be useful.
 
 Aso, this is obviously ugly, but Flutter makes it really easy to solve that
-problem with transitions and animations. [Here's an article I wrote on making those useful](http://ericwindmill.com/ux-transitions-in-flutter-fade-in-image-animated-cross-fade-and-hero-transitions).
+problem with transitions and animations. [Here's an article I wrote on making those useful](https://ericwindmill.com/ux-transitions-in-flutter-fade-in-image-animated-cross-fade-and-hero-transitions).
 
 ### 7. Reset Button
 
@@ -474,7 +474,7 @@ The conditional statement that checks width should now look like this:
 
 Now, you should be able to Focus on your current location, reset the map, and place markers anywhere. Here's a screen shot:
 
-![Maps App](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1513448013/Simulator_Screen_Shot_-_iPhone_8_Plus_-_2017-12-16_at_10.09.08_cpyfaw.png)
+![Maps App](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1513448013/Simulator_Screen_Shot_-_iPhone_8_Plus_-_2017-12-16_at_10.09.08_cpyfaw.png)
 
 ### Fin
 

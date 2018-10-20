@@ -79,5 +79,5 @@ The only thing left to do is to actually **use** the DogList. Replace the DogCar
 
 This is your app already, (the dog pictures are random, of course):
 
-![sample app](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521385666/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_08.07.33.png)
+![sample app](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1521385666/flutter_by_example/Simulator_Screen_Shot_-_iPhone_X_-_2018-03-18_at_08.07.33.png)
 

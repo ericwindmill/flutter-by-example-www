@@ -16,7 +16,7 @@ module.exports = {
   userTwitter: 'ericwindmill', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'Portland, OR', // User location to display in the author segment.
   userAvatar:
-    'http://res.cloudinary.com/ericwindmill/image/upload/v1509817350/portfolio_site/no-bg-cartoon.png', // User avatar to display in the author segment.
+    'https://res.cloudinary.com/ericwindmill/image/upload/v1509817350/portfolio_site/no-bg-cartoon.png', // User avatar to display in the author segment.
   userDescription: 'All about me!', // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   github: 'https://github.com/ericwindmill',

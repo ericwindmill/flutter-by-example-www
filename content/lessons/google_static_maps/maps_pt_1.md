@@ -7,7 +7,7 @@ integrated into Flutter any time soon.
 
 Luckily, for the time being, it's easy to fake Google Maps in your app.
 
-![Demo Screenshot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1512320238/flutter-static-maps/Simulator_Screen_Shot_-_iPhone_6_-_2017-12-03_at_08.56.35.png)
+![Demo Screenshot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1512320238/flutter-static-maps/Simulator_Screen_Shot_-_iPhone_6_-_2017-12-03_at_08.56.35.png)
 
 ## Google Static Maps API
 
@@ -79,7 +79,7 @@ To begin with, replace the code in `main.dart`. You can leave `MyApp` class and 
 
 Look at that. In a matter of minutes you got a map rendering.
 
-![Demo App Screen Shot](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1512325526/flutter-static-maps/static-maps-one.png)
+![Demo App Screen Shot](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1512325526/flutter-static-maps/static-maps-one.png)
 
 But this isn't entirely useful. We probably want to render a map based on a users location, and possibly provide a marker based on some input or data.
 

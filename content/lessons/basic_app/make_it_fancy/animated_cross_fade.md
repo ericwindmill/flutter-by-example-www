@@ -7,7 +7,7 @@ At this point, your app has all the functionality that you'll implement.
 But there is some really easy animations Flutter gives you that will enhance the UX by a mile.
 
 1. Add placeholder for images, so they fade in on load.
-2. Add a [hero animation](http://ericwindmill.com/ux-transitions-in-flutter-fade-in-image-animated-cross-fade-and-hero-transitions) that connects your DogCard to the dog_detail_page.
+2. Add a [hero animation](https://ericwindmill.com/ux-transitions-in-flutter-fade-in-image-animated-cross-fade-and-hero-transitions) that connects your DogCard to the dog_detail_page.
 
 ### 1. Add an AnimatedCrossFade to load Widgets on state change
 
