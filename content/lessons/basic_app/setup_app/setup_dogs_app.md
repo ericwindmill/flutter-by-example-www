@@ -12,8 +12,8 @@ By the end of this, you should be pretty amazed by how much Flutter gives us out
 
 This is what you're making:
 
-![add dog](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699901/flutter_by_example/new_dog.gif)
-![good dogs](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699902/flutter_by_example/good_dogs.gif)
+![add dog](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699901/flutter_by_example/new_dog.gif)
+![good dogs](https://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1520699902/flutter_by_example/good_dogs.gif)
 
 Finished source code: [We Rate Dogs example app](https://github.com/ericwindmill/flutter_by_example_apps)
 
