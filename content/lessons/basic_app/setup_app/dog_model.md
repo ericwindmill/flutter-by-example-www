@@ -5,36 +5,36 @@ title: "Data Model & HTTP"
 
 ### 1. Get to a Clean Slate
 
-All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff, and you'll end up with this: 
+All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff, and you'll end up with this:
 
 ```dart
 // main.dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// MaterialApp is the base Widget for your Flutter Application
     /// Gives us access to routing, context, and meta info functionality.
-    return new MaterialApp(
+    return MaterialApp(
       title: 'We Rate Dogs',
-      // Make all our text default to white 
+      // Make all our text default to white
       // and backgrounds default to dark
-      theme: new ThemeData(brightness: Brightness.dark),
-      home: new MyHomePage(title: 'We Rate Dogs'),
+      theme: ThemeData(brightness: Brightness.dark),
+      home: MyHomePage(title: 'We Rate Dogs'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-  
+
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -43,21 +43,20 @@ class _MyHomePageState extends State<MyHomePage> {
         /// Scaffold is the base for a page.
         /// It gives an AppBar for the top,
         /// Space for the main body, bottom navigation, and more.
-        return new Scaffold(
+        return Scaffold(
             /// App bar has a ton of functionality, but for now lets
             /// just give it a color and a title.
-            appBar: new AppBar(
+            appBar: AppBar(
                 /// Access this widgets properties with 'widget'
-                title: new Text(widget.title),
+                title: Text(widget.title),
                 backgroundColor: Colors.black87,
             ),
             /// Container is a convenience widget that lets us style it's
             /// children. It doesn't take up any space itself, so it
             /// can be used as a placeholder in your code.
-            body: new Container();
+            body: Container(),
         );
     }
-
 }
 
 ```
@@ -154,4 +153,3 @@ class _MyHomePageState extends State<MyHomePage> {
     ..add(new Dog('Herbert', 'Dallas, TX, USA', 'A Very Good Boy'))
     ..add(new Dog('Buddy', 'North Pole, Earth', 'Self problaimed human lover.'));
 ```
-
