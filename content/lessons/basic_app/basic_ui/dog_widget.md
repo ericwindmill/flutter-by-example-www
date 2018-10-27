@@ -4,21 +4,24 @@ title: "Reusable Custom Card Widget"
 
 ### 1. Create Dog Card Widget
 
-We need a widget to nicely display the information in our `Dog` class. 
+We need a nice widget to display our doggos.
 
 First you'll make a card that looks like this:
 
 ![dog card](https://res.cloudinary.com/ericwindmill/image/upload/v1521328467/flutter_by_example/Screen_Shot_2018-03-10_at_10.28.18_AM.png)
 
-Create a new file caled 'dog_card.dart`.
+Create a new file called 'dog_card.dart`.
 
-In that file, make a new, blank stateful widget. It should take a Dog in it's constructor.
+In that file, make a new, blank `StatefulWidget`. It should take a Dog in its constructor.
 
 For the time being, all this will do is display the name of a dog.
 
 ```dart
+// dog_card.dart
+
 import 'package:flutter/material.dart';
-import 'package:we_rate_dogs_example/dog_model.dart';
+
+import 'dog_model.dart';
 
 class DogCard extends StatefulWidget {
   final Dog dog;
@@ -26,7 +29,7 @@ class DogCard extends StatefulWidget {
   DogCard(this.dog);
 
   @override
-  _DogCardState createState() => new _DogCardState(dog);
+  _DogCardState createState() => _DogCardState(dog);
 }
 
 class _DogCardState extends State<DogCard> {
@@ -36,28 +39,39 @@ class _DogCardState extends State<DogCard> {
 
   @override
   Widget build(BuildContext context) {
-    return new Text(widget.dog.name);
+    return Text(widget.dog.name);
   }
 }
 ```
 
-In order to make this appear, let's modify the `build` method in `main.dart`
+In order to make the `DogCard` appear, let's modify the `_MyHomePageState` `build` method in `main.dart`:
 
 ```dart
 // main.dart
-...
+
 @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text(widget.title),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
           backgroundColor: Colors.black87,
         ),
-        body: new Container(
-          child: new DogCard(dogs[1]),                                  // new
+        body: Container(
+          child: DogCard(initialDoggos[1]), // New code
         ),
     );
   }
+```
+
+And import `dog_card.dart`:
+
+```dart
+// main.dart
+
+import 'package:flutter/material.dart';
+
+import 'dog_card.dart';
+import 'dog_model.dart';
 ```
 
 Refresh your app and you can see that it's wired up now. Time to build the card.
@@ -233,7 +247,7 @@ Almost there. One more thing you need to do to complete the DogCard UI. Add a bi
 // dog_card.dart in DogCardState class
   @override
   Widget build(BuildContext context) {
-    return new Padding(                                                                                                 new 
+    return new Padding(                                                                                                 new
     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: new Container(
         height: 115.0,
@@ -246,8 +260,4 @@ Almost there. One more thing you need to do to complete the DogCard UI. Add a bi
       ),
     );
   }
-``` 
-
-
-
-
+```
