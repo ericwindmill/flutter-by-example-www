@@ -101,41 +101,35 @@ In your `Dog` class, add this method:
 // dog_model.dart
 
 Future getImageUrl() async {
-    // Null check so our app isn't doing extra work
-    // If theres already an image, we don't need to get one.
-    if (imageUrl != null) {
-      return;
-    }
-
-    // This is how http calls are done in flutter:
-    HttpClient http = new HttpClient();
-    try {
-      // Use darts Uri builder
-      var uri = new Uri.http('dog.ceo', '/api/breeds/image/random');
-      var request = await http.getUrl(uri);
-      var response = await request.close();
-      var responseBody = await response.transform(UTF8.decoder).join();
-      var json = JSON.decode(responseBody);
-      // The dog.ceo API returns a JSON object with a property
-      // called 'message', which actually is the URL.
-      var url = json['message'];
-      imageUrl = url;
-    } catch (exception) {
-      print(exception);
-    }
+  // Null check so our app isn't doing extra work.
+  // If there's already an image, we don't need to get one.
+  if (imageUrl != null) {
+    return;
   }
 
+  // This is how http calls are done in flutter:
+  HttpClient http = HttpClient();
+  try {
+    // Use darts Uri builder
+    var uri = Uri.http('dog.ceo', '/api/breeds/image/random');
+    var request = await http.getUrl(uri);
+    var response = await request.close();
+    var responseBody = await response.transform(utf8.decoder).join();
+    // The dog.ceo API returns a JSON object with a property
+    // called 'message', which actually is the URL.
+    imageUrl = json.decode(responseBody)['message'];
+  } catch (exception) {
+    print(exception);
+  }
+}
 ```
 
+**NB:** This will also require the import of two dart packages:
 
-**NB:** This will also require to to import three dart packages:
-
-```
-import 'dart:async';
+```dart
 import 'dart:convert';
 import 'dart:io';
 ```
-
 
 ### 4. Create some sample data with the new Dog class.
 
