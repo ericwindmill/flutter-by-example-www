@@ -133,17 +133,31 @@ import 'dart:io';
 
 ### 4. Create some sample data with the new Dog class.
 
-In `main.dart` let's create a handful of dogs so we have something to work with:
+In `main.dart` let's create a handful of dogs so we have something to work with.
+
+First import `dog_model.dart`:
+
+```dart
+// main.dart
+
+import 'package:flutter/material.dart';
+
+import 'dog_model.dart';
+```
+
+Then add some doggos:
 
 ```dart
 // main.dart in the State class
-...
+
 class _MyHomePageState extends State<MyHomePage> {
   var initialDoggos = []
-    ..add(new Dog('Ruby', 'Portland, OR, USA',
+    ..add(Dog('Ruby', 'Portland, OR, USA',
         'Ruby is a very good girl. Yes: Fetch, loungin\'. No: Dogs who get on furniture.'))
-    ..add(new Dog('Rex', 'Seattle, WA, USA', 'Best in Show 1999'))
-    ..add(new Dog('Rod Stewart', 'Prague, CZ', 'Star good boy on international snooze team.'))
-    ..add(new Dog('Herbert', 'Dallas, TX, USA', 'A Very Good Boy'))
-    ..add(new Dog('Buddy', 'North Pole, Earth', 'Self problaimed human lover.'));
+    ..add(Dog('Rex', 'Seattle, WA, USA', 'Best in Show 1999'))
+    ..add(Dog('Rod Stewart', 'Prague, CZ',
+        'Star good boy on international snooze team.'))
+    ..add(Dog('Herbert', 'Dallas, TX, USA', 'A Very Good Boy'))
+    ..add(Dog('Buddy', 'North Pole, Earth', 'Self proclaimed human lover.'));
+}
 ```
