@@ -151,7 +151,7 @@ Then add some doggos:
 // main.dart in the State class
 
 class _MyHomePageState extends State<MyHomePage> {
-  var initialDoggos = []
+  List<Dog> initialDoggos = []
     ..add(Dog('Ruby', 'Portland, OR, USA',
         'Ruby is a very good girl. Yes: Fetch, loungin\'. No: Dogs who get on furniture.'))
     ..add(Dog('Rex', 'Seattle, WA, USA', 'Best in Show 1999'))
