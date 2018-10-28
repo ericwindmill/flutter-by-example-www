@@ -17,7 +17,15 @@ This is what you're making:
 
 Finished source code: [We Rate Dogs example app](https://github.com/ericwindmill/flutter_by_example_apps)
 
-We'll just start this from a fresh app. Once you have [Flutter installed on your machine and your environment set up](https://flutter.io), enter the following in the your terminal:
+We'll just start this from a fresh app. Once you have [Flutter installed on your machine and your environment set up](https://flutter.io), create a new Flutter app:
+
+```bash
+flutter create basic_flutter_app
+cd basic_flutter_app
+flutter run
+```
+
+Alternatively you can clone the pre-generated app from [GitHub](https://github.com/ericwindmill/flutter_by_example_apps).
 
 ```bash
 git clone https://github.com/ericwindmill/flutter_by_example_apps.git
