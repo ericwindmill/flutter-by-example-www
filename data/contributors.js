@@ -29,4 +29,13 @@ module.exports = {
     github: 'https://github.com/abraham',
     bio: 'Developer at Bendyworks, start-up founder, international speaker, and Google Developer Expert.',
   },
+  'Pearl Latteier': {
+    avatarUrl:
+    'https://res.cloudinary.com/ericwindmill/image/upload/v1540754660/flutter_by_example/authors/full-pb-photo-4c24280a25ddfdac6c537f34e6da09f6-44796.jpg',
+    email: 'pearlbea@gmail.com',
+    portfolio: 'https://pearlbea.com/',
+    twitter: 'https://twitter.com/pblatteier',
+    github: 'https://github.com/pearlbea',
+    bio: 'Senior Developer at Bendyworks, Google Developer Expert in Web Technologies, and WomenTechmakers lead.',
+  },
 }
