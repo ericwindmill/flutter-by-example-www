@@ -5,36 +5,36 @@ title: "Data Model & HTTP"
 
 ### 1. Get to a Clean Slate
 
-All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff, and you'll end up with this: 
+All Flutter apps start with `main.dart`. Get rid of all the Counter app stuff, and you'll end up with this:
 
 ```dart
 // main.dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// MaterialApp is the base Widget for your Flutter Application
     /// Gives us access to routing, context, and meta info functionality.
-    return new MaterialApp(
+    return MaterialApp(
       title: 'We Rate Dogs',
-      // Make all our text default to white 
+      // Make all our text default to white
       // and backgrounds default to dark
-      theme: new ThemeData(brightness: Brightness.dark),
-      home: new MyHomePage(title: 'We Rate Dogs'),
+      theme: ThemeData(brightness: Brightness.dark),
+      home: MyHomePage(title: 'We Rate Dogs'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-  
+
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -43,21 +43,20 @@ class _MyHomePageState extends State<MyHomePage> {
         /// Scaffold is the base for a page.
         /// It gives an AppBar for the top,
         /// Space for the main body, bottom navigation, and more.
-        return new Scaffold(
+        return Scaffold(
             /// App bar has a ton of functionality, but for now lets
             /// just give it a color and a title.
-            appBar: new AppBar(
+            appBar: AppBar(
                 /// Access this widgets properties with 'widget'
-                title: new Text(widget.title),
+                title: Text(widget.title),
                 backgroundColor: Colors.black87,
             ),
             /// Container is a convenience widget that lets us style it's
             /// children. It doesn't take up any space itself, so it
             /// can be used as a placeholder in your code.
-            body: new Container();
+            body: Container(),
         );
     }
-
 }
 
 ```
@@ -102,56 +101,63 @@ In your `Dog` class, add this method:
 // dog_model.dart
 
 Future getImageUrl() async {
-    // Null check so our app isn't doing extra work
-    // If theres already an image, we don't need to get one.
-    if (imageUrl != null) {
-      return;
-    }
-
-    // This is how http calls are done in flutter:
-    HttpClient http = new HttpClient();
-    try {
-      // Use darts Uri builder
-      var uri = new Uri.http('dog.ceo', '/api/breeds/image/random');
-      var request = await http.getUrl(uri);
-      var response = await request.close();
-      var responseBody = await response.transform(UTF8.decoder).join();
-      var json = JSON.decode(responseBody);
-      // The dog.ceo API returns a JSON object with a property
-      // called 'message', which actually is the URL.
-      var url = json['message'];
-      imageUrl = url;
-    } catch (exception) {
-      print(exception);
-    }
+  // Null check so our app isn't doing extra work.
+  // If there's already an image, we don't need to get one.
+  if (imageUrl != null) {
+    return;
   }
 
+  // This is how http calls are done in flutter:
+  HttpClient http = HttpClient();
+  try {
+    // Use darts Uri builder
+    var uri = Uri.http('dog.ceo', '/api/breeds/image/random');
+    var request = await http.getUrl(uri);
+    var response = await request.close();
+    var responseBody = await response.transform(utf8.decoder).join();
+    // The dog.ceo API returns a JSON object with a property
+    // called 'message', which actually is the URL.
+    imageUrl = json.decode(responseBody)['message'];
+  } catch (exception) {
+    print(exception);
+  }
+}
 ```
 
+**NB:** This will also require the import of two dart packages:
 
-**NB:** This will also require to to import three dart packages:
-
-```
-import 'dart:async';
+```dart
 import 'dart:convert';
 import 'dart:io';
 ```
 
-
 ### 4. Create some sample data with the new Dog class.
 
-In `main.dart` let's create a handful of dogs so we have something to work with:
+In `main.dart` let's create a handful of dogs so we have something to work with.
+
+First import `dog_model.dart`:
+
+```dart
+// main.dart
+
+import 'package:flutter/material.dart';
+
+import 'dog_model.dart';
+```
+
+Then add some doggos:
 
 ```dart
 // main.dart in the State class
-...
-class _MyHomePageState extends State<MyHomePage> {
-  var initialDoggos = []
-    ..add(new Dog('Ruby', 'Portland, OR, USA',
-        'Ruby is a very good girl. Yes: Fetch, loungin\'. No: Dogs who get on furniture.'))
-    ..add(new Dog('Rex', 'Seattle, WA, USA', 'Best in Show 1999'))
-    ..add(new Dog('Rod Stewart', 'Prague, CZ', 'Star good boy on international snooze team.'))
-    ..add(new Dog('Herbert', 'Dallas, TX, USA', 'A Very Good Boy'))
-    ..add(new Dog('Buddy', 'North Pole, Earth', 'Self problaimed human lover.'));
-```
 
+class _MyHomePageState extends State<MyHomePage> {
+  List<Dog> initialDoggos = []
+    ..add(Dog('Ruby', 'Portland, OR, USA',
+        'Ruby is a very good girl. Yes: Fetch, loungin\'. No: Dogs who get on furniture.'))
+    ..add(Dog('Rex', 'Seattle, WA, USA', 'Best in Show 1999'))
+    ..add(Dog('Rod Stewart', 'Prague, CZ',
+        'Star good boy on international snooze team.'))
+    ..add(Dog('Herbert', 'Dallas, TX, USA', 'A Very Good Boy'))
+    ..add(Dog('Buddy', 'North Pole, Earth', 'Self proclaimed human lover.'));
+}
+```
