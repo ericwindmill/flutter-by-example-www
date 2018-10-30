@@ -2,7 +2,7 @@
 title: "Hero Transition"
 ---
 
-The hero transition is even more impressive. And easier to work with.
+The hero transition is even more impressive and easier to work with.
 
 This is what a hero animation does:
 
@@ -10,42 +10,37 @@ This is what a hero animation does:
 
 And you can make it happen with four new lines of code.
 
-### 1. Update your DogCard dogImage again
+### 1. Update the `dogImage` method of your `_DogCardState` class
 
 ```dart
-// lib/dog_card.dart in _DogCardState
-  Widget get dogImage {
-    // Wrap the entire widget in a 'Hero' widget
-    var dogAvatar = new Hero(
-      // Give your hero a tag
-      //
-      // Basically, Flutter looks for two widgets on two
-      // different pages, and if they have the same tag
-      // It animates them between the two pages
-      //
-      tag: dog,
-      child: new Container(
-      ...
+// dog_card.dart
 
-      // dont forget to close that Hero parentheses
-      // at the bottom of your widget!
+Widget get dogImage {
+  // Wrap the dogAvatar widget in a Hero widget.
+  var dogAvatar = Hero(
+    // Give your hero a tag.
+    //
+    // Flutter looks for two widgets on two different pages,
+    // and if they have the same tag it animates between them.
+    tag: dog,
+    child: Container(
+
+    // ...
+    // Close the Hero parentheses at the bottom of the dogAvatar widget.
 ```
 
-### 2. Update your DogDetailPageState dogImage
+### 2. Update the `dogImage` method of your `_DogDetailPageState` class
 
 Add almost the exact same two links of code:
 
 ```dart
   Widget get dogImage {
-    return new Hero(
-       // The same code, except the Dog property lives on the
-       // widget in this file.
+    return Hero(
+      // The same code, except the Dog property lives on the widget in this file.
       tag: widget.dog,
-      child: new Container(
+      child: Container(
         height: dogAvatarSize,
-    ...
 
-
-    // dont forget to close that Hero parentheses
-    // at the bottom of your widget!
+    // ...
+    // Close the Hero parentheses at the bottom of your widget.
 ```
