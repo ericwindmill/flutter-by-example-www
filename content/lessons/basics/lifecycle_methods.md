@@ -19,8 +19,11 @@ Contents:
 
 </div>
 
-When a Flutter builds a `StatefulWidget`, it creates a `State` object. This
-object is where all the **mutable** state for that widget is held.
+When a Flutter builds a 
+[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), it 
+creates a [`State`](https://docs.flutter.io/flutter/widgets/State-class.html) object. This
+object is where all the 
+**[mutable](https://en.wikipedia.org/wiki/Immutable_object)** state for that widget is held.
 
 The concept of state is defined by two things:
 
@@ -36,8 +39,8 @@ The tldr version is that `State` objects are long lived, but StatefulWidgets
 (and all Widget subclasses) are thrown away and rebuilt whenever configuration
 changes. It's very inexpensive for Flutter to rebuild a mutable widget.
 
-Because `State` isn't blown away on every rebuild, you can maintain it and keep
-from having to make expensive computations to get the state property everytime
+Because `State` isn't blown away on every rebuild, it avoids 
+expensive computations, and gets at the state property everytime
 something is rebuilt.
 
 Also, this is what allows Flutter animations to exist. Because `State` isn't
@@ -46,9 +49,11 @@ changes.
 
 ### 1. createState()
 
-When the Framework is instructed to build a StatefulWidget, it immediately
-calls `createState()`. This method _must_ exist. A StatefulWidget rarely needs
-to be more complicated than this.
+When the Framework is instructed to build a 
+[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), it 
+immediately calls 
+[`createState()`](https://docs.flutter.io/flutter/widgets/StatefulWidget/createState.html). This 
+method _must_ exist. A StatefulWidget rarely needs to be more complicated than this.
 
 ```dart
 class MyHomePage extends StatefulWidget {
