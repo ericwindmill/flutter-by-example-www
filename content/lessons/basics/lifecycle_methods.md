@@ -2,23 +2,6 @@
 title: "Stateful Widget Lifecycle"
 ---
 
-<div class='aside'>
-
-The lifecycle has the following simplied steps:
-
-* [createState](#1-createstate)
-* [mounted is true](#2-mounted-is-true)
-* [initState](#3-initstate)
-* [didChangeDependencies](#4-didChangeDependencies)
-* [build](#5-build)
-* [didUpdateWidget](#6-didupdatewidget)
-* [setState](#7-setstate)
-* [deactivate](#8-deactivate)
-* [dispose](#9-dispose)
-* [mounted is false](#10-mounted-is-false)
-
-</div>
-
 When a Flutter builds a 
 [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), it 
 creates a [`State`](https://docs.flutter.io/flutter/widgets/State-class.html) object. This
@@ -30,6 +13,25 @@ The concept of state is defined by two things:
 1. The data used by the widget might change.
 2. The data _can't_ be read synchronously when the widget is built. (All state
    must be established by the time the `build` method is called).
+   
+<div class='aside'>
+
+The lifecycle has the following simplified steps:
+
+* [createState()](#1-createstate)
+* [mounted == true](#2-mounted-is-true)
+* [initState()](#3-initstate)
+* [didChangeDependencies()](#4-didChangeDependencies)
+* [build()](#5-build)
+* [didUpdateWidget()](#6-didupdatewidget)
+* [setState()](#7-setstate)
+* [deactivate()](#8-deactivate)
+* [dispose()](#9-dispose)
+* [mounted == false](#10-mounted-is-false)
+
+</div>
+
+
 
 ### Why Are StatefulWidget and State Separate Classes?
 
@@ -153,12 +155,12 @@ change, unsubscribe from the old object and re-subscribe to the new instance in
 
 <div class='tip'>
 
-**tip**: This method is basically the replacement for 'initState' if you expect
-the Widget associated with this state to be rebuilt!
+**tip**: This method is basically the replacement for 'initState()' if you expect
+the `Widget` associated with this state to be rebuilt!
 
 </div>
 
-The framework always called `build` after this, so any call to `setState` is
+Flutter always called `build` after this, so any surhter/subsequent calls to `setState` is
 redundant.
 
 ```dart
@@ -172,12 +174,14 @@ void didUpdateWidget(Widget oldWidget) {
 
 ### 7. setState()
 
-This method is called often from the framework itself and from the developer.
-Its used to notify the framework that data has changed, and the widget at this
+The ['setState()'](https://docs.flutter.io/flutter/widgets/State/setState.html) 
+method is called often from the Flutter framework itself and from the developer.
+
+It is used to notify the framework that "data has changed", and the widget at this
 `build context` should be rebuilt.
 
-`setState` takes a call back which _cannot_ be async. Otherwise, it can be used
-as often as you'd like because repainting is cheap.
+`setState()` takes a callback which **cannot be async**. It is for this reason
+it can be called often as required, because repainting is cheap :-)
 
 ```dart
 void updateProfile(String name) {
@@ -187,21 +191,25 @@ void updateProfile(String name) {
 
 ### 8. deactivate()
 
-Deactivate is called when `State` is removed from the tree, _but it might be
+This is rarely used.
+
+['deactivate()'](https://docs.flutter.io/flutter/widgets/State/deactivate.html) is 
+called when `State` is removed from the tree, _but it might be
 reinserted_ before the current frame change is finished. This method exists
 basically because `State` objects can be moved from one point in a tree to
 another.
 
-This is rarely used.
+
 
 ### 9. dispose()
 
-Dispose is called when the `State` object is removed, which is permanent.
+['dispose()'](https://docs.flutter.io/flutter/widgets/State/dispose.html) is called 
+when the `State` object is removed, which is permanent.
 
-This method is where you should unsubscribe and cancel all animations, streams,
+This method is where to unsubscribe and cancel all animations, streams,
 etc.
 
 ### 10. mounted is false
 
-The `state` object can never remount, and an error is thrown is `setState` is
+The `state` object can never remount, and an error is thrown is `setState()` is
 called.
