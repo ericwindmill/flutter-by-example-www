@@ -37,21 +37,21 @@ The lifecycle has the following simplified steps:
 
 In one word: performance.
 
-The tldr version is that `State` objects are long lived, but StatefulWidgets
-(and all Widget subclasses) are thrown away and rebuilt whenever configuration
-changes. It's very inexpensive for Flutter to rebuild a mutable widget.
+The tldr version is that `State` objects are long lived, but `StatefulWidget`s
+(and all `Widget` subclasses) are thrown away and rebuilt whenever configuration
+changes. It's very inexpensive ie cheap for Flutter to rebuild a mutable widget.
 
-Because `State` isn't blown away on every rebuild, it avoids 
-expensive computations, and gets at the state property everytime
-something is rebuilt.
+As `State` isn't blown away on every rebuild, it avoids 
+expensive computations, and gets at the `state`s property, getters, setters etc everytime
+something is rebuilt frame by frame.
 
-Also, this is what allows Flutter animations to exist. Because `State` isn't
-thrown away, it can constantly be rebuilding it's Widget in response to data
-changes.
+Important is that this is what allows Flutter animations to exist. As `State` isn't
+thrown away, it can constantly be rebuilding it's `Widget` in response to data
+changes, and when required, if any.
 
 ### 1. createState()
 
-When the Framework is instructed to build a 
+When Flutter is instructed to build a 
 [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), it 
 immediately calls 
 [`createState()`](https://docs.flutter.io/flutter/widgets/StatefulWidget/createState.html). This 
@@ -70,7 +70,7 @@ When [`createState`](https://docs.flutter.io/flutter/widgets/StatefulWidget/crea
 creates the state class, a `buildContext` is assigned to
 that state. 
 
-A [BuildContext](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) is, overly 
+A [`BuildContext`](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) is, overly 
 simplified, the place in the widget tree in which
 this widget is placed. ![Here's a longer explanation.][https://flutterbyexample.com/build-context-class]
 
@@ -133,15 +133,16 @@ The docs also suggest that it could be useful if you need to do network calls
 
 ### 5. build()
 
-This method is called often (think `render`). It is required, and 
+This method is called often (think fps + `render`). It is a required, `@override` and 
 must return a [`Widget`](https://docs.flutter.io/flutter/widgets/Widget-class.html).
+
 Remember that in Flutter all gui is a widget with a child or children, even 
 ['Padding'](https://docs.flutter.io/flutter/widgets/Padding-class.html), 
 ['Center'](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
 ### 6. didUpdateWidget(Widget oldWidget)
 
-[`didUpdateWidget`](https://docs.flutter.io/flutter/widgets/State/didUpdateWidget.html) is called 
+[`didUpdateWidget()`](https://docs.flutter.io/flutter/widgets/State/didUpdateWidget.html) is called 
 if the parent widget changes and has to rebuild this widget (because it needs
 to give it different data), but it's being rebuilt with the same `runtimeType`,
 then this method is called.
@@ -149,18 +150,18 @@ then this method is called.
 This is because Flutter is re-using the `state`, which is long lived. In this
 case, required is to initialize some data again, as one would in `initState()`.
 
-If the state's `build` method relies on a Stream or other object that can
+If the state's `build()` method relies on a Stream or other object that can
 change, unsubscribe from the old object and re-subscribe to the new instance in
-`didUpdateWidget`.
+`didUpdateWidget()`.
 
 <div class='tip'>
 
-**tip**: This method is basically the replacement for 'initState()' if you expect
-the `Widget` associated with this state to be rebuilt!
+**tip**: This method is basically the replacement for 'initState()' if it is expected
+the `Widget` associated with the widgets's `state` nrrds to to be rebuilt!
 
 </div>
 
-Flutter always called `build` after this, so any surhter/subsequent calls to `setState` is
+Flutter always called `build()` after this, so any subsequent further calls to `setState` is
 redundant.
 
 ```dart
