@@ -4,7 +4,7 @@ title: "Stateful Widget Lifecycle"
 
 <div class='aside'>
 
-Contents:
+The lifecycle has the following simplied steps:
 
 * [createState](#1-createstate)
 * [mounted is true](#2-mounted-is-true)
@@ -64,11 +64,15 @@ class MyHomePage extends StatefulWidget {
 
 ### 2. mounted is true
 
-When `createState` creates your state class, a `buildContext` is assigned to
-that state. BuildContext is, overly simplified, the place in the widget tree in which
+When [`createState`](https://docs.flutter.io/flutter/widgets/StatefulWidget/createState.html) 
+creates the state class, a `buildContext` is assigned to
+that state. 
+
+A [BuildContext](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) is, overly 
+simplified, the place in the widget tree in which
 this widget is placed. ![Here's a longer explanation.][https://flutterbyexample.com/build-context-class]
 
-All widgets have a `bool this.mounted` property. It is turned true when the
+All widgets have a `bool this.mounted` property. It is turns `true` when the
 `buildContext` is assigned. It is an error to call `setState` when a widget is
 unmounted.
 
@@ -86,9 +90,10 @@ to make sure the State exists before calling `setState()`.
 This is the first method called when the widget is created (after the class
 constructor, of course.)
 
-`initState` is called once and only once. It must called `super.initState()`.
+[`initState`](https://docs.flutter.io/flutter/widgets/State/initState.html) is 
+called **once and only once**. It must also call `super.initState()`.
 
-This method is the best time to:
+This `@override` method is the best time to:
 
 1. Initialize data that relies on the specific BuildContext for the created
    instance of the widget.
@@ -109,7 +114,8 @@ initState() {
 
 ### 4. didChangeDependencies()
 
-This method is called immediately after `initState` on the first time the
+The [didChangeDependencies](https://docs.flutter.io/flutter/widgets/State/didChangeDependencies.html)
+method is called immediately after `initState` on the first time the
 widget is built.
 
 It will also be called whenever an object that this widget _depends on data
@@ -125,25 +131,30 @@ The docs also suggest that it could be useful if you need to do network calls
 
 ### 5. build()
 
-This method is called often. It is required, and it must return a Widget.
+This method is called often (think `render`). It is required, and 
+must return a [`Widget`](https://docs.flutter.io/flutter/widgets/Widget-class.html).
+Remember that in Flutter all gui is a widget with a child or children, even 
+['Padding'](https://docs.flutter.io/flutter/widgets/Padding-class.html), 
+['Center'](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
 ### 6. didUpdateWidget(Widget oldWidget)
 
-If the parent widget changes and has to rebuild this widget (because it needs
+[`didUpdateWidget`](https://docs.flutter.io/flutter/widgets/State/didUpdateWidget.html) is called 
+if the parent widget changes and has to rebuild this widget (because it needs
 to give it different data), but it's being rebuilt with the same `runtimeType`,
 then this method is called.
 
-This is because Flutter is re-using the state, which is long lived. In this
-case, you may want to initialize some data again, as you would in initState.
+This is because Flutter is re-using the `state`, which is long lived. In this
+case, required is to initialize some data again, as one would in `initState()`.
 
-If your state's `build` method relies on a Stream or other object that can
+If the state's `build` method relies on a Stream or other object that can
 change, unsubscribe from the old object and re-subscribe to the new instance in
-didUpdateWidget.
+`didUpdateWidget`.
 
 <div class='tip'>
 
 **tip**: This method is basically the replacement for 'initState' if you expect
-your Widget associated with this state to be rebuilt!
+the Widget associated with this state to be rebuilt!
 
 </div>
 
