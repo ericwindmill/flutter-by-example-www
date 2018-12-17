@@ -2,7 +2,7 @@
 title: "BuildContext Class"
 ---
 
-The `build` method in every Flutter widget takes an argument of `BuildContext`.
+Every Flutter widget has an `@override build()` method with the argument of `BuildContext`.
 
 ```dart
 class CartItemWidget extends StatelessWidget {
@@ -14,18 +14,25 @@ class CartItemWidget extends StatelessWidget {
 
 <div class='aside'>
 
-### tldr
+### why BuildContext()
 
-In one sentence, the `BuildContext` is simply the location of the widget in the
-widget tree.
+Simply explain is that the `BuildContext` is:
+- the location of the `Widget` in the widget tree.
+- a widget of widgets, like nested.wrap `<div <div> .html>`
+- parent objects in qt and alike
+- In Flutter, everything is a Widget, down to the final `build.call()`
+- Until finally a widget is returned with its "stuff," row dimentions et all
 
 </div>
 
-Each widget has its own build context. _This BuildContext is the parent of the
-widget returned by the `build` method._
+Important concept to understand is that 
 
-In other words, the `buildContext` of the Widget that _calls_ `build` is not the
-same as the build context of the widget _returned_ by `build`.
+1 - Every `Widget` has its own `build()` and its `context`.
+2 - The BuildContext is the parent of the widget returned by the `build()` method._
+
+
+In other words, the `buildContext` of the Widget that _calls_ `build()` is not the
+same as the build context of the widget _returned_ by `build()`.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -49,18 +56,19 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-If you did this exact experiment, your print statements would be different, but
+If you did this exact experiment, the print statements would be different, but
 those are the actual numbers that I got.
 
 **But what does this actually mean?**
 
-This comes with one big gotcha: It's easy to reference the _wrong_ build
-context, and that can cause unexpected situations, specifically when using
-the `of` method.
+This is the one big **gotcha;-)**:  
+- It is easy to reference the _wrong_ `build()`
+- and its `context` 
+- This can cause unexpected situations, specifically when using the `of()` method.
 
-### The 'of' Method
+### The 'of()' Method
 
-In Flutter, widgets can look up and down the widget tree, in some cases, to
+In Flutter, as everthing are widgets, looking up and down the widget tree, in some cases, to
 reference other Widgets. This is required for some functionality.
 
 In particular, widgets that want to use the State of `inherited` widgets need
@@ -84,6 +92,8 @@ framework can find the correct `Theme` object because it knows the tree in
 relation to this `build context`.
 
 #### The Gotcha
+
+With the scaffold, Flutter does give us a nice way to solve following problem...
 
 When creating some widgets, such as a snackbar, you have to grab the nearest
 Scaffold context so that Flutter knows how to paint the snackbar, since
@@ -118,7 +128,7 @@ Consider this:
   }
 ```
 
-Flutter does give us a nice way to solve this problem, though.
+
 
 ### Builder Methods
 
