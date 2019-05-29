@@ -141,9 +141,11 @@ void renderDogPic() async {
   await dog.getImageUrl();
   // setState tells Flutter to rerender anything that's been changed.
   // setState cannot be async, so we use a variable that can be overwritten
-  setState(() {
+  if (mounted) { // Avoid calling `setState` if the widget is no longer in the widget tree.
+    setState(() {
       renderUrl = dog.imageUrl;
-  });
+    });
+  }
 }
 ```
 
