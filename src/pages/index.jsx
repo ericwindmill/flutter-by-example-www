@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import config from '../../data/SiteConfig'
 import ExampleListing from '../components/ExampleList'
 import SiteHeader from '../components/SiteHeader'
 import CtaButton from '../components/CtaButton'
+import CalloutCard from "../components/callout_card";
+import FiaSalesCallout from "../components/fia_sales_callout";
 
 export default class HomePage extends React.Component {
   render() {
@@ -15,13 +16,14 @@ export default class HomePage extends React.Component {
         <Helmet title={config.siteTitle} />
         <BodyContainer>
           <SiteHeader />
+          <FiaSalesCallout />
           <img
             className={'hero'}
-            src="https://res.cloudinary.com/ericwindmill/image/upload/v1525634840/flutter_by_example/hero-image-fbe.png"
-            alt=""
+            src='https://res.cloudinary.com/ericwindmill/image/upload/v1525634840/flutter_by_example/hero-image-fbe.png'
+            alt=''
           />
-          <div className="main-copy">
-            <div className="words">
+          <div className='main-copy'>
+            <div className='words'>
               <p>
                 Flutter By Example is a collection of example tutorials that
                 will help you master Flutter by coding real apps.
@@ -35,9 +37,9 @@ export default class HomePage extends React.Component {
                 We encourage you to get involved, contribute and teach what you
                 know about Dart and Flutter.
               </p>
-              <div className="button-row">
+              <div className='button-row'>
                 <CtaButton isExternalLink>
-                  <a href="https://github.com/ericwindmill/flutter_by_example_apps">
+                  <a href='https://github.com/ericwindmill/flutter_by_example_apps'>
                     Example Apps Github
                   </a>
                 </CtaButton>
