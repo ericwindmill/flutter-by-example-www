@@ -34,7 +34,7 @@ class FiaSalesCallout extends Component {
              that's covered.</p>
 
           <ButtonContainer style={{margin: "auto"}}>
-            <a href='https://www.manning.com/books/flutter-in-action'>
+            <a href='https://www.manning.com/books/flutter-in-action?a_aid=flutterinaction&a_bid=d08c3247'>
               Go to Table of Contents
             </a>
           </ButtonContainer>
